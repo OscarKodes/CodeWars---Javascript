@@ -1,0 +1,31 @@
+function findOdd(array) {
+  
+  let intFreq = {};
+  
+  for (let i = 0; i < array.length; i++) {
+    
+    let currElement = array[i];
+    
+    if (intFreq[currElement] === undefined) {
+    
+      intFreq[currElement] = 1;
+    }
+    
+    else {
+    
+      intFreq[currElement] += 1;
+    }
+  }
+  
+  for (let int in intFreq) {
+  
+    let currIntFreq = intFreq[int];
+    
+    if (currIntFreq % 2 === 1) {
+    
+      return Number(int);
+    }
+  }
+
+  return 0;
+}
