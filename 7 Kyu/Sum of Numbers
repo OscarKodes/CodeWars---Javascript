@@ -1,0 +1,33 @@
+function GetSum( a,b )
+{
+   //Good luck!
+   
+   let sum;
+   
+   let startIdx;
+   let endIdx;
+   
+   if (b < a) {
+     startIdx = b
+     endIdx = a;
+     sum = startIdx;
+
+   }
+   
+   else if (a < b) {
+     startIdx = a;
+     endIdx = b;
+     sum = startIdx
+   }
+   
+   else {
+     sum = a;
+   }
+   
+   for (let i = startIdx + 1; i <= endIdx; i++) {
+     sum += i;
+   }
+   
+   
+   return sum;
+}
