@@ -1,0 +1,54 @@
+function findOutlier(array){
+  
+  let outlier;
+  let evenOddScore = 0;
+  
+  for (let i = 0; i < 3; i++) {
+  
+    let currNum = array[i];
+    
+    if (currNum % 2 === 0) {
+    
+      evenOddScore++;
+    }
+    
+    else {
+    
+      evenOddScore--;
+    }
+  }
+  
+  
+  // if the majority of the first three integers are even, 
+  // the "score" will be a positive number
+  
+  if (evenOddScore > 0) {
+  
+    // if the "score" is positive, then most of the intergers are even,
+    // and the outlier we want to find is odd
+
+    array.forEach(function(num) {
+      
+      if (num % 2 === 1 || num % 2 === -1) {
+      
+        outlier = num;
+      }
+    });
+  }
+  
+  
+  // any other case, we want to look for an even outlier number
+  
+  else {
+  
+    array.forEach(function(num) {
+      
+      if (num % 2 === 0) {
+      
+        outlier = num;
+      }
+    });
+  }
+  
+  return outlier;
+}
