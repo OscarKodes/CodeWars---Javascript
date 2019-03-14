@@ -1,0 +1,28 @@
+function findShort(str){
+
+  let shortestLength;
+  let currWord = '';
+  
+  for (let i = 0; i <= str.length; i++) {
+  
+    let currChar = str[i];
+    
+    if (currChar === ' ' || i === str.length) {
+      
+      if (currWord.length < shortestLength || shortestLength === undefined) {
+      
+        shortestLength = currWord.length;
+        
+      }
+      
+      currWord = '';
+    }
+    
+    else {
+    
+      currWord += currChar;
+    }
+  }
+  
+  return shortestLength;
+}
