@@ -1,0 +1,33 @@
+function validParentheses(parens){
+  
+  let validScore = 0;
+  
+  for (let i = 0; i < parens.length; i++) {
+    
+    let currChar = parens[i];
+    
+    
+    if (currChar === "(" ) {
+      validScore++;
+      // for every open braket we'll add to the validScore
+    }
+    
+    else {
+      validScore--;
+      // for every closed bracket we'll subtract from the validScore
+    }
+    
+    if (validScore < 0) {
+      break;
+      // if the validScore every drops below zero,
+      // it means a close bracket occured before a matching open bracket
+      // so already know it's defintely not valid, and we break the loop
+    }
+  }
+  
+  if (validScore === 0) {
+    return true;
+  }
+
+  return false;
+}
