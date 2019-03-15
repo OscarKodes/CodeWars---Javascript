@@ -1,0 +1,38 @@
+function humanReadable(seconds) {
+  
+
+  let hours = (seconds - (seconds % 3600)) / 3600;
+  
+  seconds = seconds - (hours * 3600);
+  
+  
+  let minutes = (seconds - (seconds % 60)) / 60;
+  
+  seconds = seconds - (minutes * 60);
+
+
+  let hoursStr = String(hours);
+  let minutesStr = String(minutes);
+  let secondsStr = String(seconds);
+  
+  
+  if (hoursStr.length < 2) {
+    hoursStr = '0' + hoursStr;
+  }
+  
+  if (minutesStr.length < 2) {
+    minutesStr = '0' + minutesStr;
+  }
+  
+  if (secondsStr.length < 2) {
+    secondsStr = '0' + secondsStr;
+  }
+  
+  
+  let timeArray = [hoursStr, minutesStr, secondsStr];
+  
+  let formattedTime = timeArray.join(':');
+  
+  
+  return formattedTime;
+}
