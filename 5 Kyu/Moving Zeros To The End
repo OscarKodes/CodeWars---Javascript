@@ -1,0 +1,28 @@
+var moveZeros = function (arr) {
+  
+  let zeroCount = 0;
+  
+  let newArray = [];
+  
+  arr.forEach(function(element) {
+  
+    if (element === 0) {
+    
+      zeroCount++;
+    }
+    
+    else {
+    
+      newArray.push(element);
+    }
+  
+  });
+  
+  while (zeroCount > 0) {
+  
+    newArray.push(0);
+    zeroCount--;
+  }
+  
+  return newArray;
+}
