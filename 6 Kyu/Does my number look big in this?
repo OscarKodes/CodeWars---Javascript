@@ -1,0 +1,23 @@
+function narcissistic(num) {
+
+  let numStr = String(num);
+  
+  let sum = 0;
+  
+  for (let i = 0; i < numStr.length; i++) {
+  
+    let currNum = Number(numStr[i]);
+    
+    sum += currNum ** numStr.length;
+  }
+  
+  if (sum === num) {
+  
+    return true;
+  }
+  
+  else {
+  
+    return false;
+  }
+}
