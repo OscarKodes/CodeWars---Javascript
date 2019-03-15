@@ -1,0 +1,35 @@
+function digital_root(num) {
+  
+  // set base case
+  if (String(num).length < 2) {
+    return num;
+  }
+  
+  // set recursive case
+  else {
+  
+    let numStr = String(num);
+    
+    let numArray = [];
+    
+    for (let i = 0; i < numStr.length; i++) {
+    
+      let currNum = Number(numStr[i]);
+      
+      numArray.push(currNum);
+    }
+    
+    let currSum = 0;
+    
+    numArray.forEach(function(digit) {
+    
+      currSum += digit;
+    });
+  
+    let rootSum = digital_root(currSum);
+    
+    return rootSum;
+  }
+  
+  return 0;
+}
