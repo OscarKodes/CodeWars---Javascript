@@ -1,0 +1,28 @@
+function spinWords(str){
+
+  let wordArray = str.split(' ');
+  
+  let newArray = [];
+  
+  wordArray.forEach(function(word) {
+    
+    let reversedWord = '';
+    
+    if (word.length < 5) {
+      newArray.push(word);
+    }
+    
+    else {
+      for (let i = word.length - 1; i >= 0; i--) {
+      
+        let currChar = word[i];
+        
+        reversedWord += currChar;
+      }
+      
+      newArray.push(reversedWord);
+    }
+  });
+  
+  return newArray.join(' ');
+}
