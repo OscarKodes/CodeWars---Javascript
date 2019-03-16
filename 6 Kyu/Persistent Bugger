@@ -1,0 +1,28 @@
+function persistence(num) {
+   
+
+   // set base case
+   if (num < 10) {
+     return 0;
+   }
+   
+   // set recursive case
+   else {
+     
+     let digitsArray = String(num).split('');
+     
+     let currProduct = 1;
+     
+     digitsArray.forEach(function(digit) {
+     
+       currProduct *= digit;
+     
+     });
+     
+     let rounds = 1 + persistence(currProduct);
+     
+     return rounds;
+   }
+   
+  return 0;
+}
