@@ -1,0 +1,34 @@
+function getCount(str) {
+
+  var vowelsCount = 0;
+  
+  let letterArr = str.split('');
+  
+  letterArr.forEach(function(char) {
+  
+    if (isVowel(char)) {
+    
+      vowelsCount++;
+    }
+  });
+  
+  return vowelsCount;
+}
+
+
+// helper function
+function isVowel(char) {
+  
+  let vowels = "aeiou";
+  
+  
+  if (vowels.indexOf(char) > -1) {
+  
+    return true;
+  }
+  
+  else {
+  
+    return false;
+  }
+}
