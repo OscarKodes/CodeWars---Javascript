@@ -1,0 +1,33 @@
+function duplicateCount(text){
+
+  let letterCount = {};
+  let repeatingNums = 0;
+  
+  text = text.toUpperCase();
+  
+  for (let i = 0; i < text.length; i++) {
+  
+    let currChar = text[i];
+    
+    if (!letterCount[currChar]) {
+      
+      letterCount[currChar] = 1;
+      
+    }
+    
+    else {
+
+      letterCount[currChar]++;
+    }
+  }
+  
+  for (let letter in letterCount) {
+    
+    if (letterCount[letter] > 1) {
+    
+      repeatingNums++;
+    }
+  }
+  
+  return repeatingNums;
+}
