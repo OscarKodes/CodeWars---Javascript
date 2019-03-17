@@ -1,0 +1,43 @@
+function rot13(message){
+  
+  let smallAlphabet = "abcdefghijklmnopqrstuvwxyz";
+  let bigAlphabet = smallAlphabet.toUpperCase();
+  
+  let cipheredMessage = "";
+  
+  for (let i = 0; i < message.length; i++) {
+    
+    let currChar = message[i];
+    
+    if (smallAlphabet.indexOf(currChar) > -1) {
+      
+      let cipheredIndex = smallAlphabet.indexOf(currChar) + 13;
+      
+      if (cipheredIndex > 25) {
+      
+        cipheredIndex -= 26;
+      }
+      
+      cipheredMessage += smallAlphabet[cipheredIndex];
+    }
+    
+    else if (bigAlphabet.indexOf(currChar) > -1) {
+      
+      let cipheredIndex = bigAlphabet.indexOf(currChar) + 13;
+      
+      if (cipheredIndex > 25) {
+      
+        cipheredIndex -= 26;
+      }
+      
+      cipheredMessage += bigAlphabet[cipheredIndex];
+    }
+    
+    else {
+    
+      cipheredMessage += currChar;
+    }
+  }
+  
+  return cipheredMessage;
+}
