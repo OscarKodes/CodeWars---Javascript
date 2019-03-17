@@ -1,0 +1,48 @@
+function scramble(str1, str2) {
+ 
+ let wordCountObj1 = {};
+ 
+ for (let i = 0; i < str1.length; i++) {
+ 
+   let char = str1[i];
+   
+   if (!wordCountObj1[char]) {
+   
+     wordCountObj1[char] = 1;
+   }
+   
+   else {
+   
+     wordCountObj1[char]++;
+   }
+ }
+ 
+ 
+ let wordCountObj2 = {};
+ 
+ for (let i = 0; i < str2.length; i++) {
+ 
+   let char = str2[i];
+   
+   if (!wordCountObj2[char]) {
+   
+     wordCountObj2[char] = 1;
+   }
+   
+   else {
+   
+     wordCountObj2[char]++;
+   }
+ }
+
+ for (let letter in wordCountObj2) {
+ 
+   if (!(wordCountObj2[letter] <= wordCountObj1[letter])) {
+   
+     return false;
+     break;
+   }
+ }
+ 
+ return true;
+}
