@@ -1,0 +1,37 @@
+function domainName(url){
+  
+  let startIdx = 0;
+  let endIdx = 0;
+  
+  let domain = '';
+  
+  if (url.includes("www.")) {
+  
+    startIdx = url.indexOf("www.") + 4;
+  }
+  
+  else if (url.includes("http://")) {
+  
+    startIdx = 7;
+  }
+  
+  else if (url.includes("https://")) {
+  
+    startIdx = 8;
+  }
+  
+  for (let i = startIdx; i < url.length; i++) {
+  
+    let char = url[i];
+    
+    if (char === ".") {
+      break;
+    }
+    
+    else {
+      domain += char;
+    }
+  }
+  
+  return domain;
+}
