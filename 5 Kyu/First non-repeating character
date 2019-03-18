@@ -1,0 +1,31 @@
+function firstNonRepeatingLetter(str) {
+  
+  for (let i = 0; i < str.length; i++) {
+  
+    let currChar = str[i];
+    let upperChar = currChar.toUpperCase();
+    
+    for (let j = 0; j < str.length; j++) {
+      
+      let currChar2 = str[j];
+      let upperChar2 = currChar2.toUpperCase();
+      
+      if ((currChar === currChar2 || upperChar === upperChar2) && i != j) {
+      
+        break;
+      }
+      
+      else if (j >= str.length - 1) {
+      
+        return str[i];
+      }
+    }
+  }
+  
+  if (str.length === 1) {
+    
+    return str[0];
+  }
+  
+  return "";
+}
