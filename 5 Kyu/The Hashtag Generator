@@ -1,0 +1,25 @@
+function generateHashtag (str) {
+
+  let rawArray = str.split(" ");
+  
+  let newStr = "";
+  
+  rawArray.forEach(function(element) {
+  
+    if (element !== '') {
+      
+      let newWord = element[0].toUpperCase() + element.slice(1);
+      
+      newStr += newWord;
+    }
+  });
+  
+  
+  if (newStr === "" || newStr.length >= 140) {
+    
+    return false;
+  }
+  
+  
+  return "#" + newStr;
+}
