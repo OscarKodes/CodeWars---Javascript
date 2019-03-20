@@ -1,0 +1,60 @@
+function score( dice ) {
+  
+  let diceCount = {};
+  
+  let totalScore = 0;
+  
+  for (let i = 0; i < dice.length; i++) {
+  
+    let currNum = dice[i]
+    
+    if (!diceCount[currNum]) {
+    
+      diceCount[currNum] = 1;
+    }
+    
+    else {
+    
+      diceCount[currNum]++;
+    }
+  }
+  
+  if (diceCount[1]) {
+  
+    while (diceCount[1] !== 0 && diceCount[1] !== 3) {
+  
+      totalScore += 100;
+      diceCount[1]--;
+    }
+  }
+  
+  if (diceCount[5]) {
+  
+    while ( diceCount[5] !== 0 && diceCount[5] !== 3) {
+    
+      totalScore += 50;
+      diceCount[5]--;
+    }
+  }
+  
+  let tripleRollPoints = {
+    1: 1000,
+    2: 200,
+    3: 300,
+    4: 400,
+    5: 500,
+    6: 600,
+  };
+  
+  for (let num in diceCount) {
+  
+    let rollFreq = diceCount[num];
+    
+    if (rollFreq >= 3) {
+    
+      totalScore += tripleRollPoints[num];
+    }
+  }
+  
+  return totalScore;
+}
