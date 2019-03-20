@@ -1,0 +1,41 @@
+const frame = (text, char) => {
+  
+  let frameWidth = 0;
+  let topBotLines = '';
+  let finalFrame = '';  
+  
+  text.forEach(function(word) {
+  
+    if (word.length + 4 > frameWidth) {
+    
+      frameWidth = word.length + 4;
+    }
+  });
+  
+  
+  for (let i = 0; i < frameWidth; i++) {
+  
+    topBotLines += char;
+  }
+  
+  finalFrame += topBotLines;
+  
+  for (let i = 0; i < text.length; i++) {
+    
+    let word = text[i];
+    
+    let currLine = char + " " + word;
+    
+    while (currLine.length < frameWidth - 1) {
+      
+      currLine += " ";
+    }
+    
+    finalFrame += "\n" + currLine + char;
+
+  }
+  
+  finalFrame += "\n" + topBotLines;
+  
+  return finalFrame;
+};
