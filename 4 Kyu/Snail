@@ -1,0 +1,46 @@
+snail = function(array) {
+  
+  let flatArray = [];
+  
+  if (array[0][0] === undefined) {
+  
+    return [];
+  }
+  
+  for (let i = 0; i < (array.length / 2); i++) {
+    
+    // top row, going right ; i = 0 (0, 0) (0, 1) (0, 2) (0, 3) ; i = 1 (1, 1) (1, 2)
+    for (let j = i; j < array.length - i; j++) {
+    
+      let currNum = array[i][j];
+      
+      flatArray.push(currNum);
+    }
+
+    // right column, going down ; i = 0 (2,1) (2,1) i=1 (---)
+    for (let j = i + 1; j <= array.length - (i + 1); j++) {
+      
+      let currNum = array[j][array.length - (i + 1)];
+      
+      flatArray.push(currNum);
+    }
+    
+    // bottom row, going left ; i = 0 (3, 2) (3, 1) (3, 0) ; i = 1 (2, 1)
+    for (let j = array.length - (i + 2); j >= i; j--) {
+      
+      let currNum = array[array.length - (i + 1)][j];
+      
+      flatArray.push(currNum);
+    }
+    
+    // left column, going up ; i = 0 (2, 0) (1, 0) ; i = 1 (-,-)
+    for (let j = array.length - (i + 2); j > i; j--) {
+      
+      let currNum = array[j][i];
+      
+      flatArray.push(currNum);
+    }
+  }
+  
+  return flatArray;
+}
