@@ -1,0 +1,12 @@
+function clean(arr) {
+  
+  let newArr = [];
+  
+  arr.forEach(function(element) {
+  
+    newArr.push(element);
+  });
+  
+  
+  return newArr;
+}
