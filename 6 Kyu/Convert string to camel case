@@ -1,0 +1,33 @@
+function toCamelCase(str){
+  
+  let strArr = [];
+  
+  let camelStr = "";
+  
+  if (str.includes("-")) {
+  
+    strArr = str.split("-");
+  }
+  
+  if(str.includes("_")) {
+  
+    strArr = str.split("_");
+  }
+  
+  strArr.forEach(function(word, index) {
+  
+    if (index === 0) {
+      
+      camelStr += word;
+    }
+    
+    else {
+      
+      let upperFirstChar = word[0].toUpperCase();
+      
+      camelStr += upperFirstChar + word.slice(1);
+    }
+  });
+  
+  return camelStr;
+}
