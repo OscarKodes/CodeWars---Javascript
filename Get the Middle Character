@@ -1,0 +1,19 @@
+function getMiddle(str){
+  
+
+  if (str.length % 2 === 1) {
+    
+    let midChar = (str.length - 1) / 2;
+    
+    return str[midChar];
+  }
+  
+  else {
+  
+    let midChar = str.length / 2;
+    
+    return str[midChar - 1] + str[midChar]
+  }
+  
+  return 0;
+}
