@@ -1,0 +1,15 @@
+function timeForMilkAndCookies(date){
+  
+  let strDate = String(date);
+  
+  let month = strDate.slice(4, 7);
+  
+  let day = strDate.slice(8, 10);
+  
+  if (day === '24' && month === 'Dec') {
+    
+    return true;
+  }
+  
+  return false;
+}
