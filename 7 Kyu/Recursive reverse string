@@ -1,0 +1,20 @@
+function reverse(str) {
+	
+  // set base case
+  if (str.length === 1) {
+  
+    return str[0];
+  }
+  
+  // set recursive case
+  else {
+  
+    let lastChar = str[str.length - 1];
+    
+    let remainingChars = str.slice(0, -1);
+    
+    let reverseStr = lastChar + reverse(remainingChars);
+    
+    return reverseStr;
+  }
+}
