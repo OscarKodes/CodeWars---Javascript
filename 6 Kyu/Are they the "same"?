@@ -1,0 +1,31 @@
+function comp(array1, array2){
+  
+  if (!(array1 && array2)) {
+  
+    return false;
+  }
+  
+  for (let i = 0; i < array1.length; i++) {
+  
+    let currNum = array1[i];
+    
+    if (!array2.includes(currNum ** 2)) {
+  
+      return false;
+    }
+    
+    else {
+    
+      let currIndex = array2.indexOf(currNum ** 2);
+      
+      array2.splice(currIndex, 1);
+    }
+  }
+
+  if (array2.length > 0) {
+  
+    return false;
+  }
+  
+  return true;
+}
