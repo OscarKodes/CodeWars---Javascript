@@ -1,0 +1,24 @@
+function wave(str){
+  
+  let waveArr = [];
+  
+  for (let i = 0; i < str.length; i++) {
+    
+    if (str[i] === ' ') {
+    
+      continue;
+    }
+    
+    let standingChar = str[i].toUpperCase();
+    
+    let leftStr = str.slice(0, i);
+    
+    let rightStr = str.slice(i + 1);
+    
+    let newWord = leftStr + standingChar + rightStr;
+    
+    waveArr.push(newWord);
+  }
+  
+  return waveArr;
+}
