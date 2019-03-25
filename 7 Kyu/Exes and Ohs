@@ -1,0 +1,27 @@
+function XO(str) {
+    
+    let oCount = 0;
+    let xCount = 0;
+    
+    for (let i = 0; i < str.length; i++) {
+    
+      let char = str[i];
+      
+      if (char.toUpperCase() === 'O') {
+      
+        oCount++;
+      }
+      
+      else if (char.toUpperCase() === 'X') {
+      
+        xCount++;
+      }
+    }
+    
+    if (oCount === xCount) {
+    
+      return true;
+    }
+    
+    return false;
+}
