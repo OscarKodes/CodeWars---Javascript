@@ -1,0 +1,22 @@
+function mergeArrays(a, b) {
+  
+  let mergedArr = [];
+  
+  for (let i = 0; i < a.length || i < b.length; i++) {
+  
+    let charA = a[i];
+    let charB = b[i];
+    
+    if (charA) {
+    
+      mergedArr.push(charA);
+    }
+    
+    if (charB) {
+    
+      mergedArr.push(charB);
+    }
+  }
+  
+  return mergedArr;
+}
