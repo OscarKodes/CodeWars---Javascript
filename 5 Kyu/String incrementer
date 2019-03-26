@@ -1,0 +1,47 @@
+function incrementString (str) {
+  
+  let numIdx = str.length;
+  
+  for (let i = str.length - 1; i >= 0; i--) {
+  
+    let char = str[i];
+    
+    if (char > -1) {
+      
+     numIdx = i;
+    }
+    
+    else {
+    
+      break;
+    }
+  }
+  
+  let numStr = str.slice(numIdx);
+  
+  let digits = numStr.length;
+  
+  let num = Number(numStr);
+  
+  if (num === 0 || !num) {
+  
+    num = 1;
+  }
+  
+  else {
+    
+    num++;
+  }
+  
+  let extraZeros = digits - String(num).length;
+  
+  let zeroes = "";
+  
+  while (extraZeros > 0) {
+    
+    zeroes += '0';
+    extraZeros--;
+  }
+  
+  return str.slice(0, numIdx) + zeroes + String(num);
+}
