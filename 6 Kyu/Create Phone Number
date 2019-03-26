@@ -1,0 +1,12 @@
+function createPhoneNumber(numbers){
+  
+  let numStr = numbers.join('');
+  
+  let firstStr = "(" + numStr.slice(0, 3) + ") ";
+  
+  let midStr = numStr.slice(3, 6) + "-";
+  
+  let endStr = numStr.slice(6);
+  
+  return  firstStr + midStr + endStr;
+}
