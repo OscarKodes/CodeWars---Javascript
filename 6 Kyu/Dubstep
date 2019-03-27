@@ -1,0 +1,18 @@
+function songDecoder(song){
+  
+  let originalSongArr = [];
+  
+  let songArr = song.split("WUB");
+  
+  for (let i = 0; i < songArr.length; i++) {
+  
+    let currElement = songArr[i];
+    
+    if (currElement !== "WUB" && currElement !== "") {
+    
+      originalSongArr.push(currElement);
+    }
+  }
+  
+  return originalSongArr.join(" ");
+}
