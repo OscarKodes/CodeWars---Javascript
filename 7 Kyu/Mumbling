@@ -1,0 +1,25 @@
+function accum(str) {
+	
+  let finalStr = str[0].toUpperCase();
+  
+  for (let i = 1; i < str.length; i++) {
+  
+    let upperChar = str[i].toUpperCase();
+  
+    let lowerChar = str[i].toLowerCase();
+    
+    let strPart = "-" + upperChar;
+    
+    let j = i;
+    
+    while (j > 0) {
+    
+      strPart += lowerChar;
+      j--;
+    }
+    
+    finalStr += strPart;
+  }
+  
+  return finalStr;
+}
