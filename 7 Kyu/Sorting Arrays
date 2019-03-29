@@ -1,0 +1,22 @@
+function sortArray(a1, a2) {
+
+  let newArr = [];
+  
+  for (let i = 0; i < a1.length; i++) {
+  
+    let firstChar = a1[i][0];
+    
+    for (let j = 0; j < a2.length; j++) {
+    
+      let firstChar2 = a2[j][0];
+      
+      if (firstChar === firstChar2) {
+        
+        newArr.push(a2[j]);
+        break;
+      }
+    }
+  }
+  
+  return newArr;
+}
