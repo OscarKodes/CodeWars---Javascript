@@ -1,0 +1,18 @@
+function lenR(array) {
+
+  // set base case
+  if (array.length === 0) {
+  
+    return 0;
+  }
+  
+  // set recursive case
+  else {
+    
+    let remainingArray = array.slice(0, -1);
+    
+    let arrayLength = 1 + lenR(remainingArray);
+    
+    return arrayLength;
+  }
+}
