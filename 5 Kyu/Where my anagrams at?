@@ -1,0 +1,67 @@
+function anagrams(word, wordArray) {
+  
+  let anagramArr = [];
+  
+  let charsObj = {};
+  
+  for (let i = 0; i < word.length; i++) {
+  
+    let char = word[i];
+    
+    if (!charsObj[char]) {
+    
+      charsObj[char] = 1;
+    }
+    
+    else {
+    
+      charsObj[char]++;
+    }
+  }
+
+  wordArray.forEach(function(maybeAna) {
+  
+    let wordChars = {};
+  
+    for (let i = 0; i < maybeAna.length; i++) {
+    
+      let char = maybeAna[i];
+      
+      if (!wordChars[char]) {
+      
+        wordChars[char] = 1;
+      }
+      
+      else {
+      
+        wordChars[char]++;
+      }
+    }
+    
+    let match = true;
+    
+    for (let key in charsObj) {
+    
+      if (!wordChars[key]) {
+      
+        match = false
+        break;
+      }
+      
+      if (wordChars[key] !== charsObj[key]) {
+      
+        match = false;
+        break;
+      }
+      
+      match = true;
+    }
+    
+    if (match) {
+    
+      anagramArr.push(maybeAna);
+    }
+  });
+  
+  return anagramArr;
+}
