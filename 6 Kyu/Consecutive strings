@@ -1,0 +1,32 @@
+function longestConsec(strArr, k) {
+
+  if (strArr.length === 0 || k > strArr.length || k <= 0) {
+  
+    return "";
+  }
+  
+  let maxChars = 0;
+  let bestSlice = [];
+  
+  for (let i = 0; i < strArr.length; i++) {
+  
+    let currSlice = strArr.slice(i, i + k);
+    
+    let charCount = 0;
+    
+    for (let j = 0; j < currSlice.length; j++) {
+    
+      let currWord = currSlice[j];
+      
+      charCount += currWord.length;
+    }
+    
+    if (charCount > maxChars) {
+    
+      bestSlice = currSlice;
+      maxChars = charCount;
+    }
+  }
+  
+  return bestSlice.join("");
+}
