@@ -1,0 +1,17 @@
+String.prototype.toJadenCase = function() {
+  
+  let strArr = this.split(" ");
+  
+  let jadenArr = [];
+  
+  for (let i = 0; i < strArr.length; i++) {
+  
+    let currWord = strArr[i];
+    
+    let jadenWord = currWord[0].toUpperCase() + currWord.slice(1);
+    
+    jadenArr.push(jadenWord);
+  }
+  
+  return jadenArr.join(" ");
+};
