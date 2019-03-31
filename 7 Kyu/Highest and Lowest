@@ -1,0 +1,25 @@
+function highAndLow(numbers){
+  
+  let maxNum;
+  
+  let minNum;
+  
+  let numArr = numbers.split(" ");
+  
+  for (let i = 0; i < numArr.length; i++) {
+  
+    let currNum = Number(numArr[i]);
+    
+    if (currNum > maxNum || maxNum === undefined) {
+    
+      maxNum = currNum;
+    }
+    
+    if (currNum < minNum || minNum === undefined) {
+    
+      minNum = currNum;
+    }
+  }
+  
+  return String(maxNum) + " " + String(minNum);
+}
