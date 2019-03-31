@@ -1,0 +1,22 @@
+function solution(str, markers) {
+  
+  let firstMark = markers[0];
+  
+  let secondMark = markers[1];
+  
+  
+  let markIdx1 = str.indexOf(firstMark);
+
+  let markIdx2 = str.indexOf(secondMark);
+  
+
+  let dashBreak = str.indexOf("\n");
+  
+
+  let firstStr = str.slice(0, markIdx1 - 1);
+  
+  let secondStr = str.slice(dashBreak, markIdx2 - 1);
+  
+  
+  return firstStr + secondStr;
+}
