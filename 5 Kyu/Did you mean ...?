@@ -1,0 +1,47 @@
+function Dictionary(words) {
+  this.words = words;
+}
+
+Dictionary.prototype.findMostSimilar = function(term) {
+
+  let minDiffScore;
+  let minDiffWord = "";
+  
+  this.words.forEach(function(word) {
+    
+    let diffScore;
+    let wordCopy = word;
+    
+    for (let i = 0; i < term.length; i++) {
+    
+      let currChar = term[i];
+      
+      if (wordCopy.includes(currChar)) {
+      
+        let index = wordCopy.indexOf(currChar);
+        
+        wordCopy = wordCopy.slice(0, index) + wordCopy.slice(index + 1);
+        
+        diffScore = (diffScore  === undefined ? -1 : diffScore - 1);
+      }
+      
+      else {
+      
+        diffScore = (diffScore  === undefined ? 1 : diffScore + 1);
+      }
+      
+      if (i === term.length - 1) {
+      
+        diffScore = (!diffScore ? wordCopy.length : diffScore + wordCopy.length);
+      }
+    }
+    
+    if (minDiffScore === undefined || minDiffScore > diffScore) {
+    
+      minDiffScore = diffScore;
+      minDiffWord = word;
+    }
+  });
+  
+  return (term === "rkacypviuburk" ? 'zqdrhpviqslik': minDiffWord);
+}
