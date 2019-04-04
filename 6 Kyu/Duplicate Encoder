@@ -1,0 +1,22 @@
+function duplicateEncode(word){
+
+  let charCount = {};
+  
+  let encodedStr = "";
+  
+  for (let i = 0; i < word.length; i++) {
+  
+    let char = word[i].toLowerCase();
+    
+    charCount[char] = charCount[char] ? charCount[char] + 1 : 1;
+  }
+  
+  for (let i = 0; i < word.length; i++) {
+  
+    let char = word[i].toLowerCase();
+    
+    encodedStr += charCount[char] > 1 ? ")" : "(";
+  }
+  
+  return encodedStr;
+}
