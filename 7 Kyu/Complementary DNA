@@ -1,0 +1,15 @@
+function DNAStrand(dna){
+  
+  let pairs = {T:'A',A:'T',G:'C',C:'G'};
+  
+  let str = '';
+  
+  for (let i = 0; i < dna.length; i++) {
+  
+    let char = dna[i];
+    
+    str += pairs[char];
+  }
+  
+  return str;
+}
