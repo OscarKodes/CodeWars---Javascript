@@ -1,0 +1,19 @@
+var uniqueInOrder=function(iterable){
+  
+  let arr = [];
+  
+  let lastChar;
+  
+  for (let i = 0; i < iterable.length; i++) {
+  
+    let char = iterable[i];
+    
+    if (char !== lastChar) {
+    
+      arr.push(char);
+      lastChar = char;
+    }
+  }
+  
+  return arr;
+}
