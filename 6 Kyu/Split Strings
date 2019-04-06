@@ -1,0 +1,14 @@
+function solution(str){
+   
+   let arr = [];
+   
+   for (let i = 0; i < str.length; i++) {
+     
+     let pair = i + 1 === str.length ? str[i] + '_' : str[i] + str[i + 1];
+     
+     arr.push(pair);
+     i++;
+   }
+   
+   return arr;
+}
