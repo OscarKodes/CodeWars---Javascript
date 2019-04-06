@@ -1,0 +1,72 @@
+function inArray(array1,array2){
+  
+  // loop thru each element of arr1
+  // check each element in arr2 to see if any "includes" a slice in it that matches the length of arr1's word
+  // if it does record the arr1 element
+  
+  // arrange the matches in alpha order
+  // - 
+  
+  // at the end return the records arr
+  
+  console.log("arr1 = "+array1);
+  console.log("arr2 = "+array2);
+  
+  let matchWords = [];
+  let finalWords = [];
+  
+  for (let i = 0; i < array1.length; i++) {
+  
+    let word = array1[i];
+    
+    for (let j = 0; j < array2. length; j++) {
+    
+      let word2 = array2[j];
+      
+      if (word2.includes(word)) {
+      
+        matchWords.push(word);
+        
+        break;
+      }
+    }
+  }
+  
+  // Arrange the matching words in Alphabetical Order
+  // declare the alphabet
+  // 
+  
+  let alpha = 'abcdefghijklmnopqrstuvwxyz';
+  
+  let minIdx = 30;
+  
+  let currWord;
+  
+  for (let i = 0; matchWords.length > 0; i++) {
+        
+    let firstLetter = matchWords[i][0].toLowerCase();
+
+    if (alpha.indexOf(firstLetter) < minIdx) {
+
+      currWord = matchWords[i];
+      
+      minIdx = alpha.indexOf(firstLetter);
+    }
+    
+    if (i === matchWords.length - 1) {
+    
+      finalWords.push(currWord);
+      
+      minIdx = 30;
+      
+      matchWords.splice(matchWords.indexOf(currWord), 1);
+      
+      i = -1;
+    }
+  }
+
+  
+  
+  console.log(finalWords);
+  return finalWords;
+}
