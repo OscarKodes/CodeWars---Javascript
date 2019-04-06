@@ -1,0 +1,26 @@
+function findMissingLetter(arr) {
+
+  let alpha = 'abcdefghijklmnopqrstuvwxyz';
+
+  let caseAlpha = alpha.includes(arr[0]) ? alpha : alpha.toUpperCase();
+  
+  
+  let lastChar = arr[arr.length - 1];
+  
+  let startIdx = caseAlpha.indexOf(arr[0]);
+  
+  let endIdx = caseAlpha.indexOf(lastChar);
+  
+  let mySlice = caseAlpha.slice(startIdx, endIdx + 1);
+  
+  
+  for (let i = 0; i < mySlice.length; i++) {
+  
+    let char = mySlice[i];
+    
+    if (char !== arr[i]) {
+    
+      return char;
+    }
+  }
+}
