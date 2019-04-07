@@ -1,0 +1,20 @@
+function descendingOrder(n){
+  
+  let numStrArr = String(n).split('');
+  
+  let resultStr = ''; 
+  
+  for (let i = 9; i >= 0; i--) {
+  
+    if (numStrArr.includes(String(i))) {
+      
+      let numIdx = numStrArr.indexOf(String(i));
+      
+      resultStr += numStrArr.splice(numIdx, 1);
+    }
+    
+    i = numStrArr.includes(String(i)) ? i + 1 : i;
+  }
+  
+  return Number(resultStr);
+}
