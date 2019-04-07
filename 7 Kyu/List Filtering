@@ -1,0 +1,16 @@
+function filter_list(l) {
+  
+  let arr = [];
+  
+  for (let i = 0; i < l.length; i++) {
+  
+    let element = l[i];
+    
+    if (typeof element === 'number') {
+    
+      arr.push(element);
+    }
+  }
+  
+  return arr;
+}
