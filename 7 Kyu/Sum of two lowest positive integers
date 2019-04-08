@@ -1,0 +1,53 @@
+function sumTwoSmallestNumbers(numbers) {  
+  
+  console.log(numbers);
+  
+  let smallest, secondSmallest;
+  
+  for (let i = 0; i < numbers.length; i++) {
+  
+    let num = numbers[i];
+    
+    if (!smallest) {
+    
+      smallest = num;
+      continue;
+    }
+    
+    else if (!secondSmallest) {
+    
+      if (num < smallest) {
+      
+        secondSmallest = smallest;
+        smallest = num;
+      }
+      
+      else {
+      
+        secondSmallest = num;
+      }
+      
+      continue;
+    }
+    
+    if (num < smallest) {
+    
+      secondSmallest = smallest;
+      smallest = num;
+    }
+    
+    else if (num < secondSmallest) {
+    
+      secondSmallest = num;
+    }
+  }
+  
+  if (numbers.includes(0)) {
+  
+    secondSmallest = smallest;
+    smallest = 0;
+  }
+  
+  console.log(smallest, secondSmallest);
+  return smallest + secondSmallest;
+};
