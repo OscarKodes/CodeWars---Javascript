@@ -1,0 +1,16 @@
+function rank(card) {
+  
+  if (card[0] == 1) {
+  
+    return 0;
+  }
+  
+  if (card[0] < 10) {
+  
+    return Number(card[0]);
+  }
+  
+  let royals = {T:10,J:11,Q:12,K:13,A:14}
+  
+  return royals[card[0]] ? royals[card[0]] : 0;
+}
