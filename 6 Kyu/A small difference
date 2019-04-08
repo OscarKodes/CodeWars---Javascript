@@ -1,0 +1,39 @@
+function oneCharDifference(s1, s2) {
+  
+  if (s1 === s2) {
+  
+    return false;
+  }
+  
+  if (s1.length - s2.length > 1 || s1.length - s2.length < -1) {
+  
+    return false;
+  }
+  
+  else if (s1.length - s2.length !== 0) {
+    
+    let smallerStr = s1.length < s2.length ? s1 : s2;
+    
+    let biggerStr = s1.length > s2.length ? s1 : s2;
+    
+    for (let i = 0; i < smallerStr.length; i++) {
+    
+      let char = smallerStr[i];
+      
+      if (biggerStr.indexOf(char) === -1) {
+      
+        return false;
+      }
+    }
+  }
+  
+  if (s1[0] !== s2[0] && s1[s1.length - 1] !== s2[s2.length -1]) {
+  
+    if (s1.length !== 1 || s2.length !== 1) {
+    
+      return s1.length + s2.length === 1 ? true : false;
+    }
+  }
+  
+  return true;
+}
