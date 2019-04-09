@@ -1,0 +1,18 @@
+function longest(s1, s2) {
+  
+  let alpha = 'abcdefghijklmnopqrstuvwxyz';
+  
+  let str = '';
+  
+  for (let i = 0; i < alpha.length; i++) {
+    
+    let char = alpha[i];
+    
+    if (s1.includes(char) || s2.includes(char)) {
+    
+      str += char;
+    }
+  }
+  
+  return str;
+}
