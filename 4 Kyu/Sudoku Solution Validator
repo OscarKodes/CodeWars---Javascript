@@ -1,0 +1,60 @@
+function validSolution(board){
+  
+  let numObj1, numObj2;
+  
+  // Check all columns have 1-9 once each
+  
+  for (let i = 0; i < board.length; i++) {
+  
+    numObj1 = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0};
+    
+    numObj2 = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0};
+    
+    for (let j = 0; j < board.length; j++) {
+    
+      let checkCol = board[j][i];
+      let checkRow = board[i][j];
+      
+      numObj1[checkCol]++;
+      numObj2[checkRow]++;
+    }
+    
+    for (let key in numObj1) {
+     
+      if (numObj1[key] !== 1) {
+        return false;
+      }
+    }
+    
+    for (let key in numObj2) {
+     
+      if (numObj2[key] !== 1) {
+
+        return false;
+      }
+    }
+  }
+  
+  // check square regions
+  numObj = {1:0,2:0,3:0,4:0,5:0,6:0,7:0,8:0,9:0};
+  
+  for (let i = 0; i < 3; i++) {
+  
+    for (let j = 0; j < 3; j++) {
+    
+      let num = board[i][j];
+      
+      numObj[num]++;
+    }
+  }
+  
+  for (let key in numObj) {
+      
+    if (numObj[key] !== 1) {
+      
+      return false;
+    }
+  }
+  
+  return true;
+}
