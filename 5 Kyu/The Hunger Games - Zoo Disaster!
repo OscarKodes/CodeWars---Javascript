@@ -1,0 +1,74 @@
+var whoEatsWho = function(zoo) {
+  
+  let zooCopy = zoo.split(',');
+
+  let zooArr = [zoo];
+  
+  let animalFood = {
+  
+    antelope:['grass'],
+    'big-fish':['little-fish'],
+    bug:['leaves'],
+    bear:['big-fish','bug','chicken','cow','leaves','sheep'],
+    chicken:['bug'],
+    cow:['grass'],
+    fox:['chicken','sheep'],
+    giraffe:['leaves'],
+    lion:['antelope', 'cow'],
+    panda:['leaves'],
+    sheep:['grass'],
+  };
+  
+  for (let i = 0; i < zooCopy.length; i++) {
+
+    let animal = zooCopy[i];
+    
+    // check if the current animal eats anything at all
+    
+    if (!animalFood[animal]) {
+    
+      continue;
+    }
+
+    let left = zooCopy[i - 1] ? zooCopy[i - 1] : 'nothing';
+
+    let right = zooCopy[i + 1] ? zooCopy[i + 1] : 'nothing';
+    
+    
+    // check if the animal can eat whatever is to the left
+    
+    if (left !== 'nothing' && animalFood[animal].includes(left)) {
+      
+      let str = animal + ' eats ' + left;
+      
+      zooArr.push(str);
+
+      zooCopy.splice(i - 1, 1);
+      
+      i = -1;
+      
+      continue;
+    }
+    
+    // check if animal can eat to the right
+    
+    if (right !== 'nothing' && animalFood[animal].includes(right)) {
+
+      let str = animal + ' eats ' + right;
+      
+      zooArr.push(str);
+
+      zooCopy.splice(i + 1, 1);
+      
+      i = -1;
+      
+      continue;
+    }
+  }
+  
+  zooCopy = zooCopy.join(',');
+  
+  zooArr.push(zooCopy);
+  
+  return zooArr;
+}
