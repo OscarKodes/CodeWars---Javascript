@@ -1,0 +1,18 @@
+function dirReduc(arr){
+  
+  let opposites = {NORTH:"SOUTH",SOUTH:"NORTH",EAST:"WEST",WEST:"EAST"};
+  
+  for (let i = 0; i < arr.length; i++) {
+  
+    let str1 = arr[i];
+    let str2 = arr[i + 1];
+    
+    if (opposites[str1] === str2) {
+      
+      arr.splice(i, 2);
+      i = -1;
+    }
+  }
+  
+  return arr;
+}
