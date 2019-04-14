@@ -1,0 +1,18 @@
+function isIsogram(str){
+  
+  str = str.toLowerCase();
+  
+  while (str.length > 1) {
+  
+    let char = str[0];
+    
+    str = str.slice(1);
+    
+    if (str.includes(char)) {
+    
+      return false;
+    }
+  }
+  
+  return true;
+}
