@@ -1,0 +1,16 @@
+function maskify(cc) {
+  
+  let str = "";
+  
+  if (cc.length <= 4) {
+  
+    return cc;
+  }
+  
+  for (let i = 0; i < cc.length - 4; i++) {
+  
+    str += "#";
+  }
+  
+  return str += cc.slice(cc.length - 4);
+}
