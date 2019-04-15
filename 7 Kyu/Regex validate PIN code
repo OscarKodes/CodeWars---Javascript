@@ -1,0 +1,20 @@
+function validatePIN (pin) {
+  
+  
+  if (pin.length === 4 || pin.length === 6) {
+  
+    for (let i = 0; i < pin.length; i++) {
+    
+      let char = pin[i];
+      
+      if (!(Number(char) || char === '0')) {
+      
+        return false;
+      }
+    }
+    
+    return true;
+  }
+ 
+  return false;
+}
