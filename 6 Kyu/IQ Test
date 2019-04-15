@@ -1,0 +1,42 @@
+function iqTest(numbers){
+  
+  let numArr = numbers.split(" ");
+
+  let evenScore = 0;
+  
+  for (let i = 0; i < 3; i++) {
+  
+    let num = numArr[i];
+    
+    if (num % 2 === 0) {
+    
+      evenScore++;
+    }
+    
+    else {
+    
+      evenScore--;
+    }
+  }
+  
+  for (let i = 0; i < numArr.length; i++) {
+  
+    let num = numArr[i];
+  
+    if (evenScore > 0) {
+    
+      if (num % 2 === 1) {
+      
+        return i + 1;
+      }
+    }
+    
+    else {
+    
+      if (num % 2 === 0) {
+      
+        return i + 1;
+      }
+    }
+  }
+}
