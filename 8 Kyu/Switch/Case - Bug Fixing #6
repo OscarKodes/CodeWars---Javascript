@@ -1,0 +1,32 @@
+function evalObject(value){
+
+  var result = 0;
+  
+  var a = value.a;
+  var b = value.b;
+  
+  switch(value.operation){
+  
+    case'+': result = a + b;
+    break;
+    
+    case'-': result = a - b;
+    break;
+    
+    case'/': result = a / b;
+    break;
+    
+    case'*': result = a * b;
+    break;
+    
+    case'%': result = a % b;
+    break;
+    
+    case'^': result = Math.pow(a, b);
+    break;
+    
+    default: result = 0;
+  }
+  
+  return result;
+}
