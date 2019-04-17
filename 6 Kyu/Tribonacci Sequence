@@ -1,0 +1,18 @@
+function tribonacci(signature,n){
+  
+  if (n <= 3) {
+  
+    return signature.slice(0, n);
+  }
+  
+  for (let i = 0; i < n - 3; i++) {
+  
+    let slice = signature.slice(signature.length - 3, signature.length);
+    
+    let sum = slice[0] + slice[1] + slice[2];
+    
+    signature.push(sum);
+  }
+  
+  return signature;
+}
