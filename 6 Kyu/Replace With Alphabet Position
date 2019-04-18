@@ -1,0 +1,18 @@
+function alphabetPosition(text) {
+
+  let alpha = "abcdefghijklmnopqrstuvwxyz";
+  
+  let arr = [];
+  
+  for (let i = 0; i < text.length; i++) {
+  
+    let char = text[i].toLowerCase();
+    
+    if (alpha.indexOf(char) > -1) {
+    
+      arr.push(alpha.indexOf(char) + 1);
+    }
+  }
+
+  return arr.join(" ");
+}
