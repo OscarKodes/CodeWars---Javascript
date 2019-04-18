@@ -1,0 +1,15 @@
+function openOrSenior(data){
+  
+  let arr = [];
+  
+  for (let i = 0; i < data.length; i++) {
+  
+    let member = data[i];
+    
+    let status = member[0] > 54 && member[1] > 7 ? "Senior" : "Open";
+    
+    arr.push(status);
+  }
+  
+  return arr;
+}
