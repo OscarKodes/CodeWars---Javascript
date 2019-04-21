@@ -1,0 +1,36 @@
+function removeSmallest(numbers) {
+  
+  let minNum = -1
+  
+  let minIdx;
+  
+  let arr = [];
+  
+  let foundMinNum = false;
+  
+  for (let i = 0; i < numbers.length; i++) {
+  
+    let num = numbers[i];
+    
+    if ((minNum < 0 || num < minNum) && !foundMinNum) {
+    
+      minNum = num;
+      
+      minIdx = i;
+    }
+    
+    if (foundMinNum && i !== minIdx) {
+      
+      arr.push(num);
+    }
+    
+    if ((i === numbers.length - 1) && !foundMinNum) {
+    
+      foundMinNum = true;
+      
+      i = -1;
+    }
+  }
+
+  return arr;
+}
