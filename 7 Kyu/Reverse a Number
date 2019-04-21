@@ -1,0 +1,23 @@
+function reverseNumber(n) {
+  
+  let nStr = String(n);
+  
+  let numStr = "";
+  
+  if (n < 0) {
+  
+    numStr += "-";
+  }
+ 
+  for (let i = nStr.length - 1; i >= 0; i--) {
+  
+    let char = nStr[i];
+    
+    if (char !== "-") {
+    
+      numStr += char;
+    }
+  }
+  
+  return Number(numStr);
+}
