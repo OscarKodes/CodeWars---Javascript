@@ -1,0 +1,21 @@
+function noSpace(x){
+
+  // using a switch method just for self practice
+  let str = "";
+  
+  for (let i = 0; i < x.length; i++) {
+  
+    let char = x[i];
+    
+    switch (char) {
+    
+      case ' ':
+        break;
+        
+      default:
+        str += char;
+    }
+  }
+  
+  return str;
+}
