@@ -1,0 +1,26 @@
+function list(names){
+  
+  let str = "";
+  
+  for (let i = 0; i < names.length; i++) {
+    
+    let currName = names[i].name;
+    
+    if (i === 0) {
+      
+      str += currName;
+    }
+    
+    else if (i === names.length - 1) {
+    
+      str += " & " + currName;
+    }
+    
+    else {
+    
+      str += ", " + currName;
+    }
+  }
+  
+  return str;
+}
