@@ -1,0 +1,18 @@
+function findEvenIndex(arr) {
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    let leftNums = arr.slice(0, i).join("+");
+    let leftSum = eval(leftNums);
+    
+    let rightNums = arr.slice(i + 1).join("+");
+    let rightSum = eval(rightNums);
+    
+    if (leftSum === rightSum || leftSum === 0 || rightSum === 0) {
+    
+      return i;
+    }
+  }
+
+  return -1;
+}
