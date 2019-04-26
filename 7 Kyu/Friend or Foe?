@@ -1,0 +1,16 @@
+function friend(friends){
+  
+  let arr = [];
+  
+  for (let i = 0; i < friends.length; i++) {
+  
+    let friend = friends[i];
+    
+    if (friend.length === 4) {
+    
+      arr.push(friend);
+    }
+  }
+  
+  return arr;
+}
