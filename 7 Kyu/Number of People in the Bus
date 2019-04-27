@@ -1,0 +1,13 @@
+var number = function(busStops){
+  
+  let sum = 0;
+  
+  for (let i = 0; i < busStops.length; i++) {
+    
+    let currStop = busStops[i];
+    
+    sum += currStop[0] - currStop[1];
+  }
+  
+  return sum;
+}
