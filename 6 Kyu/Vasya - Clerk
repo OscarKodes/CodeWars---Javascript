@@ -1,0 +1,54 @@
+function tickets(peopleInLine){
+
+  let cashRegister = {
+  
+    25:0,
+    50:0,
+    100:0,
+  };
+  
+  for (let i = 0; i < peopleInLine.length; i++) {
+  
+    let person = peopleInLine[i];
+    
+    if (person === 25) {
+    
+      cashRegister[25]++;
+    }
+    
+    else if (person === 50) {
+    
+      if (cashRegister[25] < 1) {
+      
+        return "NO";
+      }
+      
+      else {
+      
+        cashRegister[50]++;
+        cashRegister[25]--;
+      }
+    }
+    
+    else {
+      
+      if (cashRegister[50] >= 1 && cashRegister[25] >= 1) {
+      
+        cashRegister[25]--;
+        cashRegister[50]--;
+      }
+      
+      else if (cashRegister[25] >= 3) { 
+      
+        cashRegister[25] -= 3;
+      }
+      
+      else {
+      
+        return "NO";
+      }
+    }
+  }
+
+  return "YES";
+}
