@@ -1,0 +1,8 @@
+function solution(str, ending){
+  
+  let idx = str.length - ending.length;
+  
+  let mySlice = str.slice(idx);
+  
+  return ending === mySlice ? true : false;
+}
