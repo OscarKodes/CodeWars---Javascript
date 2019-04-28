@@ -1,0 +1,47 @@
+function countSmileys(arr) {
+
+  let validFace = {
+  
+    eyes: [":",";"],
+    nose: ["-","~"],
+    mouth: [")","D"],
+  };
+  
+  let smilies = 0;
+  
+  for (let i = 0; i < arr.length; i++) {
+  
+    let element = arr[i];
+    
+    let firstChar = element[0];
+    let lastChar = element[element.length - 1];
+    
+    if (element.length > 3) {
+    
+      continue;
+    }
+    
+    if (validFace.eyes.includes(firstChar) && validFace.mouth.includes(lastChar)) {
+    
+      if (element.length === 3) {
+      
+        if (validFace.nose.includes(element[1])) {
+        
+          smilies++;
+        }
+        
+        else {
+        
+          continue;
+        }
+      }
+      
+      else {
+      
+        smilies++;
+      }
+    }
+  }
+  
+  return smilies;
+}
