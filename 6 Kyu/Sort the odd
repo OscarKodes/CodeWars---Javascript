@@ -1,0 +1,35 @@
+function sortArray(array) {
+  
+  // record the index of all odd numbers
+  // and record all the odd numbers into a seperate array
+  
+  let idxs = [];
+  let odds = [];
+  
+  for (let i = 0; i < array.length; i++) {
+    
+    let num = array[i];
+    
+    if (num % 2 === 1) {
+    
+      idxs.push(i);
+      odds.push(num);
+    }
+  }
+  
+  // sort the odd number array into ascending order
+  odds.sort(function(a, b) {return a-b});
+  
+  // put the sorted odd numbers back into the original array
+  // in ascending order, and in each recorded index
+  
+  for (let i = 0; i < odds.length; i++) {
+  
+    let num = odds[i];
+    let idx = idxs[i];
+    
+    array[idx] = num;
+  }
+  
+  return array;
+}
