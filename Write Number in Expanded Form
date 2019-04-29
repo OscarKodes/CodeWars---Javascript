@@ -1,0 +1,28 @@
+function expandedForm(num) {
+  
+  let numStr = String(num);
+  
+  let emptyStr = "";
+  
+  for (let i = 0; i < numStr.length; i++) {
+  
+    let digit = Number(numStr[i]);
+    
+    if (digit !== 0) {
+    
+      let currNum = digit * Math.pow(10, (numStr.length - (i + 1)));
+      
+      if (emptyStr === "") {
+      
+        emptyStr += String(currNum);
+      }
+      
+      else {
+      
+        emptyStr += " + " + String(currNum);
+      }
+    }
+  }
+  
+  return emptyStr;
+}
