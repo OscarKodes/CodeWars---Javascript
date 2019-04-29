@@ -1,0 +1,50 @@
+function sumArray(array) {
+
+  if (!array) {
+  
+    return 0;
+  }
+
+  if (array.length < 2) {
+    
+    return 0;
+  }
+  
+  
+  let maxIdx, minIdx;
+  let minNum = Number.POSITIVE_INFINITY;
+  let maxNum = Number.NEGATIVE_INFINITY;
+  let sum = 0;
+  
+  for (let i = 0; i < array.length; i++) {
+  
+    let num = array[i];
+    
+    if (num > maxNum) {
+
+      maxNum = num;
+      maxIdx = i;
+    }
+    
+    if (num < minNum) {
+    
+      minNum = num
+      minIdx = i;
+    }
+  }
+  
+  for (let i = 0; i < array.length; i++) {
+  
+    let num = array[i];
+  
+    if (i !== minIdx && i !== maxIdx) {
+    
+      sum += num;
+    }
+  }
+  
+  console.log("array = ", array);
+  console.log("sum = ", sum);
+  console.log(minNum, maxNum);
+  return sum;
+}
