@@ -1,0 +1,24 @@
+function deleteNth(arr,n){
+  
+  let numCount = {};
+  let newArr = [];
+  
+  for (let i = 0; i < arr.length; i++) {
+  
+    let num = arr[i];
+    
+    if (!numCount[num]) {
+    
+      numCount[num] = 1;
+      newArr.push(num);
+    }
+    
+    else if (numCount[num] < n) {
+      
+      numCount[num] += 1;
+      newArr.push(num);
+    }
+  }
+  
+  return newArr;
+}
