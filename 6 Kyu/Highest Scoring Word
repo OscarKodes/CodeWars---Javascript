@@ -1,0 +1,30 @@
+function high(x){
+  
+  let alpha = " abcdefghijklmnopqrstuvwxyz";
+  
+  let hiScore = 0;
+  
+  let hiWord = "";
+  
+  let arr = x.split(" ");
+  
+  arr.forEach(function(word) {
+  
+    let wordScore = 0;
+  
+    for (let i = 0; i < word.length; i++) {
+    
+      let char = word[i];
+      
+      wordScore += alpha.indexOf(char);
+    }
+    
+    if (wordScore > hiScore) {
+    
+      hiScore = wordScore;
+      hiWord = word;
+    }
+  });
+  
+  return hiWord;
+}
