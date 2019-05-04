@@ -1,0 +1,22 @@
+function mineColor(line, number) {
+  
+  let letter = "abcdefg";
+  
+  if (letter.indexOf(line) % 2 === 0) {
+  
+    if (number % 2 === 0) {
+    
+      return "white";
+    }
+  }
+  
+  else {
+  
+    if (number % 2 === 1) {
+    
+      return "white";
+    }
+  }
+  
+  return "black";
+}
