@@ -1,0 +1,29 @@
+function toWeirdCase(string){
+  
+  let arr = string.split(" ");
+  let resultArr = [];
+  
+  arr.forEach(function(word) {
+  
+    let weirdWord = "";
+    
+    for (let i = 0; i < word.length; i++) {
+    
+      let char = word[i];
+    
+      if (i % 2 === 0) {
+      
+        weirdWord += char.toUpperCase();
+      }
+      
+      else {
+      
+        weirdWord += char.toLowerCase();
+      }
+    }
+    
+    resultArr.push(weirdWord);
+  });
+  
+  return resultArr.join(" ");
+}
