@@ -1,0 +1,8 @@
+function abbrevName(name){
+
+  let firstInitial = name[0];
+  
+  let lastInitial = name[name.indexOf(" ") + 1];
+
+  return (firstInitial + "." + lastInitial).toUpperCase();
+}
