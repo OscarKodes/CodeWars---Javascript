@@ -1,0 +1,29 @@
+function titleCase(title, minorWords) {
+
+  if (title === "") {
+    return "";
+  }
+  
+  let minorArr = minorWords ? minorWords.toLowerCase().split(" ") : "";
+  let titleArr = title.split(" ");
+  let resultArr = [];
+  
+  for (let i = 0; i < titleArr.length; i++) {
+  
+    let word = titleArr[i].toLowerCase();
+    
+    if (minorArr.includes(word) && i !== 0) {
+    
+      resultArr.push(word);
+    }
+    
+    else {
+      
+      let titleWord = word[0].toUpperCase() + word.slice(1);
+      
+      resultArr.push(titleWord);
+    }
+  }
+  
+  return resultArr.join(" ");
+}
