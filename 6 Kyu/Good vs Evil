@@ -1,0 +1,37 @@
+function goodVsEvil(good, evil){
+  
+  let goodArr = good.split(" ");
+  let evilArr = evil.split(" ");
+  
+  let goodWorth = [1,2,3,3,4,10];
+  let evilWorth = [1,2,2,2,3,5,10];
+  
+  let goodSum = 0;
+  let evilSum = 0;
+  
+  for (let i = 0; i < goodArr.length; i++) {
+  
+    let race = goodArr[i];
+    
+    goodSum += race * goodWorth[i];
+  }
+  
+  for (let i = 0; i < evilArr.length; i++) {
+  
+    let race = evilArr[i];
+    
+    evilSum += race * evilWorth[i];
+  }
+  
+  if (goodSum > evilSum) {
+  
+    return "Battle Result: Good triumphs over Evil";
+  }
+  
+  else if (goodSum < evilSum) {
+  
+    return "Battle Result: Evil eradicates all trace of Good";
+  }
+  
+  return "Battle Result: No victor on this battle field";
+}
