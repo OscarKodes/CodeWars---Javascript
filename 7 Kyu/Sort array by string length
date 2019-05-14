@@ -1,0 +1,19 @@
+function sortByLength (array) {
+  
+  let wordLengths = {};
+  let newArr = [];
+
+  for (let i = 0; i < array.length; i++) {
+  
+    let word = array[i];
+    
+    wordLengths[word.length] = word;
+  }
+
+  for (let key in wordLengths) {
+  
+    newArr.push(wordLengths[key]);
+  }
+  
+  return newArr;
+}
