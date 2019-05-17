@@ -1,0 +1,40 @@
+ function groupCheck(s){
+ 
+  let symbolObj = {
+  
+    ")": "(",
+    "]": "[",
+    "}": "{",
+  }
+  
+  let openers = [];
+  
+  for (let i = 0; i < s.length; i++) {
+  
+    let char = s[i];
+    
+    if (symbolObj[char]) {
+    
+      let preStr = s.slice(0, i);
+      
+      let opener = symbolObj[char];
+
+      if (!preStr.includes(opener) || openers[openers.length - 1] !== opener) {
+        
+        return false;
+      }
+      
+      else {
+      
+        openers.pop();
+      }
+    }
+    
+    else {
+    
+      openers.push(char);
+    }
+  }
+  
+  return openers.length > 0 ? false : true;
+ }
