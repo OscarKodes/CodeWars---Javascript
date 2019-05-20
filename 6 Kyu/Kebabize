@@ -1,0 +1,23 @@
+function kebabize(str) {
+
+  let kebabStr = "";
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  let abcBig = abc.toUpperCase();
+
+  for (let i = 0; i < str.length; i++) {
+    
+    let char = str[i];
+    
+    if (abc.includes(char)) {
+    
+      kebabStr += char;
+    }
+    
+    else if (abcBig.includes(char)) {
+    
+      kebabStr += kebabStr.length === 0 ? char.toLowerCase() : "-" + char.toLowerCase();
+    }
+  }
+
+  return kebabStr;
+}
