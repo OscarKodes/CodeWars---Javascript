@@ -1,0 +1,15 @@
+function shuffle(arr) {
+
+  let output = [];
+
+  while (arr.length > 0) {
+  
+    let idx = Math.floor(Math.random() * (arr.length));
+    
+    output.push(arr[idx]);
+    
+    arr.splice(idx, 1);
+  }
+
+  return output;
+}
