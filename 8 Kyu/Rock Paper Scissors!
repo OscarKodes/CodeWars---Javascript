@@ -1,0 +1,13 @@
+const rps = (p1, p2) => {
+
+  let winObj = {
+  
+    'scissors': 'paper',
+    'paper': 'rock',
+    'rock': 'scissors',
+  }
+  
+  return winObj[p1] === p2 ? "Player 1 won!" :
+         winObj[p2] === p1 ? "Player 2 won!" :
+         "Draw!";
+};
