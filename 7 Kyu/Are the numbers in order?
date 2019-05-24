@@ -1,0 +1,21 @@
+function inAscOrder(arr) {
+
+  let num = null;
+
+  for (let i = 0; i < arr.length; i++) {
+  
+    let currNum = arr[i];
+    
+    if (currNum >= num || num === null) {
+    
+      num = currNum;
+    }
+    
+    else {
+    
+      return false;
+    }
+  }
+
+  return true;
+}
