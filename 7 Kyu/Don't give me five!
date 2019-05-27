@@ -1,0 +1,13 @@
+function dontGiveMeFive(start, end) {
+  
+  let count = 0;
+  
+  for (let num = start; num <= end; num++) {
+  
+    let numStr = String(num);
+    
+    count += numStr.includes(5) ? 0 : 1;
+  }
+  
+  return count;
+}
