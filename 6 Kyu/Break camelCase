@@ -1,0 +1,23 @@
+function solution(string) {
+    
+    let lowerCase = "abcdefghijlmnopqrstuvwxyz";
+    
+    let result = "";
+    
+    for (let i = 0; i < string.length; i++) {
+    
+      let char = string[i];
+      
+      if (lowerCase.includes(char)) {
+      
+        result += char;
+      }
+      
+      else {
+      
+        result += " " + char;
+      }
+    }
+    
+    return result;
+}
