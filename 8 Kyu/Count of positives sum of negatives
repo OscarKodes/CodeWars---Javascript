@@ -1,0 +1,28 @@
+function countPositivesSumNegatives(input) {
+
+    let positives = 0;
+    let sum = 0;
+    
+    if (!input) {
+      return [];
+    }
+    
+    if (!input.length) {
+      return [];
+    }
+    
+    for (let i = 0; i < input.length; i++) {
+    
+      let num = input[i];
+      
+      if (num > 0) {
+        positives++;
+      }
+      
+      else {
+        sum += num;
+      }
+    }
+    
+    return [positives, sum];
+}
