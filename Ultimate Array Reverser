@@ -1,0 +1,21 @@
+const ultimateReverse = s => {
+  
+  let str = s.join("");
+  str = str.split("");
+  str = str.reverse();
+  str = str.join("");
+  
+  let arr = [];
+  
+  let idx = 0;
+    
+  for (let i = 0; i < s.length; i++) {
+  
+    let wordLength = s[i].length;
+    
+    arr.push(str.slice(idx, wordLength + idx));
+    idx += wordLength;
+  }
+  
+  return arr;
+};
