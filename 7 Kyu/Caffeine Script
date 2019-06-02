@@ -1,0 +1,16 @@
+function caffeineBuzz(n){
+
+  let even = "Script";
+  
+  if (n % 3 === 0) {
+  
+    if (n % 4 === 0) {
+    
+      return "Coffee" + even;
+    }
+    
+    return n % 2 === 0 ? "Java" + even : "Java";
+  }
+  
+  return "mocha_missing!"
+}
