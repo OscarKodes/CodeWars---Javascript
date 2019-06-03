@@ -1,0 +1,13 @@
+var gimme = function (inputArray) {
+  
+  // it's necessary to copy the arr with slice because if we don't the original arr will be mutated
+  let arrCopy = inputArray.slice(0);
+
+  let sortedArr = arrCopy.sort(function(a,b) {return a-b});
+  
+  let midIdx = (sortedArr.length - 1) / 2;
+  
+  let midNum = sortedArr[midIdx];
+
+  return inputArray.indexOf(midNum);
+};
