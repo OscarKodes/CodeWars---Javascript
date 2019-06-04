@@ -1,0 +1,18 @@
+function findLongest(array){
+
+  let arrCopy = array.slice();
+  
+  let sortArr = arrCopy.sort(function(a,b) {return a-b});
+
+  let maxLength = sortArr[sortArr.length - 1].toString().length;
+  
+  for (let i = 0; i < array.length; i++) {
+  
+    let num = array[i];
+    
+    if (num.toString().length === maxLength) {
+    
+      return num;
+    }
+  }
+}
