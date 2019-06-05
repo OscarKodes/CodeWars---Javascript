@@ -1,0 +1,4 @@
+function last(list){
+  let lastArg = arguments[arguments.length - 1];
+  return lastArg.length > 1 ? lastArg[lastArg.length - 1] : lastArg;
+}
