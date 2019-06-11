@@ -1,0 +1,22 @@
+function tripledouble(num1, num2) {
+
+  let str1 = num1.toString();
+  let str2 = num2.toString();
+  
+  for (let i = 0; i <= 9; i++) {
+  
+    let strI = i.toString();
+    let double = strI + strI;
+    let triple = double + strI;
+  
+    if (str1.includes(triple)) {
+    
+      if (str2.includes(double)) {
+      
+        return 1;
+      }
+    }
+  }
+  
+  return 0;
+}
