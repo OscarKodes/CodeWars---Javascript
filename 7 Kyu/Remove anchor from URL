@@ -1,0 +1,7 @@
+function removeUrlAnchor(url){
+
+  let idx = url.indexOf("#");
+  let endIdx = idx > 0 ? idx : url.length;
+
+  return url.slice(0, endIdx);
+}
