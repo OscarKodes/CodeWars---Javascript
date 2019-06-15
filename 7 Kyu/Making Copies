@@ -1,0 +1,6 @@
+function copyList(l){
+  
+  let lCopy = l.slice();
+  
+  return lCopy;
+}
