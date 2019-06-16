@@ -1,0 +1,42 @@
+function rot13(str) {
+
+  let lowerAbc1 = "abcdefghijklm";
+  let upperAbc1 = lowerAbc1.toUpperCase();
+  
+  let lowerAbc2 = "nopqrstuvwxyz";
+  let upperAbc2 = lowerAbc2.toUpperCase();
+  
+  let decryptStr = "";
+  
+  for (let i = 0; i < str.length; i++) {
+  
+    let char = str[i];
+    
+    if (lowerAbc1.includes(char)) {
+    
+      decryptStr += lowerAbc2[lowerAbc1.indexOf(char)];
+    }
+    
+    else if (lowerAbc2.includes(char)) {
+    
+      decryptStr += lowerAbc1[lowerAbc2.indexOf(char)];
+    }
+    
+    else if (upperAbc1.includes(char)) {
+    
+      decryptStr += upperAbc2[upperAbc1.indexOf(char)];
+    }
+    
+    else if (upperAbc2.includes(char)) {
+    
+      decryptStr += upperAbc1[upperAbc2.indexOf(char)];
+    }
+    
+    else {
+    
+      decryptStr += char;
+    }
+  }
+  
+  return decryptStr;
+}
