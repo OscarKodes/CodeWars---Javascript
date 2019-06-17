@@ -1,0 +1,24 @@
+var flatten = function (array){
+  
+  let arr = [];
+  
+  array.forEach(function(element){
+    
+    if (Array.isArray(element)) {
+    
+      for (let i = 0; i < element.length; i++) {
+    
+        let innerElement = element[i];
+        
+        arr.push(innerElement);
+      }
+    }
+    
+    else {
+    
+      arr.push(element);
+    }
+  });
+  
+  return arr;
+}
