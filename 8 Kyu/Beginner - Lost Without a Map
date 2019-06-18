@@ -1,0 +1,9 @@
+function maps(arr){
+  
+  return arr.map(double);
+}
+
+function double(num){
+
+  return num * 2;
+}
