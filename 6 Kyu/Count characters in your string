@@ -1,0 +1,21 @@
+function count (string) {  
+  
+  let charObj = {};
+  
+  for (let i = 0; i < string.length; i++) {
+  
+    let char = string[i];
+    
+    if (charObj[char] === undefined) {
+    
+      charObj[char] = 1;
+    }
+    
+    else {
+      
+      charObj[char]++;
+    }
+  }
+  
+  return charObj;
+}
