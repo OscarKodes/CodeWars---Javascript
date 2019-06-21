@@ -1,0 +1,33 @@
+function board(size) {
+  
+  let strBlack = "";
+  let strWhite = "";
+  let chessBoard = "";
+  
+  for (let i = 0; i < size; i++) {
+  
+    strBlack += i % 2 === 0 ? "#" : " ";
+    
+    if (i === size - 1) {
+    
+      strBlack += "\n";
+    }
+  }
+  
+  for (let i = 0; i < size; i++) {
+  
+    strWhite += i % 2 === 0 ? " " : "#";
+    
+    if (i === size - 1) {
+    
+      strWhite += "\n";
+    }
+  }
+  
+  for (let i = 0; i < size; i++) {
+  
+    chessBoard += i % 2 === 0 ? strBlack : strWhite;
+  }
+  
+	return chessBoard;
+}
