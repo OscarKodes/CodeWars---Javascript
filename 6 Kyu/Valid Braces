@@ -1,0 +1,36 @@
+function validBraces(braces){
+  
+  let openBrackets = [];
+  
+  let openers = "{[(";
+  let closers = "}])";
+  
+  for (let i = 0; i < braces.length; i++) {
+  
+    let char = braces[i];
+    
+    if (openers.includes(char)) {
+    
+      openBrackets.push(char);
+    }
+    
+    else {
+    
+      let closerIndex = closers.indexOf(char);
+      let lastBracket = openBrackets[openBrackets.length - 1];
+      let openerIndex = openers.indexOf(lastBracket);
+      
+      if (openerIndex === closerIndex) {
+      
+        openBrackets.pop();
+      }
+      
+      else {
+      
+        return false;
+      }
+    }
+  }
+  
+  return openBrackets.length > 0 ? false : true;
+}
