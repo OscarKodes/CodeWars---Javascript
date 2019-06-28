@@ -1,0 +1,7 @@
+function isTriangleNumber(number) {
+  
+  let num = Math.floor(Math.sqrt(number * 2));
+  let rectangle = num * (num + 1);
+  
+  return rectangle / 2 === number ? true : false;
+}
