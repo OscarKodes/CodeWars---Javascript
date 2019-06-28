@@ -1,0 +1,10 @@
+function digitize(n) {
+
+  let arr = String(n).split("").reverse();
+  
+  arr.forEach(function(numStr, idx) {
+    arr[idx] = Number(numStr);
+  });
+  
+  return arr;
+}
