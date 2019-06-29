@@ -1,0 +1,11 @@
+const reverseSeq = n => {
+
+  let countDown = [];
+  
+  for (let i = n; i > 0; i--) {
+  
+    countDown.push(i);  
+  }
+  
+  return countDown;
+};
