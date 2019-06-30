@@ -1,0 +1,13 @@
+function keysAndValues(data){
+  
+  let keyArr = [];
+  let valueArr = [];
+  
+  for (let key in data) {
+  
+    keyArr.push(key);
+    valueArr.push(data[key]);
+  }
+  
+  return [keyArr, valueArr];
+}
