@@ -1,0 +1,28 @@
+String.prototype.toAlternatingCase = function () {
+
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+
+  let newStr = "";
+  
+  for (let i = 0; i < this.length; i++) {
+  
+    let char = this[i];
+    
+    if (abc.includes(char)) {
+    
+      newStr += char.toUpperCase();
+    }
+    
+    else if (abc.toUpperCase().includes(char)) {
+    
+      newStr += char.toLowerCase();
+    }
+    
+    else {
+    
+      newStr += char;
+    }
+  }
+  
+  return newStr;
+}
