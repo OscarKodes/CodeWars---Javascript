@@ -1,0 +1,31 @@
+function foldArray(array, runs) {
+
+  let lastArr = array.slice();
+  
+  for (let i = 0; i < runs; i++) {
+  
+    let centerIdx = (lastArr.length - 1) / 2;
+    
+    let currArr = [];
+    
+    for (let j = 0; j <= centerIdx; j++) {
+    
+      let leftIdx = j;
+      let rightIdx = lastArr.length - (j + 1);
+      
+      if (leftIdx === rightIdx) {
+      
+        currArr.push(lastArr[centerIdx]);
+      }
+      
+      else {
+      
+        currArr.push(lastArr[leftIdx] + lastArr[rightIdx]);
+      }
+    }
+    
+    lastArr = currArr.slice();
+  }
+  
+  return lastArr;
+}
