@@ -1,0 +1,13 @@
+function squareSum(numbers){
+  
+  let sum = 0;
+  
+  for (let i = 0; i < numbers.length; i++) {
+  
+    let num = numbers[i];
+    
+    sum += Math.pow(num, 2);
+  }
+  
+  return sum;
+}
