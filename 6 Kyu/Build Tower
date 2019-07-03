@@ -1,0 +1,21 @@
+function towerBuilder(nFloors) {
+
+  let towerArr = [];
+  
+  for (let i = 1; towerArr.length < nFloors; i++) {
+  
+    let towerWidth = (nFloors * 2) - 1;
+    
+    let asteriskLength = i + (i - 1);
+    let asterisks = "*".repeat(asteriskLength);
+    
+    let spaceLength = (towerWidth - asteriskLength) / 2;
+    let spaces = " ".repeat(spaceLength);
+    
+    let currFloor = spaces + asterisks + spaces;
+    
+    towerArr.push(currFloor);
+  }
+  
+  return towerArr;
+}
