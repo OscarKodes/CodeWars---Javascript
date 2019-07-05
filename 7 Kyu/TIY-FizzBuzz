@@ -1,0 +1,26 @@
+function tiyFizzBuzz(sentence){
+  
+  let upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let vowel = "aeiouAEIOU";
+  let finalStr = "";
+  
+  for (let i = 0; i < sentence.length; i++) {
+  
+    let char = sentence[i];
+    let fizzbuzz = "";
+    
+    if (upperCase.includes(char)) {
+    
+      fizzbuzz += "Iron";
+    }
+    
+    if (vowel.includes(char)) {
+    
+      fizzbuzz += fizzbuzz === "Iron" ? " Yard" : "Yard";
+    }
+    
+    finalStr += fizzbuzz.length > 0 ? fizzbuzz : char;
+  }
+  
+  return finalStr;
+}
