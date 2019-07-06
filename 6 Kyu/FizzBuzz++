@@ -1,0 +1,36 @@
+function fizzbuzzPlusPlus(numbers, words) {
+
+  let arr = [];
+  
+  let endNum = numbers.reduce((a, b) => a * b);
+  
+  for (let i = 0; i < endNum; i++) {
+  
+    let num = i + 1;
+    
+    for (let j = 0; j < numbers.length; j++) {
+    
+      let currWord = words[j];
+    
+      if (num % numbers[j] === 0) {
+      
+        if (typeof arr[i] === "string") {
+          
+          arr[i] += currWord;
+        }
+        
+        else {
+        
+          arr.push(currWord);
+        }
+      }
+    }
+    
+    if (!arr[i]) {
+    
+      arr.push(num);
+    }
+  }
+
+  return arr;
+}
