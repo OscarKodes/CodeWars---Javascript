@@ -1,0 +1,18 @@
+function vowelIndices(word){
+  
+  const vowels = "aeiouyAEIOUY";
+  
+  let arr = [];
+  
+  for (let i = 0; i < word.length; i++) {
+    
+    let char = word[i];
+    
+    if (vowels.includes(char)) {
+    
+      arr.push(i + 1);
+    }
+  }
+  
+  return arr;
+}
