@@ -1,0 +1,20 @@
+function flipper(stringArr){
+
+  let flipArr = stringArr.reverse();
+  
+  flipArr.forEach(function(word, index){
+
+    if (word.length > 1) {
+    
+      flipArr[index] = word.slice(0, -1).toLowerCase() + word.slice(-1).toUpperCase();
+    }
+    
+    else {
+    
+      flipArr[index] = word;
+    }
+    
+  });
+  
+  return flipArr.join(" ");
+}
