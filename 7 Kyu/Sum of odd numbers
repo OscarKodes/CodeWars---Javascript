@@ -1,0 +1,14 @@
+function rowSumOddNumbers(n) {
+
+  let oddNumArr = [];
+  
+  const midNum = Math.pow(n, 2);
+  const firstNum = midNum - (n - 1);
+  
+  for (let i = firstNum; oddNumArr.length < n; i += 2) {
+  
+    oddNumArr.push(i);
+  }
+  
+  return oddNumArr.reduce((a, b) => a + b);
+}
