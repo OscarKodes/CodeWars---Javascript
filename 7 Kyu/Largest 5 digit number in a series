@@ -1,0 +1,28 @@
+function solution(digits){
+
+  let maxNum = 0;
+  
+  for (let i = 9; i >= 0; i--) {
+    
+    let theRest = digits;
+  
+    while (theRest.includes(i)) {
+  
+      let startIdx = theRest.indexOf(i);
+    
+      let fiveDigits = Number(theRest.slice(startIdx,  startIdx + 5));
+          
+      if (fiveDigits > maxNum) {
+      
+        maxNum = fiveDigits;
+      }
+      
+      theRest = theRest.slice(startIdx + 1);
+      
+      if (!theRest.includes(i) && maxNum > 0) {
+      
+        return maxNum;
+      }
+    }
+  }
+}
