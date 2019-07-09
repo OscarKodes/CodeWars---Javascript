@@ -1,0 +1,19 @@
+function partsSums(ls) {
+
+  if (ls.length === 0) {
+    return [0];
+  }
+
+  let sumArr = [ls.reduce((a, b) => a + b)];
+  
+  for (let i = 0; i < ls.length; i++) {
+  
+    let currNum = ls[i];
+    
+    let prevSum = sumArr[i];
+    
+    sumArr.push(prevSum - currNum);
+  }
+  
+  return sumArr;
+}
