@@ -1,0 +1,9 @@
+function isPowerOfTwo(n){
+  
+  while (n > 2) {
+  
+    n /= 2;
+  }
+  
+  return n === 2 ? true : n === 1 ? true : false;
+}
