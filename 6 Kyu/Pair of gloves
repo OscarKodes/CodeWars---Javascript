@@ -1,0 +1,23 @@
+function numberOfPairs(gloves) {
+  
+  let looseGloves = [];
+  let pairs = 0;
+  
+  gloves.forEach(function(glove){
+  
+    if (looseGloves.includes(glove)) {
+    
+      let gloveIdx = looseGloves.indexOf(glove);
+
+      looseGloves.splice(gloveIdx, 1);
+      pairs++;
+    }
+    
+    else {
+      
+      looseGloves.push(glove);
+    }
+  });
+  
+  return pairs;
+}
