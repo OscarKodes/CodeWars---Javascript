@@ -1,0 +1,24 @@
+function dataReverse(data) {
+  
+  let nestedArrs = [];
+  
+  while (data.length > 0) {
+  
+    nestedArrs.push(data.splice(0 ,8));
+  }
+  
+  let reversedNestedArr = nestedArrs.reverse();
+  let finalArr = [];
+  
+  reversedNestedArr.forEach(function(arr) {
+    
+    for (let i = 0; i < arr.length; i++) {
+    
+      let num = arr[i];
+      
+      finalArr.push(num);
+    }
+  });
+  
+  return finalArr;
+}
