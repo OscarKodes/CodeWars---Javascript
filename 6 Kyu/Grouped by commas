@@ -1,0 +1,23 @@
+function groupByCommas(n) {
+  
+  let numStr = String(n);
+  
+  let digitsIn = 0;
+  
+  let finalStr = "";
+  
+  for (let i = numStr.length - 1; i >= 0; i--) {
+  
+    let char = numStr[i];
+    
+    if (digitsIn % 3 === 0 && digitsIn !== 0) {
+      
+      finalStr = "," + finalStr;
+    }
+    
+    finalStr = char + finalStr;
+    digitsIn++;
+  }
+  
+  return finalStr;
+}
