@@ -1,0 +1,39 @@
+function sortArray(array) {
+    
+    let evenArr = [];
+    let oddArr = [];
+    let finalArr = [];
+    
+    array.forEach(function(num) {
+    
+      if (num % 2 === 0) {
+        evenArr.push(num);
+      }
+      
+      else {
+        oddArr.push(num);
+      }
+    });
+    
+    evenArr.sort((a, b) => b-a);
+    oddArr.sort((a, b) => a-b);
+    
+    let evenIdx = 0;
+    let oddIdx = 0;
+    
+    array.forEach(function(num) {
+    
+      if (num % 2 === 0) {
+      
+        finalArr.push(evenArr[evenIdx]);
+        evenIdx++;
+      }
+      
+      else {
+        finalArr.push(oddArr[oddIdx]);
+        oddIdx++;
+      }
+    });
+    
+    return finalArr;
+}
