@@ -1,0 +1,22 @@
+function generateShape(int){
+  
+  let row = "";
+  let shape = "";
+  
+  for (let i = 0; i < int; i++) {
+  
+    row += "+";
+  }
+  
+  for (let i = 0; i < int; i++) {
+  
+    shape += row;
+    
+    if (i < int - 1) {
+      
+      shape += "\n";
+    }
+  }
+  
+  return shape;
+}
