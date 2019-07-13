@@ -1,0 +1,16 @@
+function meeting(s) {
+    
+    let str = s.toUpperCase();
+    let strArr = str.split(";");
+    let namesArr = [];
+    let finalStr = "";
+    
+    strArr.forEach(function(fullName) {
+    
+      let lastFirstArr = fullName.split(":").reverse();
+      let nameStr = "(" + lastFirstArr.join(", ") + ")";
+      namesArr.push(nameStr);
+    });
+    
+  return namesArr.sort().join("");
+}
