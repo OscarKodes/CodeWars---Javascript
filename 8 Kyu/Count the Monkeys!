@@ -1,0 +1,11 @@
+function monkeyCount(n) {
+
+  let countArr = [];
+  
+  for (let i = 1; i <= n; i++) {
+  
+    countArr.push(i);
+  }
+  
+  return countArr;
+}
