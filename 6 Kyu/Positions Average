@@ -1,0 +1,54 @@
+function posAverage(s) {
+    
+    let strArr = s.split(", ");
+    
+    let resultArr = [];
+    
+    strArr.forEach(function(str, idx){
+    
+      for (let i = idx; i < strArr.length - 1; i++) {
+      
+        let str2 = strArr[i + 1];
+      
+        resultArr.push(countMatches(str, str2));
+      }
+    });
+    
+    let divisor = calculatePotentialMatches(strArr.length, strArr[0].length);
+    let sum = resultArr.reduce((a, b) => a + b);
+    let average = sum / divisor;
+    
+    return average * 100;
+}
+
+function countMatches(str1, str2) {
+
+  let matchCount = 0;
+
+  for (let i = 0; i < str1.length; i++) {
+  
+    let num1 = str1[i];
+    let num2 = str2[i];
+    
+    if (num1 === num2) {
+    
+      matchCount++;
+    }
+  }
+  
+  return matchCount;
+}
+
+function calculatePotentialMatches(strAmount, digits) {
+
+  let total = 0;
+
+  for (let round = 1; round <= strAmount; round++) {
+    
+    let currRoundMatches = digits * (strAmount - round);
+    
+    total += currRoundMatches
+  }
+  
+  return total;
+}
