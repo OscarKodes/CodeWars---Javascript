@@ -1,0 +1,14 @@
+function maxRot(n) {
+
+  let numCombos = [n];
+  
+  let numStr = String(n);
+  
+  for (let i = 0; i < numStr.length; i++) {
+  
+    numStr = numStr.slice(0, i) + numStr.slice(i + 1, numStr.length) + numStr[i];
+    numCombos.push(Number(numStr));
+  }
+  
+  return numCombos.sort((a, b) => b-a)[0];
+}
