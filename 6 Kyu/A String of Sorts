@@ -1,0 +1,17 @@
+function sortString(string,ordering) {
+  
+  let sortedStr = "";
+  
+  for (let i = 0; i < ordering.length; i++) {
+  
+    let char = ordering[i];
+    
+    while (string.includes(char)) {
+      sortedStr += char;
+      let removeIdx = string.indexOf(char);
+      string = string.slice(0, removeIdx) + string.slice(removeIdx + 1);
+    }
+  }
+  
+  return sortedStr + string;
+}
