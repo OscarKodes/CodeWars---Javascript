@@ -1,0 +1,6 @@
+function enough(cap, on, wait) {
+  
+  let seatlessPeople = cap - (on + wait);
+  
+  return seatlessPeople >= 0 ? 0 : seatlessPeople *= -1;
+}
