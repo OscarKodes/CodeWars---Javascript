@@ -1,0 +1,23 @@
+function duplicates(array){
+
+  let pairs = 0;
+  
+  while (array.length > 0) {
+  
+    let num = array[0];
+
+    if (array.slice(1).includes(num)) {
+    
+      let matchingIdx = array.slice(1).indexOf(num);
+      array.splice(0, 1);
+      array.splice(matchingIdx, 1);
+      pairs++;
+    } 
+    
+    else {
+      array.splice(0, 1);
+    }
+  }
+  
+  return pairs;
+}
