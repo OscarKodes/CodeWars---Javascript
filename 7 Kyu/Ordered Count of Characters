@@ -1,0 +1,25 @@
+let orderedCount = function (text) {
+  
+  let resultArr = [];
+  let indexRecorder = [];
+  
+  for (let i = 0; i < text.length; i++) {
+    
+    let char = text[i];
+    
+    if (indexRecorder.includes(char)) {
+    
+      let index = indexRecorder.indexOf(char);
+      
+      resultArr[index][1]++;
+    }
+    
+    else {
+    
+      resultArr.push([char, 1]);
+      indexRecorder.push(char);
+    }
+  }
+  
+  return resultArr;
+}
