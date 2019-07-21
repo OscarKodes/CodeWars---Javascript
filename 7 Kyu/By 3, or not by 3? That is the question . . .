@@ -1,0 +1,13 @@
+function divisibleByThree(str){
+  
+  let arr = str.split("");
+  
+  arr.forEach(function(str, idx) {
+  
+    arr[idx] = Number(str);
+  });
+  
+  let sum = arr.reduce((a, b) => a += b);
+
+  return sum % 3 === 0 ? true : false;
+}
