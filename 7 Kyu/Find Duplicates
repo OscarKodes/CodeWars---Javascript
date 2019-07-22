@@ -1,0 +1,15 @@
+function duplicates(arr) {
+  let pairs = [];
+  
+  while (arr.length > 0) {
+    let num = arr.shift();
+  
+    if (arr.includes(num)) {
+    
+      pairs.push(num);
+      arr = arr.filter(element => element !== num);
+    } 
+  }
+
+  return pairs;
+}
