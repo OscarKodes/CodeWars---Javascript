@@ -1,0 +1,7 @@
+function getSize(l, w, h) {
+
+  let sArea = 2 * (l * w + l * h + h * w);
+  let vol = l * w * h;
+
+  return [sArea, vol];
+}
