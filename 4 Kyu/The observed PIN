@@ -1,0 +1,120 @@
+function getPINs(observed) {
+
+  if (observed.length < 2) {
+  
+    return getAdjNums(observed);
+  }
+  
+  let arrOfAdjNumArrs = [];
+
+  for (let i = 0; i < observed.length; i++) {
+  
+    let numStr = observed[i];
+    
+    arrOfAdjNumArrs.push(getAdjNums(numStr));
+  }
+  
+  while (arrOfAdjNumArrs.length > 1) {
+  
+    let comboArr = getTwoArrCombos(arrOfAdjNumArrs[0], arrOfAdjNumArrs[1]);
+    
+    arrOfAdjNumArrs.splice(0, 2);
+    arrOfAdjNumArrs.unshift(comboArr);
+  }
+  
+  let finalComboArr = arrOfAdjNumArrs[0];
+  
+  return finalComboArr;
+}
+
+function getAdjNums(numStr) {
+
+  let num = Number(numStr);
+
+  let keypadArr = [
+  
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9],
+    [null, 0, null]
+  ];
+  
+  // find given num's coord
+  let numCoord = givenNumCoord(num, keypadArr);
+  let row = numCoord[0];
+  let col = numCoord[1];
+
+  let adjNums = existingAdjNums(row, col, keypadArr);
+  
+  return adjNums;
+}
+
+function givenNumCoord(num, keypad) {
+  
+  let row, col;
+  
+  for (let i = 0; i < 4; i++) {
+
+    if (keypad[i].includes(num)) {
+
+      row = i;
+      col = keypad[i].indexOf(num);
+      return [row, col];
+    }
+  }
+}
+
+function existingAdjNums(row, col, keypad) {
+
+  let adjNums = [];
+  
+  let coordObj = {
+  
+    up: [[row - 1],[col]],
+    down: [[row + 1],[col]],
+    left: [[row],[col - 1]],
+    right: [[row],[col + 1]],
+    center: [[row],[col]]
+  }
+
+  for (let direction in coordObj) {
+    
+    let coord = coordObj[direction];
+    let coordRow = coord[0][0];
+    let coordCol = coord[1][0];
+
+    if (coordRow < 0 || coordCol < 0) {
+      continue;
+    }
+    
+    else if (coordCol > 2 || coordRow > 3 || (coordRow === 3 && coordCol !== 1)) {
+      continue;
+    }
+    
+    else if (typeof keypad[coordRow][coordCol] === "number") {
+      adjNums.push(String(keypad[coordRow][coordCol]));
+    }
+  }
+  
+  return adjNums;
+}
+
+function getTwoArrCombos(arr1, arr2) {
+
+  let comboArr = [];
+
+  while (arr1.length > 0) {
+  
+    for (let i = 0; i < arr2.length; i++) {
+    
+      let num1 = arr1[0];
+      let num2 = arr2[i];
+      
+      comboArr.push(num1 + num2);
+    }
+    
+    arr1.shift();
+  }
+  
+ return comboArr;
+}
