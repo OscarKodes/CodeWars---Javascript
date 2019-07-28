@@ -1,0 +1,23 @@
+function avgArray(arr) {
+  
+  let sumArr = arr[0];
+  let averageArr = [];
+  
+  arr.forEach(function(innerArr, i) {
+  
+    if (i !== 0) {
+    
+      for (let i = 0; i < innerArr.length; i++) {
+    
+        sumArr[i] += innerArr[i];
+      }
+    }
+  });
+
+  sumArr.forEach(function(sum) {
+  
+    averageArr.push(sum / arr.length);
+  });
+  
+  return averageArr;
+}
