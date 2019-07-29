@@ -1,0 +1,100 @@
+function byState(str) {
+
+  ////==== SETUP =============================
+  // define an obj of state abbreviations
+  let stateNames = {
+  
+    'AZ': 'Arizona',
+    'CA': 'California',
+    'ID': 'Idaho',
+    'IN': 'Indiana',
+    'MA': 'Massachusetts',
+    'OK': 'Oklahoma',
+    'PA': 'Pennsylvania',
+    'VA': 'Virginia'
+  }
+  
+  // SEPERATE PEOPLE BY STATE INTO stateArrs within states OBJECT
+  let states = seperateByState(str);
+  
+  //===== SORT STAGE ==============================
+  // sort each state's peoplesArr by first names
+  for (let key in states) {
+  
+    let peopleArr = states[key];
+    
+    peopleArr.sort();
+  }
+  
+  // create an arr of all the existing state in sorted order
+  let sortedStates = [];
+  
+  for (let state in states) {
+  
+    sortedStates.push(state);
+  }
+  
+  sortedStates.sort();
+
+  //==== PUT TOGETHER FINAL STR ====================
+  let finalArr = [];
+  
+  // go thru each state in alphabetical order
+  sortedStates.forEach(function(state, i) {
+  
+    let currPeople = states[state];
+    let stateName = stateNames[state];
+    let seperator = stateName + "\r\n..... ";
+    
+    let stateStr = seperator + currPeople.join(" " + seperator);
+    
+    if (i !== sortedStates.length - 1) {
+    
+      stateStr += " " + stateName + "\r\n ";
+    } else {
+    
+      stateStr += " " + stateName;
+    }
+    
+    finalArr.push(stateStr);
+  });
+  
+  return finalArr.join("").split(",").join("");
+}
+
+function seperateByState(str) {
+
+  let abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  let states = {};
+  
+  // loop thru string, find double capitals
+  for (let i = 0; str.length > 0; i++) {
+    
+    let char1 = str[i];
+    let char2 = str[i + 1];
+    let pair = char1 + char2;
+    
+    if (abc.includes(char1) && abc.includes(char2) && str[i - 1] === " "){
+
+      // create the key value pair in the states obj, if it doesn't exist
+      if (!states[pair]) {
+        states[pair] = [];
+      }
+
+      // seperate it before the double captial, push into the state obj
+      states[pair].push(str.slice(0 , i - 1));
+      
+      if (i + 3 === str.length) {
+      
+        str = "";
+      } else {
+      
+        str = str.slice(i + 3);
+      }
+      
+      i = -1
+    }
+  }
+  
+  return states;
+}
