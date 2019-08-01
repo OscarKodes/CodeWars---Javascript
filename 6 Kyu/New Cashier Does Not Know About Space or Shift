@@ -1,0 +1,26 @@
+function getOrder(input) {
+
+  const menu = [
+    "Burger",
+    "Fries",
+    "Chicken",
+    "Pizza",
+    "Sandwich",
+    "Onionrings",
+    "Milkshake",
+    "Coke",
+  ]
+  
+  let wordArr = [];
+
+  menu.forEach(function(item){
+  
+    while (input.length > 0 && input.includes(item.toLowerCase())) {
+      let itemIdx = input.indexOf(item.toLowerCase());
+      input = input.slice(0, itemIdx) + input.slice(itemIdx + item.length);
+      wordArr.push(item);
+    }
+  });
+
+  return wordArr.join(" ");
+}
