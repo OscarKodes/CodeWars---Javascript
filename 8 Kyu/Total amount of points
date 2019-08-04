@@ -1,0 +1,20 @@
+function points(games) {
+  
+  let points = 0;
+  
+  games.forEach(function(game) {
+  
+    let x = game[0];
+    let y = game[2];
+  
+    if (x > y) {
+      points += 3;
+    } 
+    
+    else if (x === y) {
+      points += 1;
+    }
+  });
+  
+  return points;
+}
