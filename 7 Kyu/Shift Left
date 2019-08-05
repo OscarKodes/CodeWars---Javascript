@@ -1,0 +1,12 @@
+function shiftLeft(s, t){
+
+  let sArr = s.split("").reverse();
+  let tArr = t.split("").reverse();
+  
+  while(sArr.length > 0 && sArr[0] === tArr[0]) {
+    sArr.shift();
+    tArr.shift();
+  }
+  
+  return sArr.length + tArr.length;
+}
