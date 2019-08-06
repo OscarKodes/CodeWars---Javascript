@@ -1,0 +1,12 @@
+function babySharkLyrics(){
+
+  let str = "";
+
+  ["Baby", "Mommy", "Daddy", "Grandma", "Grandpa", "Let's go hunt"]
+  .forEach(function(name, i){
+    name += i < 5 ? " shark" : "";
+    str += (name + "," + " doo".repeat(6) + "\n").repeat(3) + name + "!\n";
+  });
+  
+  return str += "Run away,…"
+}
