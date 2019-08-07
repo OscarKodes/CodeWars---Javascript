@@ -1,0 +1,12 @@
+function rowWeights(array){
+  
+  let team1 = 0;
+  let team2 = 0;
+  
+  array.forEach(function(weight, i) {
+  
+    i % 2 === 0 ? team1 += weight : team2 += weight;
+  });
+  
+  return [team1, team2];
+}
