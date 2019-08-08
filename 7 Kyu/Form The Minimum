@@ -1,0 +1,14 @@
+function minValue(values){
+  
+  let numStr = "";
+  
+  for (let i = 0; i <= 9; i++) {
+  
+    if (values.includes(i)) {
+    
+      numStr += i;
+    }
+  }
+  
+  return Number(numStr);
+}
