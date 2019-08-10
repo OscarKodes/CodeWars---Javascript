@@ -1,0 +1,11 @@
+function stairsIn20(s){
+  
+  s.forEach(function(weekday, i) {
+  
+    s[i] = weekday.reduce((a, b) => a += b);
+  });
+  
+  let yearTotal = s.reduce((a, b) => a += b);
+
+  return yearTotal * 20;
+}
