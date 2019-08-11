@@ -1,0 +1,14 @@
+function minSum(arr) {
+  
+  arr = arr.sort((a, b) => a-b);
+  let part1 = arr.slice(0, arr.length / 2);
+  let part2 = arr.slice(arr.length / 2).reverse();
+  
+  let minSum = 0;
+  
+  part1.forEach(function(num, i){
+    minSum += (num * part2[i]);
+  });
+  
+  return minSum;
+}
