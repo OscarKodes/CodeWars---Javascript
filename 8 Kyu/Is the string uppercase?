@@ -1,0 +1,5 @@
+String.prototype.isUpperCase = function() {
+  let str = String(this);
+
+  return str === str.toUpperCase();
+}
