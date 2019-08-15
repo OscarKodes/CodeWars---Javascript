@@ -1,0 +1,19 @@
+function sumOfABeach(beach) {
+  
+  let sum = 0;
+  beach = beach.toLowerCase();
+  let words = ["sand", "water", "fish", "sun"];
+  
+  words.forEach(function(word){
+  
+    while(beach.includes(word)){
+    
+      let i = beach.indexOf(word);
+      let end = i + word.length;
+      beach = beach.slice(0, i) + beach.slice(end);
+      sum++;
+    }
+  });
+
+  return sum;
+}
