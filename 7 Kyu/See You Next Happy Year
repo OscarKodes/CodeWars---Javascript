@@ -1,0 +1,26 @@
+function nextHappyYear(year){
+  
+  let happyYear = year + 1;
+  
+  while (!uniqueDigits(happyYear)) {
+    happyYear++;
+  }
+  
+  return happyYear;
+}
+
+function uniqueDigits(num){
+  
+  let numStr = String(num);
+  
+  for (let i = 0; i < numStr.length; i++) {
+  
+    let char = numStr[i];
+    
+    if (numStr.slice(i + 1).includes(char)){
+      return false;
+    }
+  }
+  
+  return true;
+}
