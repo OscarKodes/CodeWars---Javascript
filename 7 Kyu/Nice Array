@@ -1,0 +1,21 @@
+function isNice(arr){
+
+  if (arr.length === 0) {
+  
+    return false;
+  }
+  
+  for (let i = 0; i < arr.length; i++) {
+  
+    let num = arr[i];
+    let numUp = num + 1;
+    let numDown = num - 1;
+    
+    if (!arr.includes(numUp) && !arr.includes(numDown)) {
+    
+      return false;
+    }
+  }
+
+  return true;
+}
