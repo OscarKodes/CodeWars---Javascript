@@ -1,0 +1,16 @@
+function solve(arr){
+    
+  for (let i = 0; i < arr.length; i++) {
+  
+    let num = arr[i];
+    let endSlice = arr.slice(i + 1);
+    
+    if (endSlice.includes(num)) {
+    
+      arr.splice(i, 1);
+      i--;
+    }
+  }
+
+  return arr;
+}
