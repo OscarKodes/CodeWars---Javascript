@@ -1,0 +1,13 @@
+function productArray(numbers){
+  
+  let productArr = [];
+  
+  for (let i = 0; i < numbers.length; i++) {
+    
+    let arrCopy = numbers.slice();
+    arrCopy.splice(i, 1);
+    productArr.push(arrCopy.reduce((a, b) => a *= b));
+  }
+  
+  return productArr;
+}
