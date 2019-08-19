@@ -1,0 +1,14 @@
+function matchArrays(v,r){
+  
+  let matches = 0;
+  
+  v.forEach(function(element){
+  
+    if (r.includes(element)) {
+      
+      matches++;
+    }
+  });
+  
+  return matches;
+}
