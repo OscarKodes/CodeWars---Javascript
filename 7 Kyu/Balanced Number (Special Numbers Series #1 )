@@ -1,0 +1,33 @@
+function balancedNum(number) {
+
+  let numStr = String(number);
+  let mid = numStr.length / 2;
+  let leftSlice, rightSlice;
+  
+  if (numStr.length <= 2) {
+  
+    return "Balanced";
+  }
+  
+  if (numStr.length % 2 === 0) {
+  
+    leftSlice = numStr.slice(0, mid - 1);
+    rightSlice = numStr.slice(0 - (mid - 1));
+  } else {
+    
+    leftSlice = numStr.slice(0, Math.floor(mid));
+    rightSlice = numStr.slice(0 - Math.floor(mid));
+  }
+  
+  return numStrToSum(leftSlice) === numStrToSum(rightSlice) ? "Balanced" : "Not Balanced";
+}
+
+function numStrToSum (numStr) {
+  
+  let strArr = numStr.split("");
+  let numArr = strArr.map(digitStr => Number(digitStr));
+  console.log(numArr);
+  let arrSum = numArr.reduce((a, b) => a += b);
+  
+  return arrSum;
+}
