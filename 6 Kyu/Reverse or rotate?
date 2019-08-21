@@ -1,0 +1,44 @@
+function revrot(str, sz) {
+
+  if (str.length === 0 || sz === 0) {
+    return "";
+  }
+  
+  return processChunks(makeChunks(str, sz)).join("");
+}
+
+function makeChunks(str, sz) {
+  let rawChunks = [];
+  
+  while (str.length >= sz) {
+    
+    let chunk = str.slice(0, sz);
+    str = str.slice(sz);
+    rawChunks.push(chunk);
+  }
+  
+  return rawChunks;
+}
+
+function processChunks(rawChunks) {
+
+  let processedChunks = [];
+
+  rawChunks.forEach(function(chunk){
+  
+    let numArr = chunk.split("").map(digit => Number(digit));
+    let cubeSum = numArr.map(num => Math.pow(num, 3)).reduce((a, b) => a += b);
+    
+    if (cubeSum % 2 === 0) {
+    
+      let reverseStr = chunk.split("").reverse().join("");
+      processedChunks.push(reverseStr);
+    } else {
+    
+      let rotateStr = chunk.slice(1) + chunk.slice(0, 1);
+      processedChunks.push(rotateStr);
+    }
+  });
+  
+  return processedChunks;
+}
