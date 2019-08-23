@@ -1,0 +1,12 @@
+function incrementer(nums) { 
+    
+  for (let i = 0; i < nums.length; i++) {
+  
+    let sum = nums[i] + i + 1;
+    
+    nums[i] = String(sum).length > 1 ? 
+              Number(String(sum).slice(-1)) : sum;
+  }
+
+  return nums;
+}
