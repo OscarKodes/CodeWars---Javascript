@@ -1,0 +1,6 @@
+function solve(s){
+    
+    let upper = s.split("").filter(a => a === a.toUpperCase()).length;
+    
+    return upper > s.length / 2 ? s.toUpperCase() : s.toLowerCase();
+}
