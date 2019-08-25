@@ -1,0 +1,24 @@
+function solve(arr){  
+
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  let result = [];
+  
+  arr.forEach(function(str){
+  
+    let matches = 0;
+  
+    for (let i = 0; i < str.length; i++) {
+    
+      let char = str[i];
+      
+      if (abc.indexOf(char) === i || abc.toUpperCase().indexOf(char) === i) {
+      
+        matches++;
+      }
+    }
+    
+    result.push(matches);
+  });
+  
+  return result;
+};
