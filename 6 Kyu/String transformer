@@ -1,0 +1,23 @@
+function stringTransformer(str) {
+  
+  let invertedStr = invertCase(str);
+  
+  return invertedStr.split(" ").reverse().join(" ");
+}
+
+function invertCase(str) {
+
+  let invertedStr = "";
+
+  for (let i = 0; i < str.length; i++) {
+  
+    let char = str[i];
+    let invertedChar = char === char.toUpperCase() ? 
+                                char.toLowerCase() : 
+                                char.toUpperCase();
+                                
+    invertedStr += invertedChar;
+  }
+
+  return invertedStr;
+}
