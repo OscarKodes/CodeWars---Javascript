@@ -1,0 +1,13 @@
+function partlist(arr) {
+    
+    let comboArr = [];
+    
+    for (let i = 0; i < arr.length - 1; i++) {
+    
+      let leftStr = arr.slice(0, i + 1).join(" ");
+      let rightStr = arr.slice(i + 1).join(" ");
+      comboArr.push([leftStr, rightStr]);
+    }
+    
+    return comboArr;
+}
