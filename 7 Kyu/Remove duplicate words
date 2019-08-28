@@ -1,0 +1,14 @@
+function removeDuplicateWords (s) {
+  
+  let resultArr = [];
+  
+  s.split(" ").forEach(function(word){
+  
+    if (!resultArr.includes(word)) {
+    
+      resultArr.push(word);
+    }
+  });
+  
+  return resultArr.join(" ");
+}
