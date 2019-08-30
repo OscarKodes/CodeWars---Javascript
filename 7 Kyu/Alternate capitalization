@@ -1,0 +1,23 @@
+function capitalize(s){
+  
+  let str1 = "";
+  let str2 = "";
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let charUpper = s[i].toUpperCase();
+    let charLower = s[i].toLowerCase();
+    
+    if (i % 2 === 0) {
+    
+      str1 += charUpper;
+      str2 += charLower;
+    } else {
+    
+      str1 += charLower;
+      str2 += charUpper;
+    }
+  }
+  
+  return [str1, str2]
+};
