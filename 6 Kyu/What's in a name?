@@ -1,0 +1,14 @@
+function nameInStr(str, name){
+  
+  for (let i = 0; i < str.length && name.length > 0; i++) {
+  
+    let char = str[i].toLowerCase();
+    
+    if (char === name[0].toLowerCase()) {
+    
+      name = name.slice(1);
+    }
+  }
+  
+  return name === "" ? true : false;
+}
