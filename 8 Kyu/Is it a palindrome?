@@ -1,0 +1,9 @@
+function isPalindrome(x) {
+  
+  let str = x.toLowerCase();
+  let half = str.length / 2;
+  let leftStr = str.slice(0, Math.floor(half));
+  let rightStr = str.slice(Math.ceil(half)).split("").reverse().join("");
+  
+  return leftStr === rightStr;
+}
