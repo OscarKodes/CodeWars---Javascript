@@ -1,0 +1,53 @@
+function revrot(str, sz) {
+
+  if (sz === 0 || str === "" || sz > str.length) {
+    return "";
+  }
+
+  let chunkArr = makeChunks(str, sz);
+
+  chunkArr.forEach(function(chunk, i){
+  
+    chunkArr[i] = checkDigitsCubedEven(chunk) ? 
+                  reverseDigits(chunk) : 
+                  rotateDigits(chunk);
+  });
+  
+  return chunkArr.join("");
+}
+
+function makeChunks(str, sz) {
+
+  let chunkArr = [];
+
+  while (str.length >= sz) {
+  
+    chunkArr.push(str.slice(0, sz));
+    
+    str = str.slice(sz);
+  }
+  
+  return chunkArr;
+}
+
+function checkDigitsCubedEven(chunk) {
+  
+  let cubedDigitsArr = chunk.split("").map(a => Math.pow(Number(a), 3));
+  let sum = cubedDigitsArr.reduce((sum, num) => sum += num);
+  
+  return sum % 2 === 0 ? true : false;
+}
+
+function rotateDigits(chunk) {
+  
+  let rotatedStr = chunk.slice(1) + chunk.slice(0, 1);
+  
+  return rotatedStr;
+}
+
+function reverseDigits(chunk) {
+
+  let reversedStr = chunk.split("").reverse().join("");
+  
+  return reversedStr;
+}
