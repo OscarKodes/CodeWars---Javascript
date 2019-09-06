@@ -1,0 +1,16 @@
+function replacement(a){
+
+  let arr = a.sort((a, b) => a-b);
+  
+  if (arr[0] === arr[arr.length - 1] && arr[0] === 1) {
+  
+    arr.pop();
+    arr.push(2);
+  } else {
+  
+    arr.pop();
+    arr.unshift(1);
+  }
+  
+  return arr;
+}
