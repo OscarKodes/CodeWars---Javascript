@@ -1,0 +1,16 @@
+function tidyNumber(n){
+  
+  let result = true;
+  
+  let numArr = String(n).split("");
+  
+  numArr.forEach(function(char, i){
+  
+    if (i + 1 < numArr.length && Number(char) > numArr[i + 1]) {
+    
+      result = false;
+    }
+  });
+  
+  return result;
+}
