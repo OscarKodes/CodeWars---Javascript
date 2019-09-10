@@ -1,0 +1,24 @@
+function isVow(a){
+
+  let vowelObj = {
+    "97": "a",
+    "101": "e",
+    "105": "i",
+    "111": "o",
+    "117": "u"
+  }
+  
+  for (let str in vowelObj) {
+  
+    let letter = vowelObj[str];
+    let num = Number(str);
+    
+    while (a.includes(num)) {
+
+      let idx = a.indexOf(num);
+      a[idx] = letter;
+    }
+  }
+  
+  return a;
+}
