@@ -1,0 +1,18 @@
+function binaryCleaner(arr) {
+
+  let arrCopy = arr.slice();
+  let removedArr = [];
+
+  for (let i = 0; i < arrCopy.length; i++) {
+    
+    let num = arrCopy[i];
+    
+    if (num > 1) {
+      removedArr.push(i + removedArr.length);
+      arrCopy.splice(i, 1);
+      i--;
+    }
+  }
+
+  return [arrCopy, removedArr];
+}
