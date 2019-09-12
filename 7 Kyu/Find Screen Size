@@ -1,0 +1,10 @@
+function findScreenHeight(width, ratio) {
+    
+    let colonIdx = ratio.indexOf(":");
+    let leftNum = Number(ratio.slice(0, colonIdx));
+    let rightNum = Number(ratio.slice(colonIdx + 1));
+    
+    let height = (width / leftNum) * rightNum;
+    
+    return String(width) + "x" + String(height);
+}
