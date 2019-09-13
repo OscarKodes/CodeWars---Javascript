@@ -1,0 +1,21 @@
+function well(x){
+
+  let goodCount = 0;
+  let result = "Fail!";
+
+  x.forEach(function(arr, i) {
+    
+    let goodArr = arr.filter(ele => typeof ele !== "number" && ele.toUpperCase() === "GOOD");
+    goodCount += goodArr.length;
+  });
+  
+  if (goodCount > 2) {
+  
+    result = "I smell a series!";
+  } else if (goodCount > 0) {
+  
+    result = "Publish!";
+  }
+  
+  return result;
+}
