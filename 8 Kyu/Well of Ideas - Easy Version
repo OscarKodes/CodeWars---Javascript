@@ -1,0 +1,14 @@
+function well(x){
+  
+  let goodArr = x.filter(str => str === 'good');
+  
+  if (goodArr.length > 2) {
+  
+    return "I smell a series!";
+  } else if (goodArr.length > 0) {
+  
+    return "Publish!";
+  }
+  
+  return "Fail!";
+}
