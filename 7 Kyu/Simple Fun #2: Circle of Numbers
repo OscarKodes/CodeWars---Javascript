@@ -1,0 +1,7 @@
+function circleOfNumbers(n, firstNumber) {
+
+  let halfTurn = n / 2;
+  let oppositeNum = firstNumber + halfTurn;
+  
+  return oppositeNum > n - 1 ? oppositeNum -= n : oppositeNum;
+}
