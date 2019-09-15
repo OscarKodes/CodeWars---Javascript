@@ -1,0 +1,56 @@
+function strCount(obj){
+
+  return digestObj(obj);
+}
+
+function digestObj(obj) { 
+
+  let currCount = 0;
+
+  for (let key in obj) {
+
+    let value = obj[key];
+    
+    if (Array.isArray(value)) {
+    
+      currCount += digestArr(value);
+    } 
+    
+    else if (typeof value === "object") {
+    
+      currCount += digestObj(value);
+    } 
+    
+    else if (typeof value === "string") {
+    
+      currCount++;
+    }
+  }
+  
+  return currCount;
+}
+
+function digestArr(arr) {
+
+  let currCount = 0;
+  
+  arr.forEach(function(ele) {
+  
+    if (Array.isArray(ele)) {
+    
+      currCount += digestArr(ele);
+    } 
+    
+    else if (typeof ele === "object") {
+    
+      currCount += digestObj(ele);
+    } 
+    
+    else if (typeof ele === "string") {
+    
+      currCount++;
+    }
+  });
+  
+  return currCount;
+}
