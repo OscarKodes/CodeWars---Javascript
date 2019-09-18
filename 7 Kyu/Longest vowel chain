@@ -1,0 +1,25 @@
+function solve(s){
+
+  let maxVowels = 0;
+  let vowelCount = 0;
+  
+  for (let i = 0; i < s.length; i++) {
+  
+    let char = s[i];
+    
+    if ("aeiou".includes(char)) {
+    
+      vowelCount++;
+    } else {
+      
+      if (vowelCount > maxVowels) {
+      
+        maxVowels = vowelCount;
+      }
+      
+      vowelCount = 0;
+    }
+  }
+  
+  return maxVowels;
+}
