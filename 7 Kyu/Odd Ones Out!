@@ -1,0 +1,17 @@
+function oddOnesOut(nums) {
+
+  let resultArr = [];
+
+  nums.forEach(function(num) {
+  
+    let numsCopy = nums.slice();
+    let numFreq = numsCopy.filter(element => element === num).length;
+    
+    if (numFreq % 2 === 0) {
+    
+      resultArr.push(num);
+    }
+  });
+
+  return resultArr;
+}
