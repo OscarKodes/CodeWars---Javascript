@@ -1,0 +1,8 @@
+function sumDigits(number) {
+
+  
+  let numStr = String(number);
+  let numArr = numStr.split("").filter(char => Number(char)).map(str => Number(str));
+  
+  return numArr.length === 0 ? 0 : numArr.reduce((sum, num) => sum += num);
+}
