@@ -1,0 +1,11 @@
+function getAges(sum,difference){
+  
+  if (sum < 0 || difference < 0) {
+    return null;
+  }
+  
+  let age1 = (sum / 2) + (difference / 2);
+  let age2 = (sum / 2) - (difference / 2);
+  
+  return age1 * age2 >= 0 ? [age1, age2] : null;
+};
