@@ -1,0 +1,22 @@
+function fistBeard(arr) {
+ 
+ let keyCodeArr = flattenArr(arr);
+ let letterArr = keyCodeArr.map(num => String.fromCharCode(num));
+ 
+ return letterArr.join("");
+}
+
+function flattenArr(arr) {
+
+  let str = "";
+
+  arr.forEach(function(nestedArr, i) {
+  
+    str += nestedArr.join(" ");
+    if (i < arr.length - 1) {
+      str += " ";
+    }
+  });
+  
+  return str.split(" ").map(str => Number(str));
+}
