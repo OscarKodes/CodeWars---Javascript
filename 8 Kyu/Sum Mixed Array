@@ -1,0 +1,3 @@
+function sumMix(x){
+  return x.map(element => Number(element)).reduce((sum, num) => sum += num);
+}
