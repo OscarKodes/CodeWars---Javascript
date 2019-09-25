@@ -1,0 +1,24 @@
+function beggars(values, n){
+  
+  if (n === 0) {
+    return [];
+  }
+  
+  let beggers = [];
+  
+  while (beggers.length < n) {
+    beggers.push(0);
+  }
+
+  let lastBegger = 0;
+
+  values.forEach(function(value){
+  
+    beggers[lastBegger] += value;  
+    
+    lastBegger === n - 1 ? lastBegger = 0 : lastBegger++;
+  });
+  
+
+  return beggers;
+}
