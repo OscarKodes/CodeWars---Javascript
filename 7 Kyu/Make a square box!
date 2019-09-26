@@ -1,0 +1,17 @@
+function box(){
+  let n = arguments[0];
+  let resultArr = [];
+  
+  let horizontalLine = "-".repeat(n);
+  let midLine = "-" + " ".repeat(n - 2) + "-";
+  
+  for (let i = 0; i < n - 2; i++) {
+  
+    resultArr.push(midLine);
+  }
+  
+  resultArr.unshift(horizontalLine);
+  resultArr.push(horizontalLine);
+  
+  return resultArr;
+}
