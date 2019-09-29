@@ -1,0 +1,21 @@
+function rgb(r, g, b){
+  
+  return (toHex(r) + toHex(g) + toHex(b)).toUpperCase();
+}
+
+function toHex(value) {
+
+  if (value > 255) {
+  
+    value = 255;
+  } 
+  
+  else if (value < 0) {
+  
+    value = 0;
+  }
+  
+  let hex = value.toString(16);
+
+  return hex.length === 1 ? "0" + hex : hex;
+}
