@@ -1,0 +1,28 @@
+function tenGreenBottles(n) {
+  
+  let nums = ["One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten"];
+  let unit = " green bottles";
+  let hang = " hanging on the wall";
+  let one = " one green bottle should accidentally fall";
+  let result = "";
+  
+  for (let i = n - 1; i >= 0; i--) {
+  
+    let currNum = nums[i];
+    let currUnit = i > 0 ? unit : unit.slice(0, -1);
+    let nextUnit =  i > 1 ? unit : unit.slice(0, -1);
+    let nextNum = i > 0 ? " " + nums[i - 1].toLowerCase() : 0;
+    
+    let line1 = currNum + currUnit + hang + ",\n";
+    let line2 = i > 0 ? 
+                "And if" + one + ",\n" :
+                "If that" + one + ",\n";
+    let line3 = i > 0 ? 
+                "There'll be" + nextNum + nextUnit + hang + ".\n\n" :
+                "There'll be no" + unit + hang + ".\n";
+                
+    result += line1 + line1 + line2 + line3;
+  }
+  
+  return result;
+}  
