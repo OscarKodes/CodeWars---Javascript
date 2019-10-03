@@ -1,0 +1,17 @@
+function bouncingBall(h,  bounce,  window) {
+  
+  let motherSees = 1;
+  
+  if (h <= 0 || bounce <= 0 || bounce >= 1 || window >= h) {
+    motherSees = -1;
+  } 
+  
+  else {
+  
+    for (let i = h * bounce; i > window; i *= bounce) {
+      motherSees += 2;
+    }
+  }
+
+  return motherSees;
+}
