@@ -1,0 +1,11 @@
+function flattenAndSort(array) {
+  
+  let flatArr = [];
+  
+  array.forEach(function(arr){
+    
+    flatArr = flatArr.concat(arr);
+  });
+  
+  return flatArr.sort((a, b) => a-b);
+}
