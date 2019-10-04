@@ -1,0 +1,19 @@
+var snakesAndLadders = function(board, dice) {
+  
+  let playerIdx = 0;
+  let endIdx = board.length - 1;
+
+  for (let i = 0; playerIdx < endIdx && i < dice.length; i++) {
+    
+    let roll = dice[i];
+    let nextIdx = playerIdx + roll;
+    let spotEffects = board[nextIdx];
+    
+    if (nextIdx <= endIdx) {
+    
+      playerIdx = nextIdx += spotEffects;
+    }
+  };
+  
+  return playerIdx;
+}
