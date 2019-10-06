@@ -1,0 +1,19 @@
+function scoobydoo(villian, villians) {
+
+  let rawEvidence = villian.split("");
+  let evidenceArr1 = rawEvidence.slice(0, 16).filter((char, i) => i % 2 === 1).reverse();
+  let evidenceArr2 = rawEvidence.slice(16).filter((char, i) => i % 2 === 0).reverse();
+  let finalEvidence = evidenceArr1.join("") + evidenceArr2.join("");
+  let culprit;
+  
+  villians.forEach(function(suspect, i){
+    let suspectArr = suspect.split("").filter((char, i) => i % 2 === 0);
+    let suspectStr = suspectArr.join("");
+    
+    if (suspectStr === finalEvidence) {
+      culprit = villians[i];
+    }
+  });
+
+ return culprit;
+}
