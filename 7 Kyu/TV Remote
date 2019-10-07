@@ -1,0 +1,64 @@
+const keyboard = [
+  ["a","b","c","d","e","1","2","3"],
+  ["f","g","h","i","j","4","5","6"],
+  ["k","l","m","n","o","7","8","9"],
+  ["p","q","r","s","t",".","@","0"],
+  ["u","v","w","x","y","z","_","/"]
+]
+
+var tvRemote = function(word) {
+  
+  let totalClicks = 0;
+  let cursorRow = 0;
+  let cursorCol = 0;
+  let allRows = word.split("").map(char => findRow(char));
+  let allCols = word.split("").map(char => findCol(char));
+  
+  allRows.forEach(function(nextSpot, i) {
+  
+    let nextRow = allRows[i];
+    let nextCol = allCols[i];
+    
+    let difference = Math.abs(nextRow - cursorRow) + Math.abs(nextCol - cursorCol);
+    totalClicks += difference + 1;
+    
+    cursorRow = nextRow;
+    cursorCol = nextCol;
+  });
+  
+  return totalClicks;
+}
+
+function findRow(char) {
+  
+  let rowIndex;
+  
+  for (let i = 0; i < keyboard.length; i++) {
+  
+    let row = keyboard[i];
+  
+    if (row.includes(char)) {
+      rowIndex = i;
+      break;
+    }
+  }
+  
+  return rowIndex;
+}
+
+function findCol(char) {
+  
+  let colIndex;
+  
+  for (let i = 0; i < keyboard.length; i++) {
+  
+    let row = keyboard[i];
+  
+    if (row.includes(char)) {
+      colIndex = row.indexOf(char);
+      break;
+    }
+  }
+  
+  return colIndex;
+}
