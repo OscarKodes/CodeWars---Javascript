@@ -1,0 +1,53 @@
+function generationLoss(orig, copy) {
+
+  if (orig.length !== copy.length) {
+  
+    return false;
+  }
+  
+  for (let i = 0; i < orig.length; i++) {
+  
+    let origChar = orig[i];
+    let copyChar = copy[i];
+    
+    if (!isEqualOrLesserGrade(origChar, copyChar)) {
+      
+      return false;
+    } 
+    
+    else if (isNonDegradable(origChar, copyChar)) {
+
+      if (origChar !== copyChar) {
+      
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+function isEqualOrLesserGrade(origChar, copyChar) {
+  
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  abc += abc.toUpperCase();
+  
+  let grades = [origChar.toUpperCase(), origChar.toLowerCase(), "#", "+", ":", ".", " "];
+  
+  if (!abc.includes(origChar)) {
+    grades.splice(0, 2);
+  }
+  
+  let origGrade = grades.indexOf(origChar);
+  let copyGrade = grades.indexOf(copyChar);
+  
+  return origGrade <= copyGrade ? true : false;
+}
+
+function isNonDegradable(origChar, copyChar) {
+
+  let isSymbol = ["!", "?"].includes(origChar);
+  let isNumber = Number(origChar);
+
+  return isSymbol || isNumber;
+}
