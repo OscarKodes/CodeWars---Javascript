@@ -1,0 +1,28 @@
+const humanYearsCatYearsDogYears = function(humanYears) {
+  
+  let catYears = petYears(humanYears, "cat");
+  let dogYears = petYears(humanYears, "dog");
+  
+  return [humanYears, catYears, dogYears];
+}
+
+const petYears = (humanYears, pet) => {
+
+  let petAge = 0;
+
+  for (let i = 1; i <= humanYears; i++) {
+  
+    if (i === 1) {
+    
+      petAge += 15;
+    } else if (i === 2) {
+    
+      petAge += 9;
+    } else {
+    
+      petAge += pet === "cat" ? 4 : 5;
+    }
+  }
+  
+  return petAge;
+}
