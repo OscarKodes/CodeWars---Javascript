@@ -1,0 +1,16 @@
+function prefill(n, v) {
+  
+  let result = [];
+  
+  if (!Number(n) && n != 0 || n === Infinity || n % 1 !== 0 || n < 0 || typeof n === "boolean") {
+  
+    throw new TypeError(n + " is invalid");
+  }
+  
+  for (let i = 0; i < n; i++) {
+  
+    result.push(v);
+  }
+  
+  return result;
+}
