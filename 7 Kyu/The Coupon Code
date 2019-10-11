@@ -1,0 +1,21 @@
+function checkCoupon(enteredCode, correctCode, currentDate, expirationDate){
+
+  const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  
+  let thisYear = Number(currentDate.split(" ")[2]);
+  let thisMonth = months.indexOf(currentDate.split(" ")[0].slice(0, 3));
+  let thisDay = Number(currentDate.split(" ")[1].slice(0, -1));
+
+  let couponYear = Number(expirationDate.split(" ")[2]);
+  let couponMonth = months.indexOf(expirationDate.split(" ")[0].slice(0, 3));
+  let couponDay = Number(expirationDate.split(" ")[1].slice(0, -1));
+
+  let c = enteredCode === correctCode ? 1000 : 0;
+  let y = thisYear < couponYear ? 100 : thisYear === couponYear ? 50 : 0;
+  let m = thisMonth < couponMonth ? 10 : thisMonth === couponMonth ? 5 : 0;
+  let d = thisDay <= couponDay ? 1 : 0;
+  
+  let validScore = c + y + m + d;
+
+  return validScore >= 1056;
+}
