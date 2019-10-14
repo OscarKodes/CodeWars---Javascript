@@ -1,0 +1,14 @@
+function calculate(str) {
+  
+  let removeWords = str.split("plus").map(str => str.split("minus"));
+  let numsArr = removeWords.reduce((arr, nextArr) => arr.concat(nextArr));
+  let opsArr = str.split("").filter(char => "mp".includes(char));
+  let result;
+
+  numsArr.map(numStr => Number(numStr)).forEach(function(num, i) {
+  
+    result = i === 0 ? num : opsArr[i - 1] === "m" ? result - num : result + num;
+  });
+    
+  return String(result);
+}
