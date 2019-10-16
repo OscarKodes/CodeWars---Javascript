@@ -1,0 +1,4 @@
+function wordsToMarks(string){
+   let abc = "abcdefghijklmnopqrstuvwxyz";
+   return string.split("").map(char => abc.indexOf(char) + 1).reduce((sum, num) => sum += num);
+}
