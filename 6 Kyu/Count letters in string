@@ -1,0 +1,17 @@
+function letterCount(s){
+  
+  let letters = {};
+  
+  s.split("").forEach(function(char){
+  
+    if (!letters[char]) {
+    
+      letters[char] = 1;
+    } else {
+    
+      letters[char]++;
+    }
+  });
+  
+  return letters;
+}
