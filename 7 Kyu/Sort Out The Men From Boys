@@ -1,0 +1,9 @@
+const menFromBoys = (arr) => {
+  
+  let boys = arr.filter(num => num % 2 === 0).sort((a, b) => a-b);
+  let men = arr.filter(num => Math.abs(num % 2) === 1).sort((a, b) => b-a);
+  
+  let males = [...boys, ...men];
+  
+  return males.filter((num, i) => males[i - 1] !== num);
+}
