@@ -1,0 +1,29 @@
+const productFib = (prod) => {
+  
+  let finalCombo = null;
+  const fibNumArr = [0, 1];
+  
+  for (let i = 0; finalCombo === null; i++) {
+    
+    let num1 = fibNumArr[i];
+    let num2 = fibNumArr[i + 1];
+    let currProduct = num1 * num2;
+
+    if (currProduct === prod) {
+    
+      finalCombo = [num1, num2, true];
+    } 
+    
+    else if (currProduct > prod) {
+      
+      finalCombo = [num1, num2, false];
+    }
+    
+    else {
+      
+      fibNumArr.push(num1 + num2);
+    }
+  }
+
+  return finalCombo;
+}
