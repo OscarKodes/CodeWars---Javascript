@@ -1,0 +1,23 @@
+function getScore(arr) {
+  
+  let scoreObj = {
+    0: 0,
+    1: 40,
+    2: 100,
+    3: 300,
+    4: 1200
+  }
+  
+  let totalLines = 0;
+  let totalScore = 0;
+  
+  arr.forEach(function(num){
+  
+    let level = Math.floor(totalLines / 10) + 1;
+    let gainScore = scoreObj[num];
+    totalScore += gainScore * level;
+    totalLines += num;
+  });
+  
+  return totalScore;
+}
