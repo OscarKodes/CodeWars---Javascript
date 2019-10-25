@@ -1,0 +1,10 @@
+function largestPower(n){
+
+  let k;
+
+  for (let i = 0; Math.pow(3, i) < n ; i++) {
+    k = i;
+  }
+  
+  return n >= 2 ? k : -1;
+}
