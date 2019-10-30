@@ -1,0 +1,12 @@
+function addLetters(...letters) {
+  
+  const ABC = "abcdefghijklmnopqrstuvwxyz";
+  
+  const sumValue = letters
+    .map(char => ABC.indexOf(char) + 1)
+    .reduce((sum, num) => sum += num, 0);
+    
+  const resultIdx = sumValue > 26 ? sumValue % 26 : sumValue;
+  
+  return resultIdx === 0 ? "z" : ABC[resultIdx - 1];
+}
