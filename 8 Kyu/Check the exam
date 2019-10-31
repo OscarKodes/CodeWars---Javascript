@@ -1,0 +1,13 @@
+const checkExam = (array1, array2) => {
+
+  const score = eval((array1.map((char, i) => {
+    
+        return char === array2[i]
+                ? "+4" 
+                : array2[i] === ""
+                ? "+0"
+                : "-1";
+      })).join(""));
+
+  return score < 0 ? 0 : score;
+}
