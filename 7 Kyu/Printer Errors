@@ -1,0 +1,7 @@
+function printerError(s) {
+
+  const validChars = "abcdefghijklm";
+  const errors = s.split("").filter(char => !validChars.includes(char));
+    
+  return errors.length + "/" + s.length; 
+}
