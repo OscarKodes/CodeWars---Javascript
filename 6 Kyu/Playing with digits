@@ -1,0 +1,6 @@
+const digPow = (n, p) => {
+
+  const sum = String(n).split("").map((num, i) => Math.pow(num, p + i)).reduce((sum, num) => sum += num);
+  
+  return sum % n === 0 ? sum / n : -1;
+}
