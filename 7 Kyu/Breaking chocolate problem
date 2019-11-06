@@ -1,0 +1,8 @@
+function breakChocolate(rows,cols) {
+
+  const vertBreaks = cols - 1;
+  const horiBreaks = (rows - 1) * cols;
+  const total = vertBreaks + horiBreaks;
+  
+  return rows * cols <= 0 ? 0 : total;
+}
