@@ -1,0 +1,11 @@
+function bloodMoon(r){
+
+  const quadAFE = (Math.PI * (r ** 2)) / 4;
+  const triAEF = (r ** 2) / 2;
+  const boatFAH = quadAFE - triAEF;
+  const lineAF = Math.sqrt(2 * (r ** 2));
+  const semiFGA = (Math.PI * ((lineAF / 2) ** 2)) / 2;
+  const moonArea = (semiFGA - boatFAH) / 2;
+
+  return moonArea;
+}
