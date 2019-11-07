@@ -1,0 +1,8 @@
+const decodeMorse = (morseCode) => {
+
+  const seperateWords = morseCode.split("   ");
+  
+  const decodedNestedArrs = seperateWords.map(word => word.split(" ").map(morseChar => MORSE_CODE[morseChar]));
+  
+  return decodedNestedArrs.map(charArr => charArr.join("")).join(" ").trim();
+}
