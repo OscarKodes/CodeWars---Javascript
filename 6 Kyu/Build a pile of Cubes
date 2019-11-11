@@ -1,0 +1,13 @@
+const findNb = (m) => {
+    
+  let sum = 0;
+  let n;
+  
+  for (let i = 1; sum < m; i++) {
+    
+    sum += i**3;
+    n = i;
+  }
+  
+  return sum === m ? n : -1;
+}
