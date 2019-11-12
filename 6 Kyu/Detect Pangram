@@ -1,0 +1,7 @@
+function isPangram(str){
+  
+  return "abcdefghijklmnopqrstuvwxyz".
+    split("").
+    filter(char => !str.toLowerCase().includes(char)).
+    length > 0 ? false : true;
+}
