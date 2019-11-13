@@ -1,0 +1,11 @@
+const calculateYears = (p, i, t, d) => {
+
+  let years = 0;
+
+  for (let bank = p; bank < d; bank += bank * i * (1 - t)) {
+  
+    years++; 
+  }
+  
+  return years;
+}
