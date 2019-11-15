@@ -1,0 +1,16 @@
+const maxSequence = (arr) => {
+
+  let allSums = [];
+  
+  arr.forEach(function(num, i) {
+  
+    for (let j = 0; j + i < arr.length; j++) {
+    
+      allSums.push(arr.slice(i, i + j + 1).reduce((sum, currNum) => sum += currNum));
+    }
+  });
+  
+  const maxNum = Math.max(...allSums);
+  
+  return (arr.length === 0 || maxNum < 0) ? 0 : maxNum;
+}
