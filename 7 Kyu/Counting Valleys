@@ -1,0 +1,22 @@
+function countingValleys(s) {
+  
+  let position = 0;
+  let entry = false;
+  let valleys = 0;
+  
+  s.split("").filter(char => char !== "F").forEach(function(char){
+  
+    position += char === "U" ? 1 : -1;
+    
+    if (position === -1) {
+    
+      entry = true;
+    } else if (position === 0 && entry) {
+    
+      entry = false;
+      valleys++;
+    }
+  });
+  
+  return valleys;
+}
