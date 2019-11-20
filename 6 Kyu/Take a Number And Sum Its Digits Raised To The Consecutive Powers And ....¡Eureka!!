@@ -1,0 +1,18 @@
+function sumDigPow(a, b) {
+  
+  let result = [];
+  
+  for (let i = a; i <= b; i++) {
+
+    let sum = String(i).split("").
+              map((num, idx) => num ** (idx + 1)).
+              reduce((sum, num) => sum += num);
+    
+    if (sum === i) {
+    
+      result.push(sum);
+    };
+  };
+  
+  return result;
+};
