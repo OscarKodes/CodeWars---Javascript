@@ -1,0 +1,18 @@
+function mostMoney(students) {
+
+  const sorted = students.slice().sort((a, b) => cash(b)-cash(a));
+  
+  return students.length === 1 ? 
+          students[0].name : 
+          cash(sorted[0]) === cash(sorted[sorted.length - 1]) ?
+            "all" :
+            sorted[0].name;
+}
+
+function cash(student) {
+  const fives = student.fives * 5;
+  const tens = student.tens * 10;
+  const twenties = student.twenties * 20;
+
+  return fives + tens + twenties;
+}
