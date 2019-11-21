@@ -1,0 +1,24 @@
+function amidakuji(arr){
+
+  let result = [];
+  
+  for (let i = 0; i <= arr[0].length; i++) {
+    
+    let position = i;
+    
+    arr.forEach(function(row) {
+    
+      if (row[position] === "1") {
+      
+        position++;
+      } else if (row[position - 1] === "1") {
+      
+        position--;
+      }
+    });
+    
+    result[position] = i;
+  }
+
+  return result;
+}
