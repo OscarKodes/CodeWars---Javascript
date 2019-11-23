@@ -1,0 +1,19 @@
+const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const playPass = (str, num) => {
+
+  const shiftedArr = str.split("").map(char => ABC.includes(char) ? shiftChar(char, num) : char);
+  const compNineArr = shiftedArr.map(char => (isNaN(char) || char === " ") ? char : 9 - char);
+  const capArr = compNineArr.map((char, i) => !ABC.includes(char) ? char : i % 2 === 0 ? char.toUpperCase() : char.toLowerCase());
+
+  return capArr.reverse().join("");
+}
+
+const shiftChar = (char, num) => {
+
+  const idx = ABC.indexOf(char);
+  const shiftIdx = idx + num;
+  const rotatedIdx = shiftIdx > 25 ? shiftIdx % 26 : shiftIdx;
+  
+  return ABC[rotatedIdx];
+}
