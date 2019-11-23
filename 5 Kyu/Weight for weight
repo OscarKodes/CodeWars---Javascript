@@ -1,0 +1,50 @@
+const orderWeight = (str) => {
+
+  if (str.length < 1) {
+    return "";
+  }
+
+  const strArr = str.slice().trim().split(" ");
+  const sortArr = sortBySum(strArr);
+  const resultArr = sortEqualSums(sortArr);
+
+  return resultArr.join(" ");
+}
+
+const digitSum = (weight) => {
+  
+  return weight.split("").map(str => Number(str)).reduce((sum, num) => sum += num);
+}
+
+const sortBySum = (arr) => {
+  
+  return arr.sort((a, b) => digitSum(a)-digitSum(b));
+}
+
+const sortEqualSums = (sortArr) => {
+
+  let resultArr = [];
+  let sumGroup = [];
+  let currSum = digitSum(sortArr[0]);
+  
+  sortArr.forEach(function(num , i) {
+  
+    if (digitSum(num) > currSum) {
+    
+      resultArr.push(...sumGroup.sort());
+      currSum = digitSum(num);
+      sumGroup = [num];
+      
+    } else {
+      
+      sumGroup.push(num);
+    }
+    
+    if (sortArr.length - 1 === i) {
+    
+      resultArr.push(...sumGroup.sort());
+    }
+  });
+  
+  return resultArr;
+}
