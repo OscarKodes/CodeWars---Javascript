@@ -1,0 +1,24 @@
+function nbMonths(startPriceOld, startPriceNew, savingperMonth, percentLossByMonth){
+  
+  let currOldCarPrice = startPriceOld;
+  let currNewCarPrice = startPriceNew;
+  let currPercent = percentLossByMonth;
+  let monthsPassed = 0;
+  let savings;
+  
+  for (savings = 0; savings + currOldCarPrice < currNewCarPrice; savings += savingperMonth) {
+  
+    monthsPassed++;
+    
+    if (monthsPassed % 2 === 0) {
+      currPercent += 0.5;
+    }
+    
+    currOldCarPrice = currOldCarPrice * (1 - currPercent/100);
+    currNewCarPrice = currNewCarPrice * (1 - currPercent/100);
+  }
+  
+  let leftover = currOldCarPrice + savings - currNewCarPrice;
+  
+  return [monthsPassed, Math.round(leftover)];
+}
