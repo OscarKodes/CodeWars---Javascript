@@ -1,0 +1,39 @@
+function isValidIP(str) {
+
+  const arr = str.split(".");
+  
+  for (let i = 0; i < 4; i++) {
+    
+    const el = arr[i];
+    
+    if (!(1 + Number(el))) {
+      return false;
+    }
+    
+    if (el.length < 1) {
+    
+      return false;
+    }
+    
+    if (el.length > 1 && el[0] === "0") {
+    
+      return false;
+    }
+    
+    if (el < 0 || el > 255) {
+    
+      return false;
+    }
+    
+    if (el.includes(" ") || el.includes("\n")) {
+      return false;
+    }
+    
+    if (el.toUpperCase() !== el.toLowerCase()) {
+    
+      return false;
+    }
+  }
+  
+  return arr.length === 4;
+}
