@@ -1,0 +1,14 @@
+function nbDig(n, d) {
+
+  let squaredArr = [];
+  
+  for (let i = 0; i <= n; i++) {
+  
+    squaredArr.push(i**2);
+  }
+  
+  return squaredArr
+            .map(num => num.toString())
+            .map(str => str.split("").filter(digit => digit == d).length)
+            .reduce((sum, num) => sum += num, 0);
+}
