@@ -1,0 +1,19 @@
+function arithmetic(a, b, operator){
+  
+  return eval(a + operation(operator[0]) + b);
+}
+
+const operation = char => {
+
+  switch (char) {
+  
+    case "s" :
+      return "-";
+    case "m" :
+      return "*";
+    case "d" :
+      return "/";
+    default:
+      return "+";
+  }
+}
