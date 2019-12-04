@@ -1,0 +1,12 @@
+const coinCombo = cents => {
+
+  let centsLeft = cents;
+  
+  return [25, 10, 5, 1].map(coin => {
+
+    const coinCount = Math.floor(centsLeft / coin);
+    centsLeft = centsLeft % coin;
+    
+    return coinCount;
+  }).reverse();
+};
