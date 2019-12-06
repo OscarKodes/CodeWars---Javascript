@@ -1,0 +1,14 @@
+function mxdiflg(a1, a2) {
+    
+    const sorted1 = a1.map(str => str.length).sort((a, b) => a-b);
+    const min1 = sorted1[0];
+    const max1 = sorted1.reverse()[0];
+    
+    const sorted2 = a2.map(str => str.length).sort((a, b) => a-b);
+    const min2 = sorted2[0];
+    const max2 = sorted2.reverse()[0];
+  
+    const result = Math.max(Math.abs(max2 - min1), Math.abs(max1 - min2));
+    
+    return result ? result : -1;
+};
