@@ -1,0 +1,17 @@
+function bears(x, s){
+
+  let mates = "";
+  
+  for (let i = 0; i + 1 < s.length; i++) {
+    
+    let pair = s.slice(i, i + 2);
+    
+    if (["B8", "8B"].includes(pair)) {
+    
+      mates += pair;
+      i++;
+    }
+  }
+  
+  return [mates, mates.length / 2 >= x ? true : false];
+}
