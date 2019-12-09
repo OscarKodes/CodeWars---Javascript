@@ -1,0 +1,17 @@
+const iTri = s => {
+
+  const distance = (140.6 - s).toFixed(2);
+  const verb = s < 2.4 ?
+              "Swim" :
+              s < 114.4 ?
+              "Bike" :
+              "Run";
+
+  return s === 0 ? 
+          "Starting Line... Good Luck!" :
+          s >= 140.6 ? 
+            "You're done! Stop running!" :
+            distance < 10 ?
+              {[verb]: "Nearly there!"} :
+              {[verb]: distance + " to go!"};
+}
