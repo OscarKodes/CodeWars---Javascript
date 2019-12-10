@@ -1,0 +1,18 @@
+const last = x => {
+  
+  const arr = reverseWords(x.split(" "));
+  
+  let wordGroups = {};
+  
+  arr.forEach((word) => {
+    const char = word[0];
+    wordGroups[char] ? wordGroups[char].push(word) : wordGroups[char] = [word];
+  });
+  
+  const sortedArr = Object.keys(wordGroups).sort().map(key => wordGroups[key]);
+  const flattenArr = sortedArr.reduce((finalArr, a) => finalArr.concat(a), []);
+  
+  return reverseWords(flattenArr);
+}
+
+const reverseWords = arr => arr.map(word => word.split("").reverse().join(""));
