@@ -1,0 +1,6 @@
+const areEqual = (s1, s2) => totalDiffs([...s1], [...s2]) === 0;
+
+const notEqual = (s1, s2) => totalDiffs([...s1], [...s2]) > 0;
+
+const countDiffs = (arrX, arrY) => arrX.filter((el, i) => !arrY.includes(el)).length;
+const totalDiffs = (arr1, arr2) => countDiffs(arr1, arr2) + countDiffs(arr2, arr1);
