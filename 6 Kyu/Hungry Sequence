@@ -1,0 +1,16 @@
+function hungrySequence(n){
+  
+  let arr = [];
+  
+  for (let i = 3; arr.length < n; i++) {
+  
+    let divisables = arr.filter(num => i % num === 0);
+    
+    if (divisables.length === 0) {
+    
+      arr.push(i);
+    }
+  }
+  
+  return arr;
+}
