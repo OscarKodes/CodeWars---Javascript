@@ -1,0 +1,22 @@
+function solution(roman){
+  
+  const symbolValues = {
+    "I": 1,
+    "V": 5,
+    "X": 10,
+    "L": 50,
+    "C": 100,
+    "D": 500,
+    "M": 1000,
+  }
+  
+  const values = roman.split("").map((char, i) => {
+    
+      const currVal = symbolValues[char];
+      const nextVal = symbolValues[roman[i + 1]];
+      
+      return currVal < nextVal ? currVal * -1 : currVal;
+    });
+  
+  return values.reduce((sum, num) => sum += num, 0);
+};
