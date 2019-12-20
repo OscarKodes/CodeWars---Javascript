@@ -1,0 +1,1 @@
+const solution = pairs => Object.keys(pairs).map(key => key + " = " + pairs[key]).join(",");
