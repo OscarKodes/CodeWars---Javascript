@@ -1,0 +1,31 @@
+function cakes(recipe, available) {
+  
+  let cakesMade = 0;
+  let baking = true;
+  
+  while (baking) {
+  
+    for (let key in recipe) {
+    
+      const reqIg = recipe[key];
+      const stock = available[key];
+      
+      if (stock && reqIg <= stock) {
+      
+        available[key] -= reqIg;
+      }
+      
+      else {
+      
+        baking = false;
+        break;
+      };
+    };
+    
+    if (baking) {
+      cakesMade++;
+    };
+  };
+  
+  return cakesMade;
+};
