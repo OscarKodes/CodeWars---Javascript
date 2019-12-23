@@ -1,0 +1,50 @@
+function sequenceClassifier(arr){
+  
+  let isConstant = true;
+  let isAlwaysUp = true;
+  let isSometimesUp = true;
+  let isAlwaysDown = true;
+  let isSometimesDown = true;
+  let isUnordered = true;
+  
+  for (let i = 0; i < arr.length - 1; i++) {
+  
+    let num = arr[i];
+    let nextNum = arr[i + 1];
+    
+    if (isConstant && num !== nextNum) {
+    
+      isConstant = false;
+    }
+    
+    if (isAlwaysUp && num >= nextNum) {
+    
+      isAlwaysUp = false;
+    }
+    
+    if (isSometimesUp && num > nextNum) {
+    
+      isSometimesUp = false;
+    }
+    
+    if (isAlwaysDown && num <= nextNum) {
+    
+      isAlwaysDown = false;
+    }
+    
+    if (isSometimesDown && num < nextNum) {
+    
+      isSometimesDown = false;
+    }
+    
+    let truePoints = isConstant + isAlwaysUp + isSometimesUp + 
+      isAlwaysDown + isSometimesDown + isUnordered;
+      
+    if (truePoints === 1) {
+      break;
+    }
+  }
+  
+  return isConstant ? 5 : isAlwaysUp ? 1 : isSometimesUp ? 2 : 
+      isAlwaysDown ? 3 : isSometimesDown ? 4 : 0;
+}
