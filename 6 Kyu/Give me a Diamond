@@ -1,0 +1,19 @@
+function diamond(n){
+  
+  if (n < 0 || n % 2 === 0) {
+  
+    return null;
+  } 
+  
+  let topArr = [];
+
+  for (let i = 1; i < n; i += 2) {
+    
+    let spaces = " ".repeat((n - i) / 2);
+    let asterisks = "*".repeat(i);
+    
+    topArr.push(spaces + asterisks);
+  }
+  
+  return [...topArr, "*".repeat(n), ...topArr.reverse()].join("\n") + "\n";
+}
