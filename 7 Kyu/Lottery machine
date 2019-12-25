@@ -1,0 +1,7 @@
+function lottery(str){
+   
+   let nums = str.split("").filter(char => char > -1);
+   let unique = nums.filter((num, i) => !nums.slice(0, i).includes(num));
+   
+   return unique.length > 0 ? unique.join("") : "One more run!";
+}
