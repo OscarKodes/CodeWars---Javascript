@@ -1,0 +1,11 @@
+function cleanString(s) {
+	
+  let outputArr = [];
+  
+  s.split("").forEach(char => {
+  
+    char === "#" ? outputArr.pop() : outputArr.push(char);
+  });
+  
+  return outputArr.join("");
+};
