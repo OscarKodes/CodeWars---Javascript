@@ -1,0 +1,1 @@
+const countBits = num => num.toString(2).split("").reduce((sum, digit) => sum += Number(digit), 0);
