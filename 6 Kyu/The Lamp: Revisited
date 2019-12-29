@@ -1,0 +1,13 @@
+class Lamp {
+  constructor(color) {
+    this.color = color;
+    this.on = false;
+    this.toggleSwitch = () => {
+    
+      this.on = !this.on;
+    };
+    this.state = () => {
+      return "The lamp is " + (this.on ? "on." : "off.");
+    };
+  };
+};
