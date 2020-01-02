@@ -1,0 +1,13 @@
+const palindromeChainLength = n => {
+
+  let steps = 0;
+
+  for (let total = n; total !== reverseNum(total); total += reverseNum(total)) {
+  
+    steps++;
+  };
+  
+  return steps;
+};
+
+const reverseNum = num => Number(num.toString().split("").reverse().join(""));
