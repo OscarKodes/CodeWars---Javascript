@@ -1,0 +1,15 @@
+function isIntArray(arr) {
+
+  if (Array.isArray(arr)) {
+
+    return arr.filter(el => {
+      
+      let notNum = el !== Number(el);
+      let notInt = (el % 1 !== 0) && (el % -1 !== 0);
+      
+      return notNum || notInt;
+    }).length === 0;
+  }
+
+  return false;
+}
