@@ -1,0 +1,3 @@
+const isAnagram = (test, original) => digest(test) === digest(original);
+
+const digest = str => str.toLowerCase().split("").sort().join("");
