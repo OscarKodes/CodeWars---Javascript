@@ -1,0 +1,22 @@
+function londonCityHacker(journey) {
+  
+  let busTransfer = false;
+  
+  return "£" + journey.map(ride => {
+    
+    if (typeof ride === "number") {
+      
+      if (busTransfer) {
+        
+        busTransfer = false;
+        return 0;
+      }
+      
+      busTransfer = true;
+      return 1.50;
+    }
+    
+    busTransfer = false;
+    return 2.40;
+  }).reduce((total, fee) => total += fee, 0).toFixed(2);
+};
