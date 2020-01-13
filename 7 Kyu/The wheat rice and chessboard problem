@@ -1,0 +1,1 @@
+const squaresNeeded = grains => grains === 0 ? 0 : grains.toString(2).length;
