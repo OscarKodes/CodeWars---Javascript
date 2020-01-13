@@ -1,0 +1,1 @@
+sortme = names => names.sort();
