@@ -1,0 +1,19 @@
+function queueTime(customers, n) {
+  
+  let minutes = 0;
+  let customerQueue = customers.slice();
+  let tills = [];
+  
+  while (customerQueue.length + tills.length > 0) {
+  
+    while (tills.length < n && customerQueue.length > 0) {
+    
+      tills.push(customerQueue.shift());
+    }
+    
+    tills = tills.map(customer => customer -= 1).filter(customer => customer > 0);
+    minutes++;
+  }
+  
+  return minutes;
+}
