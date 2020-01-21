@@ -1,0 +1,32 @@
+function validPhoneNumber(phoneNumber){
+  
+  for (let i = 0; i < phoneNumber.length ; i++) {
+  
+    let char = phoneNumber[i];
+    
+    if (!Number(char)) {
+    
+      if (i === 0 && char !== "(") {
+      
+        return false;
+      } 
+      
+      else if (i === 4 && char !== ")") {
+      
+        return false;
+      } 
+      
+      else if (i === 5 && char !== " ") {
+      
+        return false;
+      } 
+      
+      else if (i === 9 && char !== "-") {
+      
+        return false;
+      }
+    }
+  }
+  
+  return phoneNumber.length === 14;
+}
