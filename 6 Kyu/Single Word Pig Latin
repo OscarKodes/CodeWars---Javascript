@@ -1,0 +1,22 @@
+function pigLatin(string){
+
+  let str = string.toLowerCase();
+  let vowel = "aeiou";
+
+  if (str.split("").filter(char => char === char.toUpperCase()).length > 0) {
+  
+    return null;
+  }
+  
+  else if (vowel.includes(str[0])) {
+    return str + "way";
+  }
+  
+  else {
+  
+    let firstVowel = str.split("").filter(char => vowel.includes(char))[0];
+    let startIdx = firstVowel ? str.indexOf(firstVowel) : str.length;
+    
+    return str.slice(startIdx) + str.slice(0, startIdx) + "ay";
+  }
+}
