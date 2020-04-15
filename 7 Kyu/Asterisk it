@@ -1,0 +1,23 @@
+function asteriscIt(n) { 
+
+  let numStr = Array.isArray(n) ? String(n.join("")) : String(n);
+  let result = numStr[0];
+  
+  for (let i = 1; i < numStr.length; i++) {
+  
+    let prevNum = numStr[i - 1];
+    let currNum = numStr[i];
+    
+    if (prevNum % 2 === 0 && currNum % 2 === 0) {
+    
+      result += "*" + currNum;
+    } 
+    
+    else {
+    
+      result += currNum;
+    }
+  }
+  
+  return result;
+};
