@@ -1,0 +1,16 @@
+const generateHashtag = str => {
+  
+  let removeSpaces = str.split(" ").filter(el => el.length > 0);
+  
+  let capitalized = [];
+  
+  for (let i = 0; i < removeSpaces.length; i++) {
+    let word = removeSpaces[i];
+    word = word[0].toUpperCase() + word.slice(1).toLowerCase();
+    capitalized.push(word);
+  }
+  
+  let result = "#" + capitalized.join("");
+  
+  return capitalized.length === 0 || result.length > 140 ? false : result;
+}
