@@ -1,0 +1,26 @@
+function validParentheses(parens){
+  
+  let openedArr = [];
+  
+  for (let i = 0; i < parens.length; i++) {
+  
+    let char = parens[i];
+    
+    if (char === "(") {
+    
+      openedArr.push(char);
+    } 
+    
+    else if (openedArr.length > 0) {
+    
+      openedArr.pop();
+    }
+    
+    else {
+    
+      return false;
+    }
+  }
+  
+  return openedArr.length === 0;
+}
