@@ -1,0 +1,17 @@
+const splitInteger = (num, parts) => {
+  
+  let basePart = (num / parts) % 1 === 0 ? num / parts : Math.floor(num / parts);
+  
+  let baseArr = [];
+  baseArr[parts - 1] = null;
+  baseArr.fill(basePart, 0, parts);
+  
+  while (baseArr.reduce((sum, num) => sum += num, 0) < num) {
+  
+    let baseArrElement = baseArr.shift();
+    baseArrElement++;
+    baseArr.push(baseArrElement);
+  }
+  
+  return baseArr;
+}
