@@ -1,0 +1,16 @@
+reverse = function(array) {
+  
+  let holdArr = [];
+  
+  while (array.length > 0) {
+  
+    holdArr.push(array.pop());
+  }
+  
+  while (holdArr.length > 0) {
+  
+    array.push(holdArr.shift());
+  }
+  
+  return array;
+}
