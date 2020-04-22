@@ -1,0 +1,16 @@
+const findMiddle = str => verify(str) ? midDigits(product(getNums(str))) : -1;
+
+const verify = str => typeof str === "string" && getNums(str).length > 0;
+
+const getNums = str => str.split("").filter(char => Number(char) || char === "0");
+
+const product = arr => arr.reduce((product, num) => product *= num, 1);
+
+const midDigits = num => {
+
+  let numStr = String(num);
+  let midIdx = numStr.length / 2;
+  let midChars = numStr.length % 2 === 0 ? numStr.slice(midIdx - 1, midIdx + 1) : numStr[Math.floor(midIdx)];
+  
+  return Number(midChars);
+}
