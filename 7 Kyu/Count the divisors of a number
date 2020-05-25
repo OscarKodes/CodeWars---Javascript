@@ -1,0 +1,17 @@
+function getDivisorsCnt(n){
+  
+  let divors = [];
+  
+  for (let i = 1; i <= n && !(divors.includes(i)); i++) {
+  
+    let divResult = n / i;
+  
+    if (divResult % 1 === 0) {
+    
+      divors.push(i);
+      i !== divResult ? divors.push(divResult) : null;
+    }
+  }
+  
+  return divors.length;
+}
