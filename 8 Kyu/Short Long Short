@@ -1,0 +1,8 @@
+function solution(a, b){
+
+  let long = a.length > b.length ? a : b;
+  
+  let short = long === a ? b : a;
+  
+  return short + long + short;
+}
