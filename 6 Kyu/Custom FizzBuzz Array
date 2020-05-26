@@ -1,0 +1,23 @@
+const fizzBuzzCustom = (stringOne = "Fizz", stringTwo = "Buzz", numOne = 3, numTwo = 5) => {
+
+  let result = [];
+  
+  for (let i = 1; i <= 100; i++) {
+  
+    let newElement = "";
+    
+    if (i % numOne === 0) {
+    
+      newElement += stringOne;
+    }
+    
+    if (i % numTwo === 0) {
+    
+      newElement += stringTwo;
+    }
+    
+    newElement.length > 0 ? result.push(newElement) : result.push(i);
+  }
+  
+  return result;
+};
