@@ -1,0 +1,26 @@
+const encryptThis = text => text.split(" ").map(el => encryptWord(el)).join(" ");
+
+const encryptWord = word => {
+
+  let encrypted = word.charCodeAt(0);
+  let secondChar = word[1];
+  let midSlice = word.slice(2, word.length - 1);
+  let lastChar = word[word.length - 1];
+  
+  if (word.length > 1) {
+  
+    if (word.length > 2) {
+    
+      encrypted += lastChar;
+    
+      if (word.length > 3) {
+      
+        encrypted += midSlice;
+      }
+    }
+    
+    encrypted += secondChar;
+  }
+
+  return encrypted;
+}
