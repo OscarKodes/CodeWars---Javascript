@@ -1,0 +1,14 @@
+const VOWELS = [null, "a", "e", "i", "o", "u"];
+
+const encode = str => {
+  
+  let arr = str.split("").map(char => VOWELS.includes(char.toLowerCase()) ? VOWELS.indexOf(char.toLowerCase()) : char);
+
+  return arr.join("");
+}
+
+const decode = str => {
+  let arr = str.split("").map(char => Number(char) > 0 ? VOWELS[char] : char);
+
+  return arr.join("");
+}
