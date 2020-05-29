@@ -1,0 +1,23 @@
+const fizzbuzz = n => {
+  
+  let result = [];
+  
+  for (let i = 1; i <= n; i++) {
+  
+    let element = "";
+    
+    if (i % 3 === 0) {
+    
+      element += "Fizz";
+    }
+    
+    if (i % 5 === 0) {
+    
+      element += "Buzz";
+    }
+    
+    element.length > 0 ? result.push(element) : result.push(i);
+  }
+  
+  return result;
+};
