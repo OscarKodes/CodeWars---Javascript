@@ -1,0 +1,26 @@
+const sumNested = arr => {
+  
+  let sum = 0;
+  
+  if (arr.length === 0) {
+  
+    return 0;
+  }
+  
+  for (let i = 0; i < arr.length; i++) {
+  
+    let element = arr[i];
+    
+    if (Array.isArray(element)) {
+    
+      sum += sumNested(element);
+    } 
+    
+    else {
+    
+      sum += element;
+    }
+  }
+  
+  return sum;
+};
