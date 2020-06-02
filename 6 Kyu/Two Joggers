@@ -1,0 +1,12 @@
+const nbrOfLaps = (bob, charles) => {
+
+  let bobLaps = 1;
+  let charlesLaps = 1;
+  
+  while (bobLaps * bob !== charlesLaps * charles) {
+  
+    bobLaps * bob < charlesLaps * charles ? bobLaps++ : charlesLaps++;
+  }
+  
+  return [bobLaps, charlesLaps];
+}
