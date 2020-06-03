@@ -1,0 +1,3 @@
+const abc = "abcdefghijklmnopqrstuvwxyz";
+
+const reverseLetter = str => str.split("").filter(char => abc.includes(char.toLowerCase())).reverse().join("");
