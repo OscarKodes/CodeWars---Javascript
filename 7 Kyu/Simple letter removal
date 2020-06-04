@@ -1,0 +1,27 @@
+const ABC = "abcdefghijklmnopqrstuvwxyz";
+
+function solve(str, removeNum){
+
+  let removed = 0;
+  let charIdx = 0;
+  let resultStr = str;
+  
+  while (removed !== removeNum && charIdx <= 26) {
+  
+    let letter = ABC[charIdx];
+    let removeIdx = resultStr.indexOf(letter);
+     
+    if (removeIdx > -1) {
+
+      resultStr = resultStr.slice(0, removeIdx) + resultStr.slice(removeIdx + 1);
+      removed++;
+    }
+    
+    else {
+    
+      charIdx++;
+    }
+  }
+  
+  return resultStr;
+}
