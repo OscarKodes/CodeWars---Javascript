@@ -1,0 +1,16 @@
+const abc = "abcdefghijklmnopqrstuvwxyz";
+
+const sort = str => {
+
+  let noPuncs = removePuncs(str);
+  let lowerPart = getOnlyLower(noPuncs).sort();
+  let upperPart = getOnlyUpper(noPuncs).sort().reverse();
+  
+  return lowerPart.concat(upperPart).join(" ");
+}
+
+const removePuncs = str => str.split("").filter(char => abc.indexOf(char.toLowerCase()) > -1 || char === " ").join("");
+
+const getOnlyUpper = str => str.split(" ").filter(word => abc.indexOf(word[0]) === -1);
+
+const getOnlyLower = str => str.split(" ").filter(word => abc.indexOf(word[0]) > -1);
