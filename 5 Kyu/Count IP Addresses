@@ -1,0 +1,8 @@
+const ipsBetween = (start, end) => {
+
+  let numDiffs = numArr(end).map((endNum, i) => (endNum - numArr(start)[i]) * Math.pow(256, 3 - i));
+
+  return numDiffs.reduce((sum, num) => sum += num, 0);
+}
+
+const numArr = str => str.split(".").map(str => Number(str));
