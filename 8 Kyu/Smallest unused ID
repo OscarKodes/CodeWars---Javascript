@@ -1,0 +1,14 @@
+function nextId(ids){
+  
+  let largestNum = ids.sort((a, b) => a-b)[ids.length - 1];
+  
+  for (let i = 0; i < largestNum; i++) {
+  
+    if (!ids.includes(i)) {
+    
+      return i;
+    }
+  }
+  
+  return largestNum + 1;
+}
