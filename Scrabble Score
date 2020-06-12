@@ -1,0 +1,15 @@
+const points = {
+  "AEIOULNRST": 1,
+  "DG": 2,
+  "BCMP": 3,
+  "FHVWY": 4,
+  "K": 5,
+  "JX": 8,
+  "QZ": 10
+};
+
+const scrabbleScore = str => ltrArr(str).reduce((sum, char) => sum += ltrPts(char.toUpperCase()), 0);
+
+const ltrArr = str => str.split(" ").join("").split("")
+
+const ltrPts = char => points[Object.keys(points).filter(key => key.includes(char))[0]];
