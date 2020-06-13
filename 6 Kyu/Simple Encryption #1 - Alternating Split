@@ -1,0 +1,39 @@
+function encrypt(text, n) {
+  
+  if (text !== null) {
+  
+    let result = text.split("");
+  
+    for (let i = 0; i < n; i++) {
+    
+      let arr1 = result.filter((char, i) => i % 2 === 1);
+      let arr2 = result.filter((char, i) => i % 2 === 0);
+      result = arr1.concat(arr2);
+      
+    }
+  
+    return result.join("");
+  }
+  
+  return null
+}
+
+function decrypt(encryptedText, n) {
+  
+  if (encryptedText !== null) {
+  
+    let result = encryptedText.split("");
+  
+    for (let i = 0; i < n; i++) {
+    
+      let oddIdxArr = result.slice(0, Math.floor(result.length / 2));
+      let evenIdxArr = result.slice(Math.floor(result.length / 2));
+      
+      result = result.map((char, i) => i % 2 === 0 ? evenIdxArr[i / 2] : oddIdxArr[Math.floor(i / 2)]);
+    }
+  
+    return result.join("");
+  };
+  
+  return null;
+}
