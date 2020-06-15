@@ -1,0 +1,8 @@
+function isSortedAndHow(arr) {
+  
+  let arrCopy = arr.slice();
+  
+  return String(arr) === String(arrCopy.sort((a, b) => a-b)) ?
+          "yes, ascending" : String(arr) === String(arrCopy.sort((a, b) => b-a)) ?
+            "yes, descending" : "no";
+}
