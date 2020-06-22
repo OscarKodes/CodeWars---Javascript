@@ -1,0 +1,8 @@
+const moveZeros = arr => {
+  
+  let noZs = arr.filter(el => el !== 0);
+  let zIdx = noZs.length;
+  noZs[arr.length - 1] = null;
+  
+  return noZs.fill(0, zIdx);
+}
