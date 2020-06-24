@@ -1,0 +1,33 @@
+const ABC = "abcdefghijklmnopqrstuvwxyz";
+
+const rot13 = str => {
+
+    let arr = str.split("");
+    let rotArr = arr.map(ch => isAlpha(ch));
+    let rotStr = rotArr.join("");
+    
+    return rotStr;
+}
+
+const isAlpha = ch => {
+    
+    let isAbc = ABC.indexOf(ch.toLowerCase()) > -1;
+    
+    return isAbc ? char13(ch, idx13(ch)) : ch;
+}
+
+const idx13 = ch => {
+
+    let chIdx = ABC.indexOf(ch.toLowerCase()) + 13;
+    
+    return chIdx > 25 ? chIdx - 26 : chIdx;
+}
+
+const char13 = (ch, idx) => {
+    
+    let isUpper = ch.toUpperCase() === ch;
+    let rotCh = ABC[idx];
+    let finalCh = isUpper ? rotCh.toUpperCase() : rotCh;
+    
+    return finalCh;
+}
