@@ -1,0 +1,12 @@
+function domainName(url){
+
+  ["http://", "https://", "www."].map(str => {
+  
+    if (url.indexOf(str) > -1) {
+    
+      url = url.slice(str.length);
+    };
+  });
+  
+  return url.slice(0, url.indexOf("."));
+}
