@@ -1,11 +1,1 @@
-def capitalize(s,ind):
-    
-    chars = list(s)
-    
-    for i, char in enumerate(chars):
-        
-        if i in ind:
-        
-            chars[i] = char.upper()
-    
-    return "".join(chars)
+const capitalize = (s,arr) => s.split("").map((ch, i) => arr.includes(i) ? ch.toUpperCase() : ch).join("");
