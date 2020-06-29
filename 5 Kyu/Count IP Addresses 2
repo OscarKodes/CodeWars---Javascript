@@ -1,0 +1,7 @@
+function ipsBetween(start, end){
+  
+  let arr = start.split(".");
+  let diffArr = end.split(".").map((endNum, i) => endNum - arr[i]).reverse();
+  
+  return diffArr.reduce((sum, num, i) => sum += num * 256 ** i);
+}
