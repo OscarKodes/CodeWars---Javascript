@@ -1,0 +1,22 @@
+function Xbonacci(signature,n){
+
+  let result = signature.slice();
+  let sum;
+  
+  while (result.length < n) {
+  
+    if (sum === undefined) {
+    
+      sum = signature.reduce((sum, num) => sum += num, 0);
+    }
+    
+    else {
+      sum -= result[result.length - signature.length -1];
+      sum += result[result.length - 1];
+    }
+    
+    result.push(sum);
+  }
+  
+  return result.slice(0, n);
+}
