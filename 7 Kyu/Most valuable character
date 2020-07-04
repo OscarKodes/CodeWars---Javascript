@@ -1,0 +1,45 @@
+const abc = "abcdefghijklmnopqrstuvwxyz"
+
+function solve(st) {
+   
+  let maxVal = -1;
+  let maxChar = "";
+  
+  for (let i = 0; i < st.length; i++) {
+    
+    let char = st[i];
+    let value = st.lastIndexOf(char) - i;
+    if (value > maxVal) {
+      
+      maxVal = value;
+      maxChar = char;
+    }
+    
+    else if (value === maxVal) {
+      
+      maxChar += char;
+    }
+  }
+  
+  if (maxChar.length > 1) {
+    
+    let lowVal;
+    let lowChar;
+    
+    for (let i = 0; i < maxChar.length; i++) {
+      
+      let char = maxChar[i];
+      let idx = abc.indexOf(char);
+      
+      if (lowVal === undefined || idx < lowVal) {
+        
+        lowChar = char;
+        lowVal = idx;
+      }
+    }
+    
+    maxChar = lowChar;
+  }
+  
+  return maxChar;
+}
