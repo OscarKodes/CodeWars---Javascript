@@ -1,0 +1,6 @@
+function isIsogram(str){
+  
+  let lowStr = str.toLowerCase();
+
+  return lowStr.split("").filter((ch, i) => lowStr.lastIndexOf(ch) !== i).length === 0;
+}
