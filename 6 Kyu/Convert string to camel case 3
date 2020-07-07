@@ -1,0 +1,6 @@
+function toCamelCase(str){
+  
+  let arr = str.indexOf("-") > -1 ? str.split("-") : str.split("_");
+  
+  return str.length === 0 ? str : arr.map((word, i) => i === 0 ? word : word[0].toUpperCase() + word.slice(1)).join("");
+}
