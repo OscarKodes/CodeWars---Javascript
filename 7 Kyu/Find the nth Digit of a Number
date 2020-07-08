@@ -1,0 +1,8 @@
+const findDigit = function(num, nth){
+
+  let str = Math.abs(num).toString();
+  
+  return nth > str.length ? 
+          0 : nth <= 0 ? 
+          -1 : Number(str[str.length - nth]);
+}
