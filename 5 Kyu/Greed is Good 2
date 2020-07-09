@@ -1,0 +1,30 @@
+const score = dice => {
+
+  let sum = 0;
+  
+  for (let i = 1; i <= 6; i++) {
+    
+    let count = getCount(dice, i);
+    let unique = {1:100, 5:50};
+    
+    if ("15".includes(i)) {
+      
+      if (count >= 3) {
+        
+        sum += unique[i] * 10;
+        count -= 3;
+      }
+      
+      sum += unique[i] * count;
+    }
+    
+    else if (count >= 3) {
+      
+      sum += i * 100;
+    }
+  }
+  
+  return sum;
+}
+
+const getCount = (dice, num) => dice.filter(el => el === num).length;
