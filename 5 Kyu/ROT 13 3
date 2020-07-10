@@ -1,0 +1,17 @@
+const abc = "abcdefghijklmnopqrstuvwxyz"
+const charRot = char => abc[(abc.indexOf(char) + 13) % 26];
+
+function rot13(str) {
+  
+  return str.split("").map(char => {
+    
+      if (abc.includes(char.toLowerCase())) {
+          
+        let rotted = charRot(char.toLowerCase());
+        let isUpper = char.toUpperCase() === char;
+        return isUpper ? rotted.toUpperCase() : rotted;
+      }
+      
+      return char;
+  }).join("");
+};
