@@ -1,0 +1,17 @@
+function multiplicationTable(row,col){
+  
+  let result = [];
+  let firstRow = [];
+  
+  for (let i = 1; i <= col; i++) {
+    
+    firstRow.push(i);
+  }
+  
+  for (let i = 1; i <= row; i++) {
+    
+    result.push(firstRow.map(num => num * i));
+  }
+  
+  return result;
+}
