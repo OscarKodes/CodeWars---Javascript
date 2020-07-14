@@ -1,0 +1,16 @@
+function autocorrect(input){
+  
+  let puncLess = removePunc(input);
+  let wordArr = puncLess.split(" ").map((word, i) => (word === "u" || checkYou(word.toLowerCase())) ? "your sister" : word);
+  
+  return  wordArr.join(" ") + (puncLess !== input ? input[input.length - 1] : "");
+}
+
+function checkYou(str) {
+  
+  let uTail = str.slice(3).split("").filter(char => char !== "u");
+  
+  return !(str.slice(0, 3) !== "you" || uTail.length > 0);
+}
+
+const removePunc = str => "!?.".includes(str[str.length - 1]) ? str.slice(0, -1) : str;
