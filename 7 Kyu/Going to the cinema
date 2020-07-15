@@ -1,0 +1,15 @@
+function movie(card, ticket, perc) {
+
+  let cardTotalSpent = card;
+  let currDiscPrice = ticket;
+  let times = 0;
+
+  while (times === 0 || Math.ceil(cardTotalSpent) >= ticket * times) {
+    
+    currDiscPrice *= perc;
+    cardTotalSpent += currDiscPrice;
+    times++;
+  }
+
+  return times;
+};
