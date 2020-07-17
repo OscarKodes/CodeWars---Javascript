@@ -1,0 +1,1 @@
+const solve = arr => arr.filter(num => !arr.includes(-1 * num))[0];
