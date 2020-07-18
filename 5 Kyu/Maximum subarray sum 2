@@ -1,0 +1,20 @@
+function maxSequence(arr){
+
+  let posIdxs = arr.map((num, i) => num > 0 ? i : null).filter(el => el !== null);
+  let allSums = [];
+  
+  for (let i = 0; i < posIdxs.length; i++) {
+  
+    let startIdx = posIdxs[i];
+    allSums.push(arr[startIdx]);
+    
+    for (let j = i + 1; j < posIdxs.length; j++) {
+      
+      let endIdx = posIdxs[j];
+      let sum = arr.slice(startIdx, endIdx + 1).reduce((sum, num) => sum += num, 0);
+      allSums.push(sum);
+    };
+  };
+  
+  return allSums.length > 0 ? Math.max(...allSums) : 0;
+};
