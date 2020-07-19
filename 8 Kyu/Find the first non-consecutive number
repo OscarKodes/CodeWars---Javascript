@@ -1,9 +1,6 @@
-def first_non_consecutive(arr):
-    
-    for i, num in enumerate(arr):
-        
-        if i != 0 and num != arr[i - 1] + 1:
-            
-            return num
-    
-    return None
+function firstNonConsecutive (arr) {
+  
+  let result = arr.map((num, i) => i > 0 ? num - 1 === arr[i - 1] ? null : num : null).filter(el => el !== null);
+  
+  return result.length > 0 ? result[0] : null;
+}
