@@ -1,0 +1,9 @@
+def first_non_consecutive(arr):
+    
+    for i, num in enumerate(arr):
+        
+        if i != 0 and num != arr[i - 1] + 1:
+            
+            return num
+    
+    return None
