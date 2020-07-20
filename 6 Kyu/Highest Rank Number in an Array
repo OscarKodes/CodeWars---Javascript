@@ -1,0 +1,13 @@
+function highestRank(arr){
+
+  let countObj = {};
+  
+  for (num of arr){
+    countObj[num] ? countObj[num]++ : countObj[num] = 1;
+  }
+  
+  let numArr = Object.keys(countObj);
+  let freqArr = numArr.map(num => countObj[num]);
+  
+ return Number(numArr[freqArr.lastIndexOf(Math.max(...freqArr))]);
+}
