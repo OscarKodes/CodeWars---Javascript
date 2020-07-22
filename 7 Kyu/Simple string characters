@@ -1,0 +1,12 @@
+function solve(s){
+  
+  let special = "!@#$%^&*.?-<>=_+',()\"";
+  let record = {
+    upper: s.split("").filter(el => el.toUpperCase() === el && !special.includes(el) && !Number(el) && el !== "0").length,
+    lower: s.split("").filter(el => el.toLowerCase() === el && !special.includes(el) && !Number(el) && el !== "0").length,
+    numbers: s.split("").filter(el => Number(el) > -1).length,
+    special: s.split("").filter(el => special.includes(el)).length
+  };
+  
+  return Object.values(record);
+}
