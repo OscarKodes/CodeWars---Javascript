@@ -1,0 +1,13 @@
+function loop_size(node){
+  
+  let nodeArr = [];
+  let baseNode = node;
+  
+  while(!nodeArr.includes(baseNode)) {
+    
+    nodeArr.push(baseNode);
+    baseNode = baseNode.getNext();
+  }
+  
+  return nodeArr.length - nodeArr.indexOf(baseNode);
+}
