@@ -1,0 +1,17 @@
+function presses(phrase) {
+
+  const keypad = [" 0", "1", "ABC2", "DEF3", "GHI4", "JKL5", "MNO6", "PQRS7", "TUV8", "WXYZ9", "*", "#"];
+  
+  let totalPresses = 0;
+
+  for (let i = 0; i < phrase.length; i++) {
+    
+    let char = phrase[i].toUpperCase();
+    
+    let presses = keypad.filter(button => button.includes(char))[0].indexOf(char) + 1;
+    
+    totalPresses += presses;
+  }
+
+  return totalPresses;
+}
