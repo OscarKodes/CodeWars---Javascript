@@ -1,0 +1,11 @@
+function solve(str){
+  
+  let spaceIdxs = str.split("").map((ch, i) => ch === " " ? i : null).filter(ch => ch !== null);
+  let reverseChars = str.split(" ").join("").split("").reverse();
+  
+  spaceIdxs.map(idx => {
+    reverseChars.splice(idx, 0, " ");
+  });
+  
+  return reverseChars.join("");
+};
