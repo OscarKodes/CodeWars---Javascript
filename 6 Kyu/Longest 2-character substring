@@ -1,0 +1,35 @@
+function substring(str) {
+
+  let pair = [];
+  let leftIdx = 0;
+  let longStr = "";
+  
+  for (let i = 0; i < str.length; i++) {
+    
+    let ch = str[i];
+    let chInPair = pair.includes(ch); 
+    let currSubStr = str.slice(leftIdx, i + 1);
+
+    if (!chInPair && pair.length < 2) {
+      
+      pair.push(ch);
+      longStr += ch;
+    }
+    
+    else if (chInPair && currSubStr.length > longStr.length) {
+      longStr = currSubStr;
+    }
+    
+    else if (!chInPair) {
+      
+      let removedCh = pair.shift();
+      pair.push(ch);
+      leftIdx = str.slice(0, i).lastIndexOf(removedCh) + 1;
+      
+      currSubStr = str.slice(leftIdx, i + 1);
+      longStr = currSubStr.length > longStr.length ? currSubStr : longStr;
+    }
+  }
+  
+  return longStr;
+}
