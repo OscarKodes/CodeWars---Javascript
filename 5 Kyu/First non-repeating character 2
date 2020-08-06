@@ -1,0 +1,24 @@
+function firstNonRepeatingLetter(s) {
+  
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let char = s[i];
+    
+    if (s.indexOf(char) === s.lastIndexOf(char)) {
+      
+      let lowCh = char.toLowerCase();
+      let lowStr = s.toLowerCase();
+      
+      if (abc.includes(lowCh) && lowStr.indexOf(lowCh) !== lowStr.lastIndexOf(lowCh)) {
+        
+        continue;
+      }
+      
+      return s[i];
+    }
+  }
+  
+  return "";
+}
