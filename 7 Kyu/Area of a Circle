@@ -1,0 +1,1 @@
+const circleArea = r => r <= 0 || typeof r !== "number" ? false : Number((Math.PI * r ** 2).toFixed(2));
