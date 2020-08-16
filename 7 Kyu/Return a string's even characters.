@@ -1,0 +1,1 @@
+const evenChars = s => s.length < 2 || s.length > 100 ? "invalid string" : s.split("").filter((ch, i) => i % 2 === 1);
