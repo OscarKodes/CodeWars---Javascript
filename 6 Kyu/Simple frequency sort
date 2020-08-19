@@ -1,0 +1,29 @@
+function solve(arr){
+  
+  let result = [];
+  let sortedArr = arr.sort((a, b) => a-b);  
+  let [maxLength, maxStIdx, maxEdIdx] = [0, 0, 0];
+  
+  for (let i = 0; sortedArr.length > 0; i++) {
+    
+    let num = sortedArr[i];
+    let stIdx = sortedArr.indexOf(num);
+    let edIdx = sortedArr.lastIndexOf(num);
+    let freq = edIdx - stIdx;
+    
+    if (freq > maxLength) {
+      [maxLength, maxStIdx, maxEdIdx] = [freq, stIdx, edIdx];
+    }
+    
+    i = edIdx;
+    
+    if (i + 1 === sortedArr.length) {
+
+      result = result.concat(sortedArr.splice(maxStIdx, maxLength + 1));
+      [maxLength, maxStIdx, maxEdIdx] = [0, 0, 0];
+      i = 0;
+    } 
+  }
+  
+  return result;
+};
