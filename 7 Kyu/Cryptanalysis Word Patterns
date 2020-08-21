@@ -1,0 +1,7 @@
+function wordPattern(word) {
+  
+  let splitWord = word.toLowerCase().split("");
+  let chOrder = splitWord.filter((ch, i) => !splitWord.slice(0, i).includes(ch));
+
+  return splitWord.map(ch => chOrder.indexOf(ch)).join(".");
+}
