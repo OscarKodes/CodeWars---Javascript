@@ -1,0 +1,5 @@
+const ABC = " abcdefghijklmnopqrstuvwxyz";
+
+const wordValue = a => a.map((el, i) => getScore(el) * (i + 1));
+
+const getScore = str => str.split("").map(ch => ABC.indexOf(ch)).reduce((sum, num) => sum += num, 0);
