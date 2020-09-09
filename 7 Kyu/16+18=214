@@ -1,0 +1,19 @@
+function add(num1, num2) {
+  
+  let arr1 = reverseDigits(num1);
+  let arr2 = reverseDigits(num2);
+  let resultArr = [];
+  
+  for (let i = 0; i < (arr1.length > arr2.length ? arr1.length : arr2.length); i++) {
+    let el1 = getNumOrZero(arr1[i]);
+    let el2 = getNumOrZero(arr2[i]);
+    
+    resultArr.unshift(el1 + el2);
+  }
+  
+  return Number(resultArr.join(""));
+}
+
+const reverseDigits = num => String(num).split("").reverse();
+
+const getNumOrZero = el => el > -1 ? Number(el) : 0;
