@@ -1,0 +1,1 @@
+const index = (array, n) => array[n] === undefined ? -1 : Math.pow(array[n], n);
