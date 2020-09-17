@@ -1,0 +1,21 @@
+function longestRepetition(s) {
+  
+  let result = ["", 0];
+  let currChar = "";
+  let currRep = 0;
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let char = s[i];
+    
+    if (char !== currChar) {
+      currChar = char;
+      currRep = 0;
+    }
+    
+    currRep++;
+    result = currRep > result[1] ? [currChar, currRep] : result;
+  }
+  
+  return result;
+}
