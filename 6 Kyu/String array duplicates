@@ -1,0 +1,3 @@
+const dup = arr => arr.map(el => filterDupes(el));
+
+const filterDupes = str => str.split("").filter((ch, i) => ch !== str[i - 1]).join("");
