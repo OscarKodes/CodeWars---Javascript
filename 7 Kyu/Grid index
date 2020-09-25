@@ -1,0 +1,6 @@
+function gridIndex(grid, indices) {
+  
+  let fusedGrid = grid.map(arr => arr.join("")).join("");
+  
+  return indices.map(num => fusedGrid[num - 1]).join("");
+}
