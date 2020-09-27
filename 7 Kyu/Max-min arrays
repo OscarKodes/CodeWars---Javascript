@@ -1,0 +1,14 @@
+function solve(arr){
+  
+  let arrCopy = arr.slice().sort((a, b) => b-a);
+  let result = [];
+  let maxOn = true;
+  
+  while (arrCopy.length > 0) {
+
+    maxOn ? result.push(arrCopy.shift()) : result.push(arrCopy.pop());
+    maxOn = !maxOn;
+  }
+  
+  return result;
+};
