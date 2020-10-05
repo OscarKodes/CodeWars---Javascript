@@ -1,0 +1,8 @@
+function mirror(data) {
+  
+  let right = data.slice().sort((a, b) => b-a);
+  
+  right.shift();
+  
+  return data.slice().sort((a, b) => a-b).concat(right);
+}
