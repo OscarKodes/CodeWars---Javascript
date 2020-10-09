@@ -1,0 +1,15 @@
+function dative(word) {
+
+  for (let i = word.length - 1; i >= 0; i--) {
+    
+    let ch = word[i];
+    
+    if ("eéiíöőüű".includes(ch)) {
+      return word + "nek";
+    }
+    
+    else if ("aáoóuú".includes(ch)) {
+      return word + "nak";
+    }
+  }
+}
