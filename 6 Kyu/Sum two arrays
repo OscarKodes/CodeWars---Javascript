@@ -1,0 +1,15 @@
+function addArrays(array1, array2) {
+  
+  let num1 = Number(array1.join(''));
+  let num2 = Number(array2.join(''));
+  let result = String(num1 + num2).split("").map(str => Number(str));
+  
+  if (String(result[0]) === "NaN") {
+    
+    result.shift();
+    let negativeNum = result.shift();
+    result.unshift(negativeNum * -1);
+  }
+  
+  return result.length === 1 && result[0] === 0 ? [] : result;
+}
