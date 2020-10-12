@@ -1,0 +1,9 @@
+function repeats(arr){
+
+  let singleArr = [];
+  let sorted = arr.sort().map(num => {
+    arr.indexOf(num) === arr.lastIndexOf(num) ? singleArr.push(num) : null;
+  });
+
+  return singleArr.reduce((sum, num) => sum += num);
+};
