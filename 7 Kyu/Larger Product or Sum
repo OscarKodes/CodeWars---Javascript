@@ -1,0 +1,8 @@
+function sumOrProduct(arr, n) {
+  
+  let sorted = arr.sort((a, b) => a-b);
+  let product = sorted.slice(0, n).reduce((prod, num) => prod *= num, 1);
+  let sum = sorted.slice(sorted.length - n).reduce((sum, num) => sum += num, 0);
+  
+  return product > sum ? "product" : product < sum ? "sum" : "same";
+}
