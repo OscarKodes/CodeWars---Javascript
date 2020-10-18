@@ -1,0 +1,22 @@
+function solve(a,b){
+
+  let ast = a.indexOf("*");
+
+  if (ast === -1) {
+    return a === b;
+  }
+  
+  else if (a.split("*").join("").length > b.length) {
+    return false;
+  } 
+  
+  else if (a.slice(0, ast) === b.slice(0, ast)){
+    
+    let tail = a.split("*")[1].split("").reverse().join("");
+    let bReverse = b.split("").reverse().join("");
+
+    return tail === bReverse.slice(0, tail.length);
+  }
+  
+  return false;
+}
