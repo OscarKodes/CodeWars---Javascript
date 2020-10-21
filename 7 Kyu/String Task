@@ -1,0 +1,6 @@
+function stringTask(s){
+
+  let result = s.toLowerCase().split("").filter(ch => !"aeiouy".includes(ch)).join(".");
+  
+  return result === "" ? "" : "." + result;
+}
