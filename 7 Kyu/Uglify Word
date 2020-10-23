@@ -1,0 +1,20 @@
+function uglifyWord(s) {
+  
+  let flag = false;
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+
+  return s.split("").map(ch => {
+    
+    if (abc.includes(ch.toLowerCase())) {
+      
+      flag = !flag;
+      return flag ? ch.toUpperCase() : ch.toLowerCase();
+    } 
+    
+    else {
+      
+      flag = false;
+      return ch;
+    }
+  }).join("");
+}
