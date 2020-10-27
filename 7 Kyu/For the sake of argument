@@ -1,0 +1,4 @@
+function numbers(){
+
+  return Object.values(arguments).filter(el => typeof el !== "number").length === 0;
+}
