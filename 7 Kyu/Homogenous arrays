@@ -1,0 +1,3 @@
+const filterHomogenous = arrays => arrays.filter(arr => arr.length > 0 && (arr.length === 1 || isSameType(arr)));
+
+const isSameType = arr => arr.filter(el => typeof el === typeof arr[0]).length === arr.length;
