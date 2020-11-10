@@ -1,0 +1,7 @@
+function dashatize(num) {
+
+  let arr = String(Math.abs(num)).split("").join("-").split("");
+  let result = arr.map((ch, i) => ch !== "-" ? ch : arr[i-1] % 2 === 1 || arr[i+1] % 2 === 1 ? "-" : "");
+  
+  return result.join("");
+}
