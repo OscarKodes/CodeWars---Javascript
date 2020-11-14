@@ -1,0 +1,21 @@
+function removeParentheses(s){
+  
+  let pScore = 0;
+  
+  let result = s.split("").map(ch => {
+    
+    if (ch === "(") {
+      pScore++;
+    } 
+    
+    else if (ch === ")") {
+      pScore--;
+    } 
+    
+    else if (pScore === 0) {
+      return ch;
+    }
+  });
+  
+  return result.join("");
+}
