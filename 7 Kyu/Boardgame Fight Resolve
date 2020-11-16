@@ -1,0 +1,17 @@
+function fightResolve(d, a) {
+  
+  let dUpper = d.toUpperCase();
+  let aUpper = a.toUpperCase();
+  let dWins = {
+    "K":"A",
+    "S":"P",
+    "A":"S",
+    "P":"K"
+  };
+  
+  if ((d === dUpper) === (a === aUpper)) {
+    return -1;
+  };
+  
+  return dWins[dUpper] === aUpper ? d : a;
+} 
