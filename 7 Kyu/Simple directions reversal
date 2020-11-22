@@ -1,0 +1,10 @@
+function solve(arr){
+
+  let roads = arr.map(str => str.slice(str.indexOf(" on ") + 4)).reverse();
+  let dir = arr.map(str => str.slice(0, str.indexOf(" "))).reverse();
+  dir.pop();
+
+  return roads.map((road, i) => (i-1 === -1 ? 
+                                 "Begin" : dir[i-1] === "Left" ? 
+                                 "Right" : "Left") + " on " + road);
+}
