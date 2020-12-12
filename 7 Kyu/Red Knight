@@ -1,0 +1,12 @@
+function redKnight(N, P) {
+  
+  let K = 0;
+  
+  for (let i = 0; i + P !== K; i++) {
+    
+    K += 2;
+    N = N ? 0 : 1;
+  }
+
+  return [N ? "Black" : "White", K];
+}
