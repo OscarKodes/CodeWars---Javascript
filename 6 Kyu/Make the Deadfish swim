@@ -1,0 +1,26 @@
+function parse(data) {
+  
+  let num = 0;
+  let result = [];
+  
+  data.split("").map(ch => {
+    
+    if (ch === "i") {
+      num++;
+    }
+    
+    else if (ch === "d") {
+      num--;
+    }
+    
+    else if (ch === "s") {
+      num*=num;
+    }
+    
+    else if (ch === "o"){
+      result.push(num);
+    }
+  });
+  
+  return result;
+}
