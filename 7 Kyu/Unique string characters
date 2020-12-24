@@ -1,0 +1,7 @@
+function solve(a,b){
+ 
+  let arrA = a.split("").filter(ch => !b.includes(ch));
+  let arrB = b.split("").filter(ch => !a.includes(ch));
+  
+  return arrA.join("") + arrB.join("");
+};
