@@ -1,0 +1,26 @@
+function streetFighterSelection(fighters, position, moves){
+  
+  let row = position[0];
+  let col = position[1];
+
+  return moves.slice().map(move => {
+    
+    if (move === "up" && row !== 0) {
+      row--;
+    }
+    
+    else if (move === "down" && row !== 1) {
+      row++;
+    }
+    
+    else if (move === "left") {
+      col === 0 ? col = 5 : col--;
+    }
+    
+    else if (move === "right") {
+      col === 5 ? col = 0 : col++;
+    }
+    
+    return fighters[row][col];
+  });
+}
