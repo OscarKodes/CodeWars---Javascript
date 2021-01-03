@@ -1,0 +1,1 @@
+const arr = N => " ".repeat(N).split("").map((_, i) => i);
