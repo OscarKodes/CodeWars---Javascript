@@ -1,0 +1,14 @@
+function differences(a) {
+  
+  let result;
+  
+  if (a.length <= 1) {
+    return a[0];
+  }
+  
+  else {
+    result = differences(a.map((n, i) => i < a.length - 1 ? Math.abs(a[i] - a[i+1]) : null).slice(0,-1));
+  }
+  
+  return result;
+}
