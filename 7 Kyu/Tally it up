@@ -1,0 +1,7 @@
+var scoreToTally = function(score){
+  
+  let body = "e <br>".repeat(Math.floor(score/5));
+  let tail = "abcd"[score % 5 - 1];
+  
+  return tail ? body + tail : body;
+}
