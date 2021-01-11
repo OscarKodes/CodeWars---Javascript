@@ -1,0 +1,19 @@
+function common(a,b,c){
+
+  let result = [];
+  
+  for (let i = 0; i < a.length; i++) {
+    
+    let n = a[i];
+    
+    if (b.includes(n) && c.includes(n)) {
+      result.push(n)
+      b.splice(b.indexOf(n), 1);
+      c.splice(c.indexOf(n), 1);
+      a.splice(i, 1);
+      i--;
+    }
+  }
+  
+  return result.reduce((s, n) => s += n, 0);
+}
