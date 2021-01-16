@@ -1,0 +1,1 @@
+const multiples = (m, n) => " ".repeat(m).split("").map((_, i) => (i + 1) * n);
