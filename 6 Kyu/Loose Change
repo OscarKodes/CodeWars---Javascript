@@ -1,0 +1,17 @@
+function looseChange(cents){
+  
+  let keys = ['Quarters', 'Dimes', 'Nickels', 'Pennies'];
+  let values = [25, 10, 5, 1];
+  let result = {};
+  cents = cents > 0 ? cents : 0;
+  
+  for (let i = 0; i < keys.length; i++) {
+    
+    let coinKey = keys[i];
+    let coinVal = values[i];
+    result[coinKey] = Math.floor(cents / coinVal);
+    cents -= coinVal * result[coinKey];
+  }
+
+  return result;
+}
