@@ -1,0 +1,21 @@
+function getConsectiveItems(items, key){
+  
+  let str = items.toString();
+  let count = 0;
+  let max = 0;
+  
+  for (let i = 0; i <= str.length; i++) {
+    
+    
+    if (i !== str.length && str[i] === key.toString()) {
+      count++;
+    } 
+    
+    else {
+      max = count > max ? count : max;
+      count = 0;
+    }
+  }
+  
+  return max;
+}
