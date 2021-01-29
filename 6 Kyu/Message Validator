@@ -1,0 +1,56 @@
+const alpha = "abcdefghijklmnopqrstuvwxyz";
+
+const isAValidMessage = str => {
+
+  str = str.toLowerCase();
+  let arr = seperateIntoArr(str);
+  
+  if (str.length > 0 && !alpha.includes(str[str.length - 1])) {
+    return false;
+  };
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    let el = arr[i];
+    
+    if (typeof el === "number") {
+      continue;
+    } 
+    
+    else if (el.length !== arr[i-1]) {
+       return false;
+    }
+  }
+  
+  return true;
+};
+                    
+const seperateIntoArr = str => {
+                    
+  let arr = [];
+  let temp = null;
+  
+  for (let i = 0; i <= str.length; i++) {
+    
+    let ch = str[i];
+    
+    if (temp === null) {
+      temp = alpha.includes(ch) ? ch : Number(ch);
+    }
+    
+    else if (typeof temp === "number" && !alpha.includes(ch)) {
+      temp = (temp * 10) + Number(ch);
+    }
+    
+    else if (typeof temp === "string" && alpha.includes(ch)) {
+      temp += ch;
+    }
+    
+    else {
+      arr.push(temp);
+      temp = alpha.includes(ch) ? ch : Number(ch);
+    }
+  }
+  
+  return arr;
+};
