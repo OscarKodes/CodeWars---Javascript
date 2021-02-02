@@ -1,0 +1,1 @@
+const sumStr = (a,b) => eval((a !== "" ? a : 0) + "+" + (b !== "" ? b : 0)).toString();
