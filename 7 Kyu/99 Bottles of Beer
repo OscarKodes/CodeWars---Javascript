@@ -1,0 +1,27 @@
+const sing = () => {
+
+  let a = " of beer";
+  let b = a + " on the wall";
+  let c = "Take one down and pass it around, ";
+  let result = [];
+  
+  for (let i = 99; i >= 0; i--) {
+    
+    let bt = i !== 1 ? " bottles" : " bottle"; 
+    let num = i > 0 ? i : "no more";
+    let str1 = num + bt + b + ", " + num + bt + a + ".";
+    let str2 = c + num + bt + b + ".";
+    
+    if (i < 99) {
+      result.push(str2);
+    }
+    
+    result.push(i === 0 ? "N" + str1.slice(1) : str1);
+    
+    if (i === 0) {
+      result.push("Go to the store and buy some more, 99" + bt + b + ".");
+    }
+  }
+  
+  return result;
+};
