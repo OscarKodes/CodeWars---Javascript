@@ -1,0 +1,6 @@
+let a = "abcdefghijklmnopqrstuvwxyz";
+
+function moveTen(s){
+  return s.split("").map(ch => a[a.indexOf(ch) + 10 >= 26 ? 
+                                    a.indexOf(ch) - 16 : a.indexOf(ch) + 10]).join("");
+}
