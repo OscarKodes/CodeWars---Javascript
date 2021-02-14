@@ -1,0 +1,23 @@
+function sumConsecutives(s) {
+
+  let sum = s[0];
+  let lastNum = s[0];
+  let result = [];
+  
+  for (let i = 1; i <= s.length; i++) {
+    
+    let n = s[i];
+    
+    if (lastNum !== n) {
+      lastNum = n;
+      result.push(sum);
+      sum = lastNum;
+    } 
+    
+    else {
+      sum += n;
+    };
+  }
+  
+  return result;
+}
