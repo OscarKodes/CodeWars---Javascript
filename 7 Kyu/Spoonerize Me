@@ -1,0 +1,6 @@
+function spoonerize(words) {
+
+  let headArr = words.split(" ").reverse().map(e => e[0]);
+  
+  return words.split(" ").map((e, i) => headArr[i] + e.slice(1)).join(" ");
+}
