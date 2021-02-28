@@ -1,0 +1,10 @@
+function separateTypes(input) {
+  
+  let obj = {};
+  
+  input.map(e => {
+    obj[typeof e] = obj[typeof e] === undefined ? [e] : obj[typeof e].concat([e])
+  });
+  
+  return obj;
+}
