@@ -1,0 +1,14 @@
+function getGrade (s1, s2, s3) {
+
+  let mean = (s1 + s2 + s3) / 3;
+  let grades = [60, 70, 80, 90, 100];
+
+  for (let i = 0; i < grades.length; i++) {
+
+    if (mean < grades[i]) {
+      return "FDCBA"[i];
+    }
+  }
+  
+  return "A";
+}
