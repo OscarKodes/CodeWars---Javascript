@@ -1,0 +1,13 @@
+function getMissingElement(a){
+  
+  a.sort((a, b) => a-b);
+  
+  for (let i = 0; i < 9; i++) {
+    
+    if (i !== a[i]) {
+      return i;
+    }
+  }
+  
+  return 9;
+}
