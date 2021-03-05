@@ -1,0 +1,19 @@
+function shifter(s){
+  
+  let chars = "HINOSXZMW";
+  let words = s.split(" ");
+  let shifters = [];
+  
+  for (let i = 0; i < words.length; i++) {
+    let word = words[i];
+    let chMatch = word.split("").filter(c => chars.includes(c)).length === word.length;
+    let unique = !shifters.includes(word);
+    let notEmpty = word !== "";
+    
+    if (chMatch && unique && notEmpty) {
+      shifters.push(word);
+    }
+  }
+
+  return shifters.length;
+}
