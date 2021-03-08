@@ -1,0 +1,10 @@
+const getNum = str => str.split("").filter(c => String(Number(c)) !== "NaN").join("");
+const flipTail = (str, len) => str.length - len  > 1 ? str[str.length - 1] + str.slice(len + 1, -1) + str[len] : str.slice(len);
+
+function decipherThis(str) {
+
+  return str.split(" ").map(word => {
+    let numStr = getNum(word);
+    return String.fromCharCode(numStr) + flipTail(word, numStr.length);
+  }).join(" ");
+}; 
