@@ -1,0 +1,2 @@
+const geese = ["African", "Roman Tufted", "Toulouse", "Pilgrim", "Steinbacher"];
+const gooseFilter = birds => birds.filter(e => !geese.includes(e));
