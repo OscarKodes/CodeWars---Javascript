@@ -1,0 +1,8 @@
+const findMissing = arr => {  
+  
+  let diff1 = arr[1] - arr[0];
+  let diff2 = arr[arr.length - 1] - arr[arr.length - 2];
+  let change = Math.abs(diff1) > Math.abs(diff2) ? diff2 : diff1;
+  
+  return arr.filter((n, i) => n !== arr[0] + (i * change))[0] - change;
+}
