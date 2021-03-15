@@ -1,0 +1,1 @@
+const mergeArrays = (a1, a2) => a1.filter(n => !a2.includes(n)).concat(a2).sort((a,b) => a-b);
