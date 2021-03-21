@@ -1,0 +1,31 @@
+const abc = "abcdefghijklmnopqrstuvwxyz";
+const getValue = s => s.split("").reduce((s, c) => s += abc.indexOf(c) + 1, 0);
+
+function solve(s) {
+
+  let max = 0;
+  let str = "";
+  let result = "";
+
+  for (let i = 0; i < s.length; i++) {
+    
+    let ch = s[i];
+
+    if (!"aeiou".includes(ch)) {
+      
+      str += ch;
+      let val = getValue(str);
+      
+      if (val > max) {
+        result = str;
+        max = val;
+      }
+    }
+    
+    else {
+      str = "";
+    }
+  }
+  
+  return max;
+};
