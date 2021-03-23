@@ -1,0 +1,1 @@
+const twoSort = a => a.sort()[0].split("").join("***");
