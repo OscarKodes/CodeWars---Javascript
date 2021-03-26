@@ -1,0 +1,2 @@
+const makeRow = (n, size) => Array.from(Array(size).keys()).map((_, i) => n * (i + 1));
+const multiplicationTable = size => Array.from(Array(size).keys()).map((_, i) => makeRow(i + 1, size));
