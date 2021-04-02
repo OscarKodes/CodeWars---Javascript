@@ -1,0 +1,7 @@
+function findNumber(array) {
+  
+  let wantedSum = array.reduce((s, _, i) => s += i + 1, array.length + 1);
+  let actualSum = array.reduce((s, n) => s += n, 0);
+  
+  return wantedSum - actualSum;
+}
