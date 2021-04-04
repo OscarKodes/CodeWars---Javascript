@@ -1,0 +1,1 @@
+const hasUniqueChars = s => s.split("").filter((c, i) => s.lastIndexOf(c) !== i).length === 0;
