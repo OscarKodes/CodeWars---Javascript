@@ -1,0 +1,6 @@
+function calculate(num1, operation, num2) {
+
+  let result = "+-*/".includes(operation) ? eval(num1 + operation + num2) : null;
+
+  return [Infinity, -Infinity, null].includes(result) ? null : result;
+}
