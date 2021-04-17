@@ -1,0 +1,16 @@
+function reverseFizzBuzz(array) {
+  
+  let fizz = array.indexOf("Fizz");
+  let buzz = array.indexOf("Buzz");
+  let fizzBuzz = array.indexOf("FizzBuzz");
+  
+  if (fizz < 0) {
+    fizz = fizzBuzz;
+  } 
+  
+  if (buzz < 0) {
+    buzz = fizzBuzz;
+  }
+  
+  return [fizz + 1, buzz + 1];
+};
