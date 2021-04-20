@@ -1,0 +1,9 @@
+function toTime(seconds) {
+
+  let minSec = seconds % 3600;
+  let hrSec = seconds - minSec;
+  let min = Math.floor(minSec / 60);
+  let hr = Math.floor(hrSec / 3600);
+  
+  return hr + " hour(s) and " + min + " minute(s)";
+}
