@@ -1,0 +1,29 @@
+function sortme(names){
+  
+  let obj = {};
+  let repeats = {};
+  
+  for (let i = 0; i < names.length; i++) {
+    
+    let word = names[i];
+    let lower = word.toLowerCase();
+    
+    if (!obj[lower]) {
+      obj[lower] = word;
+    } 
+    
+    else {
+      obj[lower] = Array.isArray(obj[lower]) ? obj[lower].concat(word) : [obj[lower], word];
+    }
+  }
+
+  return names.slice().map(s => s.toLowerCase()).sort().map(s => {
+    
+    if (Array.isArray(obj[s])) {
+      repeats[s] = repeats[s] > -1 ? repeats[s] + 1 : 0;
+      return obj[s][repeats[s]];
+    }
+    
+    return obj[s];
+  });
+}
