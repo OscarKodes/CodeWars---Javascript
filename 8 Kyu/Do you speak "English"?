@@ -1,0 +1,11 @@
+function spEng(sentence){
+
+  for (let i = 0; i < sentence.length - 6; i++) {
+
+    if (sentence.slice(i, i + 7).toLowerCase() === "english") {
+      return true;
+    }
+  }
+  
+  return false;
+}
