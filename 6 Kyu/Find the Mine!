@@ -1,0 +1,15 @@
+function mineLocation(field){
+  
+  let row, col;
+  
+  field.map((a, i) => {
+    
+    if (a.includes(1)) {
+     
+      row = i;
+      col = a.indexOf(1);
+    }
+  });
+  
+  return [row, col];
+}
