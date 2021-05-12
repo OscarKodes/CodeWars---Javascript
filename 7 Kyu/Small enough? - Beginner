@@ -1,0 +1,1 @@
+const smallEnough = (a, limit) => a.filter(n => n > limit).length === 0;
