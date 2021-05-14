@@ -1,0 +1,16 @@
+function digital_root(n) {
+
+  let strN = String(n);
+  let sum = 0;
+  
+  if (strN.length === 1) {
+    return n;
+  }
+  
+  else {
+    let numArr = strN.split("").map(e => Number(e));
+    sum = digital_root(numArr.reduce((s, n) => s += n, 0));
+  }
+  
+  return sum;
+}
