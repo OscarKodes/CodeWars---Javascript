@@ -1,0 +1,1 @@
+const squareDigits = n => Number(String(n).split("").map(s => Math.pow(Number(s), 2)).join(""));
