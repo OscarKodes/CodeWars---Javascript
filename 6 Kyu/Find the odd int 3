@@ -1,0 +1,17 @@
+function findOdd(a) {
+  
+  let aSort = a.sort((a, b) => a-b);
+  
+  for (let i = 0; i < aSort.length; i++) {
+    let n = aSort[i];
+    let first = a.indexOf(n);
+    let last = a.lastIndexOf(n);
+
+    if ((last - first) % 2 == 0) {
+      return n;
+    } 
+    else {
+      i = last;
+    }
+  }
+}
