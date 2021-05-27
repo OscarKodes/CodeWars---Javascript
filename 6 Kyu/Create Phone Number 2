@@ -1,0 +1,9 @@
+function createPhoneNumber(nums){
+  
+  let s = nums.join("");
+  let p1 = s.slice(0,3);
+  let p2 = s.slice(3,6);
+  let p3 = s.slice(6);
+  
+  return "(" + p1 + ") " + p2 + "-" + p3;
+}
