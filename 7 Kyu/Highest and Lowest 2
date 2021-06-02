@@ -1,0 +1,4 @@
+function highAndLow(a){
+  let nums = a.split(" ").map(s => Number(s)).sort((a, b) => a-b);
+  return nums[nums.length - 1] + " " + nums[0];
+}
