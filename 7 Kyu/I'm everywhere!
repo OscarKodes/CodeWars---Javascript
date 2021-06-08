@@ -1,0 +1,22 @@
+function i(word) {
+  
+  let f = "Invalid word";
+  
+  if (word === "") {
+    return f;
+  } 
+  
+  else if (word[0] === "I") {
+    return f;
+  } 
+  
+  else if (word[0].toLowerCase() === word[0]) {
+    return f;
+  } 
+  
+  else if (word.split("").filter(c => "aeiou".includes(c.toLowerCase())).length >= word.length / 2) {
+    return f;
+  }
+  
+  return "i" + word;
+}
