@@ -1,0 +1,1 @@
+const countBits = n => n.toString(2).split("").reduce((s, e) => s += Number(e), 0);
