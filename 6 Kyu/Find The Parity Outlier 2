@@ -1,0 +1,4 @@
+function findOutlier(a){
+  let findEven = a.slice(0, 3).filter(n => Math.abs(n) % 2 === 1).length > 1 ? 0 : 1;
+  return a.filter(n => Math.abs(n) % 2 === findEven)[0];
+}
