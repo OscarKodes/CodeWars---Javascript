@@ -1,0 +1,6 @@
+function highAndLow(nums){
+  
+  let arr = nums.split(" ").map(s => Number(s)).sort((a, b) => b-a);
+  
+  return arr[0] + " " + arr[arr.length - 1];
+}
