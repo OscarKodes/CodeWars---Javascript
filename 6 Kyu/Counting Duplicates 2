@@ -1,0 +1,18 @@
+function duplicateCount(text){
+  
+  let s = text.toLowerCase().split("").sort();
+  let count = 0;
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let ch = s[i];
+    let lastIdx = s.lastIndexOf(ch);
+    
+    if (lastIdx > i) {
+      count++;
+      i = lastIdx;
+    }
+  }
+  
+  return count;
+}
