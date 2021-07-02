@@ -1,0 +1,1 @@
+const descendingOrder = n => Number(n.toString().split("").map(s => Number(s)).sort((a, b) => b-a).join(""));
