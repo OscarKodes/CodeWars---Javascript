@@ -1,0 +1,7 @@
+function duplicateEncode(word){
+  
+  let a = word.toLowerCase().split("");
+  let sorted = a.slice().sort();
+  
+  return a.map(c => sorted.indexOf(c) === sorted.lastIndexOf(c) ? "(" : ")").join("");
+}
