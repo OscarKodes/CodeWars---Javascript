@@ -1,0 +1,13 @@
+const dissolve = n => n.toString().split("").reduce((p, n) => p *= Number(n), 1);
+
+function persistence(num) {
+  
+  let count = 0;
+  
+  while (num >= 10) {
+    count++;
+    num = dissolve(num);
+  }
+  
+  return count;
+}
