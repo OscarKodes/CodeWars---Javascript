@@ -1,0 +1,2 @@
+const s = "abcdefghijklmnopqrstuvwxyz";
+const alphabetPosition = t => t.toLowerCase().split("").filter(c => s.includes(c)).map(c => s.indexOf(c) + 1).join(" ");
