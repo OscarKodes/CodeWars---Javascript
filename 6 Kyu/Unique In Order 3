@@ -1,0 +1,16 @@
+function uniqueInOrder(s){
+  
+  let result = [];
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let e = s[i];
+    let prev = i > 0 ? s[i-1] : null;
+    
+    if (e !== prev) {
+      result.push(e);
+    }
+  }
+  
+  return result;
+}
