@@ -1,0 +1,4 @@
+function songDecoder(s){
+  let a = s.split("WUB").join(" ");
+  return a.split("").filter((c, i) => c !== " " || a[i - 1] !== " ").join("").trim();
+}
