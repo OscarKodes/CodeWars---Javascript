@@ -1,0 +1,11 @@
+function order(words){
+  
+  let arr = words.split(" ");
+  let result = [];
+  
+  arr.map(e => e.split("").filter(c => Number.isInteger(Number(c)))[0]).map((n, i) => {
+    result[n-1] = arr[i];
+  });
+
+  return result.join(" ");
+}
