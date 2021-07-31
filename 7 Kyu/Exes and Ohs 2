@@ -1,0 +1,4 @@
+const XO = s => {
+  let a = s.toLowerCase().split("").filter(c => "ox".includes(c)).sort();
+  return a.lastIndexOf("o") * 2 + 1 === a.lastIndexOf("x");
+}
