@@ -1,0 +1,7 @@
+function iqTest(nums){
+  
+  let charges = nums.split(" ").map(n => n % 2 === 1 ? 1 : -1);
+  let sum = charges.reduce((s, n) => s += n, 0);
+  
+  return charges.findIndex(n => sum < 0 ? n > 0 : n < 0) + 1;
+}
