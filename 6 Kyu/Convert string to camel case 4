@@ -1,0 +1,1 @@
+const toCamelCase = s => s.split(s.includes("-") ? "-" : "_").map((w, i) => i === 0 ? w : w[0].toUpperCase() + w.slice(1).toLowerCase()).join("");
