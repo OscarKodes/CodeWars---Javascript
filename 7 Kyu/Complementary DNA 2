@@ -1,0 +1,1 @@
+const DNAStrand = dna => dna.split("").map(c => "TATGCG"["TATGCG".indexOf(c) + 1]).join("");
