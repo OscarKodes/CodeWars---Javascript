@@ -1,0 +1,4 @@
+function moveZeros(a) {
+  let noZero = a.filter(n => n !== 0);
+  return noZero.concat(Array(a.length - noZero.length).fill(0));
+}
