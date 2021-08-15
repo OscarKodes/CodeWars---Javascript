@@ -1,0 +1,22 @@
+function validParentheses(parens){
+  
+  let storage = [];
+  let arr = parens.split("");
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    if (arr[i] === "(") {
+      storage.push("(");
+    } 
+    
+    else if(storage.length > 0) {
+      storage.pop();
+    } 
+    
+    else {
+      return false;
+    }
+  }
+  
+  return storage.length === 0;
+}
