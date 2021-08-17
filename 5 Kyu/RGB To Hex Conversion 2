@@ -1,0 +1,4 @@
+function rgb(r, g, b){
+  let arr = [r, g, b].map(n => n < 0 ? 0 : n > 255 ? 255 : n);
+  return arr.map(n => n.toString(16).length < 2 ? "0" + n.toString(16) : n.toString(16)).join("").toUpperCase();
+}
