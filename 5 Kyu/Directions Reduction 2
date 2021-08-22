@@ -1,0 +1,17 @@
+function dirReduc(arr){
+  
+  let match = {"WEST":"EAST","NORTH":"SOUTH"};
+  
+  for (let i = 0; i + 1 < arr.length; i++) {
+    
+    let d1 = arr[i];
+    let d2 = arr[i+1];
+    
+    if (match[d1] === d2 || match[d2] === d1) {
+      arr.splice(i, 2);
+      i = -1;
+    }
+  }
+  
+  return arr;
+}
