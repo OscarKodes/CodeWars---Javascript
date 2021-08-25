@@ -1,0 +1,21 @@
+function rot13(message){
+  
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  
+  let arr = message.split("").map(c => {
+    
+    let isUpper = c.toUpperCase() === c;
+    let idx = abc.indexOf(c.toLowerCase());
+    
+    if (idx < 0){
+      return c;
+    } 
+    
+    idx += 13;
+    idx = idx >= 26 ? idx - 26 : idx;
+
+    return isUpper ? abc[idx].toUpperCase() : abc[idx];
+  });
+  
+  return arr.join("");
+}
