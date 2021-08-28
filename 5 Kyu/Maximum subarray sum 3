@@ -1,0 +1,15 @@
+function maxSequence(a){
+  
+  let max = 0;
+  
+  a.forEach(function(n, size) {
+    
+    for (let i = 0; i + size < a.length; i++) {
+
+      let sum = a.slice(i, i + size + 1).reduce((s, n) => s += n, 0);
+      max = sum > max ? sum : max; 
+    };
+  });
+  
+  return max;
+}
