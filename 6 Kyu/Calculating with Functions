@@ -1,0 +1,15 @@
+function zero(s="") {return Math.floor(eval(0 + s))}
+function one(s="") {return Math.floor(eval(1 + s))}
+function two(s="") {return Math.floor(eval(2 + s))}
+function three(s="") {return Math.floor(eval(3 + s))}
+function four(s="") {return Math.floor(eval(4 + s))}
+function five(s="") {return Math.floor(eval(5 + s))}
+function six(s="") {return Math.floor(eval(6 + s))}
+function seven(s="") {return Math.floor(eval(7 + s))}
+function eight(s="") {return Math.floor(eval(8 + s))}
+function nine(s="") {return Math.floor(eval(9 + s))}
+
+function plus(n) {return "+" + n}
+function minus(n) {return "-" + n}
+function times(n) {return "*" + n}
+function dividedBy(n) {return "/" + n}
