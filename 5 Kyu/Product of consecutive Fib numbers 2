@@ -1,0 +1,14 @@
+function productFib(prod){
+  
+  let n1 = 0;
+  let n2 = 1;
+  
+  while (n1 * n2 < prod) {
+    
+    let newFib = n1 + n2;
+    n1 = n2;
+    n2 = newFib;
+  }
+  
+  return [n1, n2, n1 * n2 === prod];
+}
