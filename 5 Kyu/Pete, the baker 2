@@ -1,0 +1,1 @@
+const cakes = (r, a) => Math.min(...Object.keys(r).map(key => Math.floor(a[key] / r[key]) || 0));
