@@ -1,0 +1,7 @@
+function domainName(url){
+  
+  let idx1 = url.includes("www.") ? url.indexOf(".") + 1 : url.includes("//") ? url.indexOf("//") + 2 : 0;
+  let idx2 = url.slice(idx1).indexOf(".") + idx1;
+
+  return url.slice(idx1, idx2);
+}
