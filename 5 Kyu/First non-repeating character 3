@@ -1,0 +1,17 @@
+function firstNonRepeatingLetter(s) {
+  
+  let sorted = s.split("").sort();
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let c = s[i];
+    let sLower = s.toLowerCase();
+    let cLower = c.toLowerCase();
+    let idx1 = sLower.indexOf(cLower);
+    let idx2 = sLower.lastIndexOf(cLower);
+    
+    if (idx1 === idx2) return c;
+  };
+  
+  return "";
+};
