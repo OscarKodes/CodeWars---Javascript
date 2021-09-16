@@ -1,0 +1,11 @@
+const zeros = n => {
+
+  let z = 0;
+  
+  for (let i = 0; i <= Math.floor(Math.sqrt(n) / 5); i++) {
+    
+    z += Math.floor(n / Math.pow(5, i+1));
+  };
+  
+  return z;
+};
