@@ -1,0 +1,18 @@
+function oracle(gestures){
+  
+  let score = {rock:0,paper:0,scissors:0};
+  let win = ["rock", "scissors", "paper", "rock"];
+
+  gestures.map(sign => {
+    
+    let signIdx = win.lastIndexOf(sign);
+    
+    score[win[signIdx - 1]]++;
+    signIdx = signIdx === 3 ? 0 : signIdx;
+    score[win[signIdx + 1]]--;
+  });
+  
+  let result = Object.keys(score).filter(key => score[key] > 0);
+
+  return result.length === 0 ? "tie" : result.join("/") ;
+}
