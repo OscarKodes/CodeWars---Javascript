@@ -1,0 +1,9 @@
+function sexyName(name) {
+  
+  let result = name.toUpperCase().split("").map(c => SCORES[c] ? SCORES[c] : 0).reduce((s, n) => s += n, 0);
+  
+  return result <= 60 ? 
+          "NOT TOO SEXY" : result <= 300 ? 
+          "PRETTY SEXY" : result <= 599 ? 
+          "VERY SEXY" : "THE ULTIMATE SEXIEST";
+}
