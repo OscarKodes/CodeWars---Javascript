@@ -1,0 +1,1 @@
+const singleDigit = n => n < 10 ? n : singleDigit(n.toString(2).split("").map(s => Number(s)).reduce((s, n) => s += n, 0));
