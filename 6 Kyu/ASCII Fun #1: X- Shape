@@ -1,0 +1,16 @@
+function x(n){
+  
+  let arr = [];
+  
+  for (let i = 0; i < n; i++) {
+    
+    let dot1 = i;
+    let dot2 = n - i - 1;
+    let row = "□".repeat(n).split("");
+    row[dot1] = "■";
+    row[dot2] = "■";
+    arr.push(row.join(""));
+  }
+  
+  return arr.join("\n");
+}
