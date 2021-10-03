@@ -1,0 +1,7 @@
+const howManyYears = (date1, date2) => {
+  
+  let num1 = Number(date1.split("/").join(""));
+  let num2 = Number(date2.split("/").join(""));
+  
+  return Math.abs(Math.round((num2 - num1) / 10000))
+}
