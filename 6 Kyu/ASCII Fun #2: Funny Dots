@@ -1,0 +1,8 @@
+function dot(c,r){
+  
+  let frame = `+${"---+".repeat(c)}`;
+  let ohs = `|${" o |".repeat(c)}`;
+  let result = "-".repeat(r).split("").map(e => `${frame}\n${ohs}\n`);
+  
+  return result.join("") + frame;
+}
