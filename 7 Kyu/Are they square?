@@ -1,0 +1,8 @@
+const isSquare = a => {
+
+  return a.length === 0 ? undefined : 
+          a.filter(n => {
+            let root = Math.sqrt(n);
+            return Math.floor(root) === root;
+          }).length === a.length;
+};
