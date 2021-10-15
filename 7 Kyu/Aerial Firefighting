@@ -1,0 +1,1 @@
+const waterbombs = (f, w) => f.split("Y").map(s => Math.ceil(s.length / w)).reduce((s, n) => s += n, 0);
