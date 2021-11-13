@@ -1,0 +1,7 @@
+function updateLight(current) {
+  
+  let colors = ["green", "yellow", "red"];
+  let idx = colors.indexOf(current);
+  
+  return colors[idx > 1 ? 0 : idx + 1];
+}
