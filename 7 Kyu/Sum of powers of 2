@@ -1,0 +1,22 @@
+const powers = n => {
+
+  let result = [];
+  let largestPower = 0;
+  let total;
+  
+  while (2 ** (largestPower + 1) <= n) {
+    largestPower++;
+  }
+  
+  for (let i = largestPower; i >= 0; i--) {
+    
+    let pow = 2 ** i;
+    let currTotal = result.reduce((sum, num) => sum += num, 0);
+    
+    if (pow + currTotal <= n) {
+      result.push(pow);
+    };
+  }
+  
+  return result.sort((a, b) => a-b);
+};
