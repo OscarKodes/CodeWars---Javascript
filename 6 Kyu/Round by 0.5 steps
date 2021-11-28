@@ -1,0 +1,16 @@
+function solution(n){
+
+  let up = Math.ceil(n);
+  let down = Math.floor(n);
+  
+  let arr = [
+    up,
+    down,
+    ((up + down) / 2)
+  ];
+  
+  let differences = arr.map(num => Math.abs(num - n));
+  let minDiff = Math.min(...differences);
+
+  return arr[differences.indexOf(minDiff)];
+}
