@@ -1,0 +1,14 @@
+function peopleWithAgeDrink(old) {
+  
+  let drinks = {
+    14: "toddy",
+    18: "coke",
+    21: "beer",
+  };
+  
+  let allAges = Object.keys(drinks).map(str => Number(str));
+  
+  let age = allAges.filter(n => old < n)[0];
+  
+  return "drink " + (age ? drinks[age] : "whisky");
+};
