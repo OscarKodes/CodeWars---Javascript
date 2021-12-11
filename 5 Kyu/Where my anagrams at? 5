@@ -1,0 +1,8 @@
+const sortLetters = s => s.split("").sort().join("");
+
+function anagrams(word, words) {
+  
+  let original = sortLetters(word);
+  
+  return words.filter(s => sortLetters(s) === original);
+}
