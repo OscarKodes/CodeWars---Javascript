@@ -1,0 +1,12 @@
+function generateHashtag (str) {
+
+  let wordArr = str.split(" ").filter(s => s !== "");
+  let tagLength = wordArr.join("").length;
+  
+  if (tagLength === 0 || tagLength >= 140) {
+    
+    return false;
+  }
+  
+  return "#" + wordArr.map(s => s[0].toUpperCase() + s.slice(1).toLowerCase()).join("");
+}
