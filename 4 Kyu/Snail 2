@@ -1,0 +1,23 @@
+const shaveObj = {
+  top: arr => [arr[0], arr.slice(1)],
+  right: arr => [arr.map(a => a[a.length - 1]), arr.map(a => a.slice(0, a.length - 1))],
+  bot: arr => [arr[arr.length - 1].reverse(), arr.slice(0, arr.length - 1)],
+  left: arr => [arr.map(a => a[0]).reverse(), arr.map(a => a.slice(1))]
+};
+
+snail = arr => {
+  
+  let result = [];
+  let idx = 0;
+  let objKey = ["top", "right", "bot", "left"];
+
+  while (arr.length > 0) {
+  
+    let [currNums, leftoverNums] = shaveObj[objKey[idx]](arr);
+    result = result.concat(currNums);
+    arr = leftoverNums;
+    idx = idx + 1 === 4 ? 0 : idx + 1;
+  }
+
+  return result;
+}
