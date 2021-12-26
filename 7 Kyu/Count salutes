@@ -1,0 +1,15 @@
+function countSalutes(hallway) {
+
+  let people = hallway.split("-").join("");
+  
+  let perPerson = people.split("").map((d, i) => {
+    
+    let encounters = d === "<" ?
+                      people.slice(0, i).split("<").join("") :
+                      people.slice(i).split(">").join("")
+    
+    return encounters.length;
+  });
+  
+  return perPerson.reduce((s, n) => s += n, 0);
+}
