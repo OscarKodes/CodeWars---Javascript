@@ -1,0 +1,25 @@
+function pairZeros(arr) {
+  
+  let lastZero = -1;
+  let result = [];
+  
+  arr.map((n, i) => {
+    
+    if (n === 0 && lastZero === -1) {
+      
+      lastZero = i;
+      result.push(n);
+    }
+    
+    else if (n === 0) {
+      
+      lastZero = -1;
+    }
+    
+    else {
+      result.push(n);
+    }
+  });
+  
+  return result;
+}
