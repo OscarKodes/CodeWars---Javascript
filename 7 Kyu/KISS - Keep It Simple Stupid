@@ -1,0 +1,8 @@
+function isKiss( words ){
+  
+  let wordArr = words.split(" ");
+  
+  return wordArr.filter(w => w.length > wordArr.length).length === 0 ?
+          "Good work Joe!" : 
+          "Keep It Simple Stupid";
+}
