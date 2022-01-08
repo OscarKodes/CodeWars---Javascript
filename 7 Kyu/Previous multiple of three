@@ -1,0 +1,16 @@
+const prevMultOfThree = n => {
+  
+  if (n % 3 === 0) {
+    
+    return n;
+  }
+  
+  else if (n <= 9) {
+    
+    return null;
+  }
+  
+  let strN = String(n);
+  
+  return prevMultOfThree(Number(strN.slice(0, strN.length - 1)));
+}
