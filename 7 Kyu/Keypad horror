@@ -1,0 +1,1 @@
+computerToPhone = nums => nums.split("").map(n => "0789456123"[n]).join("");
