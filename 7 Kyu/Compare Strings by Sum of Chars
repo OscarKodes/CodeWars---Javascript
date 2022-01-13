@@ -1,0 +1,13 @@
+function compare(s1, s2) {
+  
+  let val1 = isAllLetters(s1) ? getVal(s1.toUpperCase()) : 0;
+  let val2 = isAllLetters(s2) ? getVal(s2.toUpperCase()) : 0;
+
+  return val1 === val2;
+}
+
+const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const isAllLetters = s => s !== null && s.split("").filter(c => !ABC.includes(c.toUpperCase())).length === 0;
+
+const getVal = s => s.split("").reduce((s, c) => s += c.charCodeAt(0), 0);
