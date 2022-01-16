@@ -1,0 +1,17 @@
+const removeConsecutiveDuplicates = s => {
+  
+  let words = s.split(" ");
+  let result = [];
+  
+  for (let i = 0; i < words.length; i++) {
+    
+    let word = words[i];
+    
+    if (result[result.length - 1] !== word) {
+      
+       result.push(word)
+    }
+  }
+  
+  return result.join(" ");
+}
