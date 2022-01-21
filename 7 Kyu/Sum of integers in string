@@ -1,0 +1,28 @@
+function sumOfIntegersInString(s){
+  
+  let nums = [];
+  let currNum = "";
+  let prevNum = false;
+  
+  s.split("").map((e, i) => {
+    
+    let isNum = !isNaN(+e);
+    
+    if (isNum) {
+      prevNum = true;
+      currNum += e;
+      
+      if (s.length - 1 === i) {
+        nums.push(currNum);
+      }
+    }
+    
+    else if (!isNum && prevNum) {
+      nums.push(currNum);
+      currNum = "";
+      prevNum = false;
+    }
+  });
+  
+  return nums.reduce((s, e) => s += +e, 0);
+}
