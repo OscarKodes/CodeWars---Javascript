@@ -1,0 +1,5 @@
+function comes_after(str,l) {
+  
+  return str.slice(1).split("").filter((c, i) => str[i].toLowerCase() === l.toLowerCase() && 
+                                       c.match("^[a-zA-Z\(\)]+$")).join("");
+}
