@@ -1,0 +1,3 @@
+const hex = n => n <= 0 ? "0" : n >= 255 ? "FF" : n.toString(16);
+
+const rgb = (r, g, b) => [r, g, b].map(s => hex(s).length == 2 ? hex(s) : "0" + hex(s)).join("").toUpperCase();
