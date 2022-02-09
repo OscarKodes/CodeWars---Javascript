@@ -1,0 +1,1 @@
+const moveZeros = a => a.filter(e => e !== 0).concat(a.filter(e => e === 0));
