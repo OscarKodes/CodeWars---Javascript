@@ -1,0 +1,6 @@
+function narcissistic(value) {
+  
+  let numArr = String(value).split("");
+  
+  return numArr.reduce((sum, digit) => sum += (+digit) ** numArr.length, 0) === value;
+}
