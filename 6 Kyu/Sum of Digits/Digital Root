@@ -1,0 +1,10 @@
+function digital_root(n) {
+  
+  if (n < 10) {
+    return n;
+  }
+  
+  let result = digital_root(String(n).split("").reduce((s, nStr) => s += +nStr, 0));
+  
+  return result;
+}
