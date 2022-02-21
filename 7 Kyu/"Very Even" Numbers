@@ -1,0 +1,1 @@
+const isVeryEvenNumber = n => n < 10 ? n % 2 === 0 : isVeryEvenNumber(String(n).split("").reduce((sum, digit) => sum += +digit, 0));
