@@ -1,0 +1,16 @@
+function assembleString(array){
+  
+  let result = array.length > 0 ? new Array(array[0].length).fill("#") : [];
+
+  array.map(s => {
+    
+    s.split("").map((c, i) => {
+
+      if (c !== "*") {
+        result[i] = c;
+      };
+    })
+  });
+  
+  return result.join("");
+}
