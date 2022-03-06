@@ -1,0 +1,18 @@
+function shiftedDiff(first,second){
+  
+  let rotated = first;
+  let result = 0;
+  
+  while (rotated !== second) {
+    rotated = rotate(rotated);
+    result++;
+    
+    if (result >= first.length) {
+      return -1;
+    }
+  }
+  
+  return result;
+}
+
+const rotate = s => s[s.length - 1] + s.slice(0, s.length - 1);
