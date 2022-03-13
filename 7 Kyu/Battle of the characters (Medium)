@@ -1,0 +1,15 @@
+const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const charVal = c => ABC.indexOf(c.toUpperCase()) + 1;
+
+const multiplier = c => c.toUpperCase() === c ? 1 : 0.5;
+
+const strVal = s => s.split("").reduce((sum, char) => sum += charVal(char) * multiplier(char), 0);
+
+function battle(x, y) {
+  
+  let val1 = strVal(x);
+  let val2 = strVal(y);
+  
+  return val1 >= val2 ? val1 > val2 ? x : "Tie!" : y;
+}
