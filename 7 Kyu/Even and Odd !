@@ -1,0 +1,8 @@
+function evenAndOdd(num){
+  
+  let digits = num.toString().split("").map(nStr => Number(nStr));
+  let evens = Number(digits.filter(n => n % 2 === 0).join(""));
+  let odds = Number(digits.filter(n => n % 2 !== 0).join(""));
+  
+  return [evens, odds];
+}
