@@ -1,0 +1,13 @@
+function center (strng, width, fill = ' ') {
+  
+  let s = strng;
+  let left = true;
+  
+  while (s.length < width) {
+    
+    s = left ? fill + s : s + fill;
+    left = !left;
+  }
+  
+  return s;
+}
