@@ -1,0 +1,12 @@
+function amountOfPages(summary){
+  
+  let digits = 0;
+  let page = 0;
+  
+  while (digits < summary) {
+    page++;
+    digits += page.toString().length;
+  }
+  
+  return page;
+}
