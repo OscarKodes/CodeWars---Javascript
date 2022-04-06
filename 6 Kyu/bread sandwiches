@@ -1,0 +1,30 @@
+function slicesToName(n) {
+  
+  let arr = [];
+  
+  if (n % 2 === 1) {
+    arr.push("bread");
+    n--;
+  }
+  
+  if (n / 2 > 0) arr = arr.concat(new Array(n / 2).fill("sandwich"));
+  
+  return typeof n === "number" && n > 1 ? arr.join(" ") : null;
+}
+
+function nameToSlices(name) {
+  
+  if (typeof name !== "string") return null;
+  
+  let arr = name.split(" ");
+  let bread = 0;
+  
+  if (arr.includes("bread")) {
+    bread = arr.lastIndexOf("bread") !== 0 ? false : 1;
+    arr.shift();
+  }
+  
+  let sandwiches = arr.filter(w => w !== "sandwich").length > 0 ? false : arr.length * 2;
+  
+  return typeof bread === "number" && sandwiches ? bread + sandwiches : null;
+}
