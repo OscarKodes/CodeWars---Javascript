@@ -1,0 +1,15 @@
+const LEFT = "_sbpw";
+const RIGHT = "_zdqm";
+
+const getScores = (str, side) => str.split("").map(c => side.includes(c) ? side.indexOf(c) : 0);
+const getSum = arr => arr.reduce((s, n) => s += n);
+
+function alphabetWar(fight) {
+   
+  let leftSum = getSum(getScores(fight, LEFT));
+  let rightSum = getSum(getScores(fight, RIGHT));
+  
+  return leftSum > rightSum ? 
+          "Left side wins!" : leftSum < rightSum ? 
+            "Right side wins!" : "Let's fight again!";
+}
