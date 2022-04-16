@@ -1,0 +1,13 @@
+function giveChange(amount) {
+  
+  let result = [];
+  let leftover = amount;
+  
+  [100, 50, 20, 10, 5, 1].map((num, i) => {
+    
+    result[i] = Math.floor(leftover / num);
+    leftover = leftover % num;
+  });
+  
+  return result.reverse();
+}
