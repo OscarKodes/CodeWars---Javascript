@@ -1,0 +1,1 @@
+const nameShuffler = s => s.split(" ").reverse().join(" ");
