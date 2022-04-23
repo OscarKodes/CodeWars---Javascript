@@ -1,0 +1,6 @@
+function isNarcissistic(n){
+  
+  let digits = String(n).split("")
+  
+  return digits.reduce((sum, digit) => sum += (+digit) ** digits.length, 0) === n;
+}
