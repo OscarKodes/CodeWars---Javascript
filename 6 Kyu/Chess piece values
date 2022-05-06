@@ -1,0 +1,6 @@
+function piecesValue(a, s) {
+  
+  let pieceArr = a.reduce((a, r) => a.concat(r.filter(spot => spot[0] === s[0] && spot.slice(2) !== "king")), []);
+
+  return pieceArr.reduce((sum, piece) => sum += hash[piece.slice(2)], 0);
+}
