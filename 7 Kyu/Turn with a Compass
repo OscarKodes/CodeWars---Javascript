@@ -1,0 +1,10 @@
+function direction(facing, turn){
+  
+  let compass = ["N", "NE", "E", "SE", "S", "SW", "W", "NW"];
+  let endIdx = compass.indexOf(facing) + (turn / 45);
+  
+  while (endIdx > 7) {endIdx -= 8};
+  while (endIdx < 0) {endIdx += 8};
+  
+  return compass[endIdx];
+}
