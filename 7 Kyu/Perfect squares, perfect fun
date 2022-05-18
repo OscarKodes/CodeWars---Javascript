@@ -1,0 +1,20 @@
+const squarify = (n, s) => {
+  
+  let arr = [];
+  
+  while (s.length > 0) {
+    let row = s.slice(0, n);
+    s = s.slice(n);
+    arr.push(row);
+  }
+  
+  return arr.join("\n");
+}
+
+function squareIt(int) {
+  
+  let sqrt = Math.sqrt(String(int).length);
+  
+  return Math.round(sqrt) === sqrt ? 
+          squarify(sqrt, String(int)) : "Not a perfect square!";
+}
