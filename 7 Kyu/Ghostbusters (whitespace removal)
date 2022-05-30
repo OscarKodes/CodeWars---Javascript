@@ -1,0 +1,7 @@
+function ghostBusters(building) {
+  
+  let result = building.split(" ").join("");
+  
+  return result !== building ?
+          result : "You just wanted my autograph didn't you?";
+}
