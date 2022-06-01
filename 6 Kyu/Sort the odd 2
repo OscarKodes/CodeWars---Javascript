@@ -1,0 +1,6 @@
+function sortArray(array) {
+  
+  let odds = array.filter(n => Math.abs(n % 2) === 1).sort((a, b) => a - b);
+  
+  return array.map(n => Math.abs(n % 2) === 1 ? odds.shift() : n);
+}
