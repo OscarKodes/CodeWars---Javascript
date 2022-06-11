@@ -1,0 +1,8 @@
+function robberEncode(s) {
+  
+  let ch = "BCDFGHJKLMNPQRSTVWXYZ";
+  let a = s.split("");
+  let r = a.map(c => ch.includes(c.toUpperCase()) ? c + (c.toUpperCase() === c ? "O" : "o") + c : c);
+  
+  return r.join("");
+}
