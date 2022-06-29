@@ -1,0 +1,7 @@
+function uncensor(infected, discovered) {
+  
+  let chars = discovered.split("");
+  let result = infected.split("").map(c => c === "*" ? chars.shift() : c)
+  
+  return result.join("");
+}
