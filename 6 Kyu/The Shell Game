@@ -1,0 +1,14 @@
+const find_the_ball = (start, swaps) => {
+  
+  let ball = start;
+  
+  swaps.map(swap => {
+    
+    if (swap.includes(ball)) {
+      
+      ball = ball === swap[0] ? swap[1] : swap[0];
+    }
+  })
+  
+  return ball;
+}
