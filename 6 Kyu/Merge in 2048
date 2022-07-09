@@ -1,0 +1,16 @@
+function merge(line) {
+  
+  let nonZeros = line.filter(n => n !== 0);
+  
+  for (let i = 0; i < line.length - 2; i++) {
+    
+    let n1 = nonZeros[i];
+    let n2 = nonZeros[i + 1];
+    
+    if (nonZeros[i] === nonZeros[i + 1]) {
+      nonZeros.splice(i, 2, nonZeros[i] + nonZeros[i + 1]);
+    }
+  }
+
+  return new Array(line.length).fill(0).map((z, i) => nonZeros[i] || z);
+};
