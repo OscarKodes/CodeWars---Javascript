@@ -1,0 +1,8 @@
+function chain(input, fs) {
+ 
+  let num = input;
+  
+  fs.map(fx => num = fx(num));
+  
+  return num;
+}
