@@ -1,0 +1,1 @@
+const getSumOfDigits = n => String(n).split("").reduce((s, nStr) => s += Number(nStr), 0);
