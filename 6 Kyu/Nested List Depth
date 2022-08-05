@@ -1,0 +1,24 @@
+const getArrs = a => a.filter(e => Array.isArray(e));
+
+function arrayDepth(a) {
+  
+  let allInnerArrs = getArrs(a);
+  let scores = allInnerArrs.map(e => innerArrScore(e));
+
+  return scores.length > 0 ? Math.max(...scores) + 1 : 1;
+}
+
+const innerArrScore = a => {
+  
+  let layers = 1;
+  let currInnerArr = getArrs(a);
+  
+  while (currInnerArr.length > 0) {
+    
+    currInnerArr = getArrs(currInnerArr[0]);
+    
+    layers++;
+  }
+  
+  return layers;
+}
