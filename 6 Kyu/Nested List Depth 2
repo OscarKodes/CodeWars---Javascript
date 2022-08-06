@@ -1,0 +1,9 @@
+function arrayDepth(a) {
+  
+  if (a.filter(e => Array.isArray(e)).length < 1) {
+    
+    return 1;
+  }
+  
+  return 1 + Math.max(...a.map(e => Array.isArray(e) ? arrayDepth(e) : 0));
+}
