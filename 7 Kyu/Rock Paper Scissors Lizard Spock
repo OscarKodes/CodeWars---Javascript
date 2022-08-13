@@ -1,0 +1,17 @@
+const winningHands = {
+  sc: ["pa", "li"],
+  pa: ["ro", "sp"],
+  ro: ["li", "sc"],
+  li: ["sp", "pa"],
+  sp: ["sc", "ro"]
+}
+
+function rpsls(pl1,pl2){
+  
+  let s1 = pl1.slice(0,2);
+  let s2 = pl2.slice(0,2);
+  
+  return winningHands[s1].includes(s2) ? 
+          "Player 1 Won!" : winningHands[s2].includes(s1) ?
+          "Player 2 Won!" : "Draw!";
+}
