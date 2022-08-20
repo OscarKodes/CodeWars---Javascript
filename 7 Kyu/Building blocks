@@ -1,0 +1,32 @@
+class Block{
+
+  constructor(data){
+    
+    [this.w, this.l, this.h] = data;
+  }
+  
+  getWidth() {
+    return this.w;
+  };
+  
+  getLength() {
+    return this.l;
+  };
+  
+  getHeight() {
+    return this.h;
+  };
+  
+  getVolume() {
+    return this.w * this.l * this.h;
+  };
+
+  getSurfaceArea() {
+
+    let p1 = this.w * this.h;
+    let p2 = this.h * this.l;
+    let p3 = this.w * this.l;
+
+    return (p1 + p2 + p3) * 2;
+  }
+}
