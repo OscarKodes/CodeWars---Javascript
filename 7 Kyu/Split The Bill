@@ -1,0 +1,11 @@
+function splitTheBill(obj) {
+  
+  let spentArr = Object.values(obj);
+  let mean = spentArr.reduce((s, n) => s += n, 0) / spentArr.length;
+  let owedArr = spentArr.map(n => n - mean).map(n => n % 1 === 0 ? n : Number(n.toFixed(2)));
+  let result = {};
+  
+  Object.keys(obj).map((key, i) => result[key] = owedArr[i]);
+  
+  return result;
+}
