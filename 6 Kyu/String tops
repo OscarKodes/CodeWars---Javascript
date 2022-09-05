@@ -1,0 +1,17 @@
+function tops(msg) {
+  
+  let tri = 1;
+  let idx = 0;
+  let chunk = (tri * 2) - 1;
+  let tops = "";
+  
+  while (chunk + idx < msg.length) {
+    
+    idx = chunk + idx;
+    tops += msg[idx];
+    tri += 2;
+    chunk = (tri * 2) - 1;
+  }
+  
+  return tops.split("").reverse().join("");
+}
