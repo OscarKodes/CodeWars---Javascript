@@ -1,0 +1,21 @@
+function compareVersions (version1, version2) {
+
+  let v1 = version1.split(".");
+  let v2 = version2.split(".");
+  
+  for (let i = 0; i < Math.max(v1.length, v2.length); i++) {
+    
+    let n1 = +v1[i] ? +v1[i] : 0;
+    let n2 = +v2[i] ? +v2[i] : 0;
+    
+    if (n1 < n2) {
+      return false;
+    }
+    
+    else if (n1 > n2) {
+      return true;
+    }
+  }
+  
+  return true;
+}
