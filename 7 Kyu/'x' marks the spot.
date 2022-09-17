@@ -1,0 +1,23 @@
+const xMarksTheSpot = (input) => {
+  
+  let coord = [];
+
+  for (let row = 0; row < input.length; row++) {
+    
+    
+    let arr = input[row];
+    
+    if (arr.includes("x")) {
+      
+      let col = arr.indexOf("x");
+      
+      if (coord.length > 0 || arr.slice(col + 1).includes("x")) {
+        return [];
+      }
+      
+      coord = [row, col];
+    }
+  }
+
+  return coord;
+}
