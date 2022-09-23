@@ -1,0 +1,23 @@
+function zeroPlentiful(arr){
+  
+  let zeroArr = [];
+  let zeros = "";
+  
+  while (arr.length > 0) {
+    
+    let num = arr.shift();
+    
+    if (num === 0) {
+      zeros += "0";
+    } 
+    
+    if (zeros !== "" && (arr.length === 0 || num !== 0)) {
+      zeroArr.push(zeros);
+      zeros = "";
+    }
+  }
+  
+  let lessThanFour = zeroArr.filter(s => s.length < 4);
+
+  return lessThanFour.length > 0 ? 0 : zeroArr.length;
+}
