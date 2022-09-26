@@ -1,0 +1,8 @@
+function quadraticFormula(a, b, c) {
+  
+  let negB = b * -1;
+  let sqrt = Math.sqrt((b**2) - 4 * a * c);
+  let denom = 2 * a
+  
+  return [(negB + sqrt) / denom, (negB - sqrt) / denom];
+}
