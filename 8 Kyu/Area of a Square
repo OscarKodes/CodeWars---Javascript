@@ -1,0 +1,6 @@
+function squareArea(A){
+  
+  let radius = (A * 2) / Math.PI;
+
+  return +(radius ** 2).toFixed(2);
+}
