@@ -1,0 +1,7 @@
+const circleArea = r => Math.PI * r ** 2;
+
+const rectArea = a => a[0] * a[1];
+
+const getArea = e => Array.isArray(e) ? rectArea(e) : circleArea(e);
+
+const sortByArea = arr => arr.slice().sort((a, b) => getArea(a) - getArea(b));
