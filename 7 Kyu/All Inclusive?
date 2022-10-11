@@ -1,0 +1,15 @@
+const rotate = s => s.slice(1) + s[0];
+
+function containAllRots(s, a) {
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    s = rotate(s);
+    
+    if(!a.includes(s)) {
+      return false;
+    }
+  }
+  
+  return true;
+}
