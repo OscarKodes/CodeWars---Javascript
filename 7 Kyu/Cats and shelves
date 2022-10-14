@@ -1,0 +1,14 @@
+function solution(start, finish) {
+  
+  let hops = 0;
+  let cat = start;
+  
+  while (cat + 3 < finish) {
+    cat += 3;
+    hops++;
+  } 
+  
+  let gap = finish - cat;
+  
+  return (gap % 2 === 0 ? gap : 1) + hops;
+}
