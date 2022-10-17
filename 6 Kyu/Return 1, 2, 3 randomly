@@ -1,0 +1,12 @@
+const roll = () => "00" + (one_two() - 1) + (one_two() - 1);
+
+function one_two_three() {
+  
+  let binary = roll();
+  
+  while (binary === "0000") {
+    binary = roll();
+  }
+  
+  return parseInt(binary, 2);
+}
