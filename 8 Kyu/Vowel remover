@@ -1,0 +1,1 @@
+const shortcut = s => s.split("").filter(c => !"aeiou".split("").includes(c)).join("");
