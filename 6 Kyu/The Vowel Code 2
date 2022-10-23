@@ -1,0 +1,5 @@
+const vowels = [,"a","e","i","o","u"];
+
+const encode = s => s.split("").map(c => vowels.includes(c) ? vowels.indexOf(c) : c).join("");
+
+const decode = s => s.split("").map(c => +c > 0 ? vowels[c] : c).join("");
