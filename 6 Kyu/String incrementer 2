@@ -1,0 +1,28 @@
+function incrementString (strng) {
+  
+  let lastLetter;
+  
+  for (let i = strng.length - 1; i >= 0; i--) {
+    
+    let c = strng[i];
+    
+    if (!(+c > -1)) {
+      lastLetter = i;
+      break;
+    }
+  }
+  
+  let head = strng.slice(0, lastLetter + 1);
+  let tail = strng.slice(lastLetter + 1);
+  
+  let numTail = +tail + 1;
+  let extraZeros = tail.length - String(numTail).length;
+
+  let strTail = String(numTail);
+  
+  if (extraZeros > 0) {
+    strTail = "0".repeat(extraZeros) + numTail;
+  }
+  
+  return head + strTail ;
+}
