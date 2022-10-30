@@ -1,0 +1,18 @@
+const ABC = "abcdefghijklmnopqrstuvwxyz";
+
+function rot13(str) {
+
+  return str.split("").map(c => {
+    
+    let idx = ABC.indexOf(c.toLowerCase());
+    
+    if (idx < 0) {
+      return c;
+    }
+    
+    let newIdx = idx + 13 > 25 ? idx - 13 : idx + 13;
+    let newCh = ABC[newIdx];
+
+    return c.toLowerCase() === c ? newCh : newCh.toUpperCase();
+  }).join("");
+}
