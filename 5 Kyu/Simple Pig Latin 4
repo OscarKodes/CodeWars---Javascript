@@ -1,0 +1,1 @@
+const pigIt = s => s.split(" ").map(w => "!?".includes(w) ? w : w.slice(1) + w[0] + "ay").join(" ");
