@@ -1,0 +1,7 @@
+function numberJoy(n) {
+  
+  let digitSum = n.toString().split("").reduce((s, nStr) => s += +nStr, 0);
+  let reversing = +digitSum.toString().split("").reverse().join("");
+
+  return digitSum * reversing === n;
+}
