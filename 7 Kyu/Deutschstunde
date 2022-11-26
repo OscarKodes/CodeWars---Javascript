@@ -1,0 +1,8 @@
+const countVowels = s => s.split("").filter(c => "aeiouäöüAEIOU".includes(c)).length;
+
+function derDieDas(wort){
+  
+  let n = countVowels(wort);
+  
+  return (n < 2 ? "das " : n > 3 ? "der " : "die ") + wort;
+}
