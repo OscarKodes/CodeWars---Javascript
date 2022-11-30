@@ -1,0 +1,17 @@
+function validatePalin(val) {
+  
+  let strVal = val.toString();
+  let left = strVal.slice(0, Math.floor(strVal.length / 2));
+  let right = strVal.slice(Math.ceil(strVal.length / 2));
+  
+  return left === right.split("").reverse().join("");
+}
+
+function nextPal(val) {
+  
+  let num = val + 1;
+  
+  while (!validatePalin(num)) num++
+  
+  return num;
+}
