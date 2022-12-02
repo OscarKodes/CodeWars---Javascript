@@ -1,0 +1,11 @@
+function findMultiples(integer, limit) {
+  
+  let result = [];
+  
+  for (let i = 1; i * integer <= limit; i++) {
+    
+    result.push(i * integer);
+  }
+  
+  return result;
+}
