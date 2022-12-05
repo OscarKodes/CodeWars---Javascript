@@ -1,0 +1,8 @@
+function lastSurvivor(letters, coords) {
+
+  let a = letters.slice().split("");
+  
+  coords.map(n => a.splice(n, 1));
+  
+  return a[0];
+}
