@@ -1,0 +1,8 @@
+function diffBig2(arr) {
+
+  let n1 = Math.max(...arr);
+  arr.splice(arr.indexOf(n1), 1)
+  let n2 = Math.max(...arr);
+  
+  return n1 - n2;
+}
