@@ -1,0 +1,11 @@
+function diffBig2(arr) {
+
+  let nums = [];
+  arr.map(n => nums[n] = n);
+  nums = nums.filter(e => typeof e === "number").reverse();
+
+  let [n1, n2] = nums
+  let duplicates = arr.slice(arr.indexOf(n1) + 1).includes(n1);
+
+  return duplicates ? 0 : n1 - n2;
+}
