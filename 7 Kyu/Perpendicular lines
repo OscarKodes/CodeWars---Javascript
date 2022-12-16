@@ -1,0 +1,11 @@
+function maxBisectors(n) {
+  
+  let result = 0;
+  
+  for (let i = 1; i <= n; i++) {
+    
+    result += Math.floor(i / 2);
+  }
+  
+  return result;
+}
