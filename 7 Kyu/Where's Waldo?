@@ -1,0 +1,49 @@
+let abc = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+const getChars = a => {
+
+  let chars = [];
+  
+  a.map(s => {
+    s.split("").map(c => {
+        if (abc.includes(c)) {
+          chars.push(c);
+        }
+      })
+  })
+  
+  return chars.sort();
+}
+
+const getWaldoChar = a => {
+  
+  for (let i = 0; i <= a.length - 1; i++) {
+    
+    let c = a[i];
+    
+    let lastIdx = a.lastIndexOf(c);
+    
+    if (i === lastIdx) {
+      return c;
+    } 
+    
+    else {
+      a = a.slice(lastIdx + 1);
+      i = -1;
+    }
+  }
+}
+
+const getCoords = (a, c) => {
+  
+  for (let x = 0; x < a.length; x++) {
+    
+    let str = a[x];
+    let y = str.indexOf(c);
+    if (y > -1) {
+      return [x, y];
+    }
+  }
+}
+
+const findWaldo = crowd => getCoords(crowd, getWaldoChar(getChars(crowd)));
