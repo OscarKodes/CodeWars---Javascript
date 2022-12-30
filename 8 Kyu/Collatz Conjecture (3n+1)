@@ -1,0 +1,12 @@
+const hotpo = n => {
+
+  let times = 0;
+  let num = n;
+  
+  while (num > 1) {
+    num = num % 2 === 0 ? num / 2 : 3 * num + 1;
+    times++;
+  }
+  
+  return times;
+}
