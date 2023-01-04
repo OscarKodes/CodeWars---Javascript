@@ -1,0 +1,16 @@
+function isValidWalk(walk) {
+  
+  let coord = {x:0, y:0};
+  
+  walk.map(d => {
+    if ("ns".includes(d)) {
+      coord.x += d === "n" ? 1 : -1;
+    } 
+    
+    else {
+      coord.y += d === "w" ? 1 : -1;
+    }
+  });
+  
+  return coord.x === 0 && coord.y === 0 && walk.length === 10; 
+}
