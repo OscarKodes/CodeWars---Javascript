@@ -1,0 +1,8 @@
+function countConsonants(str) {
+
+  let onlyLowers = str.split("").map(c => c.toLowerCase());
+  let onlyConsanants = onlyLowers.filter(c => "bcdfghjklmnpqrstvwxyz".includes(c));
+  let uniqueSet = new Set(onlyConsanants);
+  
+  return Array.from(uniqueSet).length;
+}
