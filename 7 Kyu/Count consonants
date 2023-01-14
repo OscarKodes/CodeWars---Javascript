@@ -1,0 +1,6 @@
+function consonantCount(str) {
+  
+  let consonants = "bcdfghjklmnpqrstvwxyz";
+  
+  return str.split("").filter(c => consonants.includes(c.toLowerCase())).length;
+}
