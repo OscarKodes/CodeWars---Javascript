@@ -1,0 +1,10 @@
+function trim(str, size) {
+  
+  let s = str;
+  
+  if (str.length > size) {
+    s = s.slice(0, size - (str.length <= 3 ? 0 : 3))
+  }
+  
+  return str.length > size ? s + "..." : s;
+}
