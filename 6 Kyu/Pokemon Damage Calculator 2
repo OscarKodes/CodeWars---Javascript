@@ -1,0 +1,20 @@
+const weaknesses = {
+    "fire": ["water"],
+    "grass": ["fire"],
+    "water": ["grass", "electric"],
+    "electric": []
+  }
+
+const effectiveness = (yourType, opponentType) => {
+
+  return weaknesses[opponentType].includes(yourType) ? 
+          2 : weaknesses[yourType].includes(opponentType) || yourType === opponentType ?
+          0.5 : 1;
+}
+
+const calculateDamage = (yourType, opponentType, attack, defense) => {
+  
+  let damage = 50 * (attack / defense) * effectiveness(yourType, opponentType);
+  
+  return damage;
+}
