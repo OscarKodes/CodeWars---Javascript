@@ -1,0 +1,8 @@
+function makeMove(sticks) {
+  
+  if (sticks <= 3) {
+    return sticks;
+  }
+  
+  return sticks % 4;
+}
