@@ -1,0 +1,1 @@
+const largest = (n, a) => a.sort((a, b) => a-b).slice(a.length - n);
