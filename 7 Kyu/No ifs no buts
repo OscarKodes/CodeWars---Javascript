@@ -1,0 +1,8 @@
+function noIfsNoButs(a, b) {
+  
+  let notEqual = +(a !== b);
+  let isLarger = +(a > b);
+  let list = [["equal to", "equal to"], ["smaller than", "greater than"]];
+  
+  return `${a} is ${list[notEqual][isLarger]} ${b}`;
+}
