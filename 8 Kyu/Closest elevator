@@ -1,0 +1,7 @@
+function elevator(left, right, call){
+  
+  let l = Math.abs(left - call);
+  let r = Math.abs(right - call);
+  
+  return r <= l ? "right" : "left";
+}
