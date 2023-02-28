@@ -1,0 +1,10 @@
+function arithmeticSequenceElements(a, d, n) {
+  
+  let nums = [];
+  
+  for (let i = 0; i < n; i++) {
+    nums.push(a + i * d);
+  }
+  
+	return nums.join(", ");
+}
