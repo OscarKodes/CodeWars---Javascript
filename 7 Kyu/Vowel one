@@ -1,0 +1,1 @@
+const vowelOne = s => s.split("").map(c => "aeiou".includes(c.toLowerCase()) ? "1" : "0").join("");
