@@ -1,0 +1,8 @@
+function bandNameGenerator(str) {
+  
+  let sameLetter = str[0] === str[str.length - 1];
+  let firstCh = str[0].toUpperCase();
+  let tail = str.slice(1);
+  
+  return sameLetter ? firstCh + tail + tail: "The " + firstCh + tail;
+}
