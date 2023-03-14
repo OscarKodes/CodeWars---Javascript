@@ -1,0 +1,16 @@
+function solution(str){
+   
+  let result = [];
+  
+  str.split("").map((c, i) => {
+    
+    let c1 = c;
+    let c2 = str[i + 1] || "_";
+    
+    if (i % 2 === 0) {
+      result.push(c1 + c2);
+    }
+  });
+  
+  return result;
+}
