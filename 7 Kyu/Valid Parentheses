@@ -1,0 +1,23 @@
+function validParentheses(s) {
+  
+  let open = [];
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let e = s[i];
+    
+    if (e === "(") {
+      open.push(e);
+    }
+    
+    else if (open.length > 0) {
+      open.pop();
+    }
+    
+    else {
+      return false; 
+    } 
+  }
+  
+  return open.length === 0;
+}
