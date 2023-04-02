@@ -1,0 +1,11 @@
+function keepOrder(a, n) {
+
+  for (let i = 0; i < a.length; i++) {
+    
+    if (n <= a[i]) {
+      return i;
+    }
+  }
+  
+  return a.length;
+}
