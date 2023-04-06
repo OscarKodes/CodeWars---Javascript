@@ -1,0 +1,7 @@
+function isItANum(s) {
+
+  let a = s.split("").filter(e => +e > -1 && e !== " ");
+  let isValid = a[0] === "0" && a.length === 11;
+  
+  return isValid ? a.join("") : "Not a phone number";
+}
