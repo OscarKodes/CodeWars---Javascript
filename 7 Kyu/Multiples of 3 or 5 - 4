@@ -1,0 +1,8 @@
+function solution(n){
+  
+  a = n > 0 ? new Array(n - 1).fill(null) : [];
+
+  return a.map((_, i) => (i + 1))
+          .filter(e => e % 3 === 0 || e % 5 === 0)
+          .reduce((s, n) => s += n, 0);
+}
