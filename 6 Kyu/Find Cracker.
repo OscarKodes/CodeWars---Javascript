@@ -1,0 +1,33 @@
+function findHack(arr) {
+
+  let gradeObj = {
+    "A":30,
+    "B":20,
+    "C":10,
+    "D":5
+  }
+  
+  let scoredArr = arr.map(a => {
+    
+    let copyA = a.slice();
+    copyA[2] = copyA[2].map(c => gradeObj[c] ? gradeObj[c] : 0);
+    let sum = copyA[2].reduce((s, n) => s += n, 0);
+    
+    if (copyA[2].length >= 5 && Math.min(...copyA[2]) >= 20) {
+      
+      sum += 20;
+    }
+    
+    return [copyA[0], copyA[1], sum]
+  });
+  
+  let crackers = scoredArr.filter(a => {
+    
+    let over200 = a[1] > 200;
+    let nonMatch = a[1] !== a[2];
+    
+    return over200 || nonMatch
+  });
+  
+  return crackers.map(a => a[0]);
+}
