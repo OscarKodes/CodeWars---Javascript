@@ -1,0 +1,6 @@
+function validateHello(greetings) {
+  
+  let reg = greetings.match(/hello|ciao|salut|hallo|hola|ahoj|czesc/ig)
+  
+  return !!reg;
+}
