@@ -1,0 +1,32 @@
+function maxSumBetweenTwoNegatives(a) {
+
+  let sums = [];
+  let nums = [];
+  let sawNegative = false;
+  
+  for (let i = 0; i < a.length; i++) {
+    
+    let n = a[i];
+    
+    if (n < 0) {
+      
+      if (!sawNegative) {
+        sawNegative = !sawNegative;
+        continue;
+      }
+      
+      sums.push(nums.reduce((sum, num) => sum += num, 0));
+      
+      nums = [];
+    }
+    
+    else if (sawNegative) {
+      
+      nums.push(n);
+    }
+  }
+
+  let result = Math.max(...sums);
+
+  return result >= 0 ? result : -1;
+}
