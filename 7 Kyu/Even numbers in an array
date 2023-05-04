@@ -1,0 +1,6 @@
+function evenNumbers(array, number) {
+  
+  let evens = array.filter(n => Math.abs(n) % 2 === 0);
+  
+  return evens.reverse().slice(0, number).reverse();
+}
