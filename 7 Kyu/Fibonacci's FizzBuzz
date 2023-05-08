@@ -1,0 +1,27 @@
+const fibsFizzBuzz = n => {
+  
+  let result = [];
+  
+  for (let i = 0; i < n; i++) {
+    
+    if (i < 2) {
+      result.push(1);
+    }
+    
+    else {
+
+      result.push(result[i - 2] + result[i - 1]);
+    }
+  }
+  
+  return result.map(num => {
+    
+    let fizz = num % 3 === 0;
+    let buzz = num % 5 === 0;
+    
+    return fizz || buzz ? 
+            fizz && buzz ? 
+            "FizzBuzz" : fizz ?
+            "Fizz" : "Buzz" : num
+  });
+}
