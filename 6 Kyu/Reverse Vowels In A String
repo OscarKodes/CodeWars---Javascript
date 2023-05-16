@@ -1,0 +1,17 @@
+function reverseVowels(str) {
+  
+  let vowels = "aeiouAEIOU";
+  let vowelArr = [];
+  let template = str.slice().split("").map(c => {
+    
+      if (vowels.includes(c)) {
+
+        vowelArr.push(c);
+        return null;
+      }
+    
+      return c;
+    });
+  
+  return template.map(e => e === null ? vowelArr.pop() : e).join("");
+}
