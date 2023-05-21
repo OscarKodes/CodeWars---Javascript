@@ -1,0 +1,10 @@
+function countSquares(n){
+  
+  let fullFace = (n + 1) ** 2;
+  let lessFace = fullFace - (n + 1) * 2;
+  let leastFace = lessFace - (n - 1) * 2;
+  
+  let paintedSquares = 2 * (fullFace + lessFace + leastFace);
+  
+  return n === 0 ? 1 : paintedSquares;
+}
