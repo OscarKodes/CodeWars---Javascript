@@ -1,0 +1,22 @@
+function anagramDifference(w1,w2){
+  
+  let sameLetters = [];
+  let copy1 = w1.slice().split("");
+  let copy2 = w2.slice().split("");
+  
+  for (let i = 0; i < copy1.length; i++) {
+    
+    let c = copy1[i];
+    let idx = copy2.indexOf(c);
+    
+    if (idx !== -1) {
+      
+      sameLetters.push(copy1.splice(i, 1));
+      sameLetters.push(copy2.splice(idx, 1));
+      
+      i--;
+    }
+  }
+
+  return copy1.length + copy2.length;
+}
