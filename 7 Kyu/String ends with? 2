@@ -1,0 +1,1 @@
+const solution = (s, e) => s.slice(s.length - e.length) === e;
