@@ -1,0 +1,1 @@
+const findArray = (a1, a2) => a1.length < 1 ? a1 : a2.map(n => a1.length >= n ? a1[n] : null).filter(e => e !== null);
