@@ -1,0 +1,19 @@
+const greatestDistance = data => {
+  
+  let idxObj = {};
+  
+  data.map((n, i) => {
+    
+    if (!idxObj[n]) {
+      idxObj[n] = [i];
+    }
+    
+    else {
+      idxObj[n].push(i);
+    }
+  })
+  
+  let duplicates = Object.values(idxObj).filter(idxArr => idxArr.length > 1);
+
+  return duplicates.length === 0 ? 0 : Math.max(...duplicates.map(idxArr => idxArr[idxArr.length - 1] - idxArr[0]));
+};
