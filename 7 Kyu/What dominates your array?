@@ -1,0 +1,19 @@
+function dominator(arr) {
+  
+  let count = {};
+  
+  arr.map(n => {
+    
+    if (!count[n]) {
+      count[n] = 1;
+    }
+    
+    else {
+      count[n]++;
+    }
+  });
+  
+  let top = Object.keys(count).sort((a, b) => count[b] - count[a])[0];
+  
+  return count[top] > arr.length / 2 ? +top : -1;
+}
