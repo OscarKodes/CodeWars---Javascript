@@ -1,0 +1,15 @@
+function firstNonRepeatingLetter(s) {
+  
+  for (let i = 0; i < s.length; i++) {
+    
+    let c = s[i];
+    let cLow = c.toLowerCase();
+    let sLow = s.toLowerCase();
+    
+    if (sLow.indexOf(cLow) === sLow.lastIndexOf(cLow)) {
+      return c;
+    }
+  }
+  
+  return "";
+}
