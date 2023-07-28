@@ -1,0 +1,26 @@
+function encryptor (key, message) {
+	
+  let abc = "abcdefghijklmnopqrstuvwxyz";
+  
+  let decoded = message.split("").map(c => {
+    
+    let newC = c;
+    let lower = c.toLowerCase();
+    
+    if (abc.includes(lower)) {
+      
+      let newIdx = abc.indexOf(lower) + key;
+      
+      if (newIdx >= 26) {newIdx = newIdx % 26};
+      while (newIdx < 0) {newIdx += 26};
+      
+      newC = abc[newIdx];
+      
+      newC = lower === c ? newC : newC.toUpperCase();
+    }
+    
+    return newC;
+  });
+  
+  return key === 0 ? "no cypher" : decoded.join("");
+}
