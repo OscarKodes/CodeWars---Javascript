@@ -1,0 +1,1 @@
+const addLength = str => str.split(" ").map(s => s + " " + s.length);
