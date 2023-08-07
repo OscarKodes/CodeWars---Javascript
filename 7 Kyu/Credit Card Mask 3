@@ -1,0 +1,6 @@
+function maskify(cc) {
+  
+  let headLength = cc.length - 4;
+  
+  return cc.length <= 4 ? cc : "#".repeat(headLength) + cc.slice(headLength);
+}
