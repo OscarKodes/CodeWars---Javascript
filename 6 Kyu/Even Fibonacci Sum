@@ -1,0 +1,18 @@
+function fibonacci(max) {
+  
+  let sum = 0;
+  let fibo = [0, 1];
+  
+  while (fibo[1] < max) {
+    
+    fibo.push(fibo[0] + fibo[1]);
+    fibo.shift();
+    
+    if (fibo[1] < max && fibo[1] % 2 === 0) {
+      
+      sum += fibo[1];
+    }
+  }
+  
+  return sum;
+}
