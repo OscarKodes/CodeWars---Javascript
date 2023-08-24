@@ -1,0 +1,1 @@
+const distinct = a => a.filter((e, i) => !a.slice(0, i).includes(e))
