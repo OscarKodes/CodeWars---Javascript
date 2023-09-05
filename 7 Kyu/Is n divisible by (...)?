@@ -1,0 +1,8 @@
+function isDivisible(){
+  
+  let args = [...arguments]
+  let num = args[0];
+  let a = args.slice(1);
+  
+  return a.filter(n => num % n === 0).length === a.length;
+}
