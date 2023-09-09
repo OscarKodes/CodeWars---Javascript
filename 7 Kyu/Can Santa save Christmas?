@@ -1,0 +1,10 @@
+function determineTime (durations) {
+  
+  let hour = durations.reduce((sum, nStr) => sum += +nStr.slice(0, 2), 0);
+  let min = durations.reduce((sum, nStr) => sum += +nStr.slice(3, 5), 0);
+  let sec = durations.reduce((sum, nStr) => sum += +nStr.slice(6, 8), 0)
+  
+  let total = hour + (min / 60) + (sec / 3600);
+  
+  return total <= 24;
+}
