@@ -1,0 +1,16 @@
+function pattern(rows,columns,str){
+  
+  let hLine = "+" + "---+".repeat(columns);
+  let resultArr = [hLine];
+  
+  for (let i = 0; i < rows; i++) {
+    
+    let startIdx = i * columns
+    let thisRow = str.slice(startIdx, startIdx + columns);
+    thisRow += " ".repeat(columns - thisRow.length);
+    resultArr.push("| " + thisRow.split("").join(" | ") + " |");
+    resultArr.push(hLine);
+  }
+
+  return resultArr.join("\n");
+}
