@@ -1,0 +1,19 @@
+function combine() {
+  
+  let result = {}
+  
+  for (let i = 0; i < arguments.length; i++) {
+    
+    let obj = arguments[i];
+    let keyArr = Object.keys(obj);
+    
+    keyArr.map(k => {
+      
+      let stored = result[k] > 0 ? result[k] : 0;
+
+      result[k] = stored + obj[k];
+    });
+  }
+  
+  return result;
+}
