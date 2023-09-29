@@ -1,0 +1,1 @@
+const filterLucky = a => a.filter(n => n.toString().indexOf("7") > -1) 
