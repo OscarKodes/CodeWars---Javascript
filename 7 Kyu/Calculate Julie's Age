@@ -1,0 +1,11 @@
+function age(a, b){
+  
+  let brother = 0;
+  
+  while (brother + a !== brother * b) {
+    
+    brother++;
+  }
+  
+  return brother + a;
+}
