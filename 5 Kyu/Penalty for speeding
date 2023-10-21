@@ -1,0 +1,40 @@
+function getNextNum(arr) {
+
+  let idx = 0;
+  let arrCopy = arr.slice();
+  let lastIteration = [];
+
+  while (arrCopy.length > 1) {
+
+    arrCopy = arrCopy.sort((a, b) => (idx >= a.length ? a[a.length - 1] : a[idx]) - (idx >= b.length ? b[b.length - 1] : b[idx]));
+
+    arrCopy = arrCopy.filter(nStr => nStr[idx] === arrCopy[0][idx]);
+
+    let numStr = arrCopy.join("");
+    
+    if (numStr === lastIteration) {
+      break;
+    }
+    
+    lastIteration = numStr;
+    idx++
+  }
+
+  return arrCopy[0];
+}
+
+function penalty(a_list){
+  
+  let result = [];
+  let leftover = a_list.slice();
+  
+  while (leftover.length !== 0) {
+    
+    let nextNum = getNextNum(leftover);
+    result.push(nextNum);
+    
+    leftover.splice(leftover.indexOf(nextNum), 1);
+  }
+  
+  return result.join("");
+}
