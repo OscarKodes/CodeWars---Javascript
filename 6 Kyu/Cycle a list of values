@@ -1,0 +1,16 @@
+function cycle(dir, arr, cur) {
+	
+  let startIdx = arr.indexOf(cur);
+  
+  let newIdx = startIdx + dir;
+  
+  while (newIdx < 0) {
+    newIdx = arr.length + newIdx
+  } 
+  
+  while (newIdx >= arr.length) {
+    newIdx = newIdx - arr.length;
+  }
+  
+  return startIdx > -1 ? arr[newIdx] : null;
+}
