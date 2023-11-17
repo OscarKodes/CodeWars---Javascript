@@ -1,0 +1,12 @@
+function getChance(n, x, a) { 
+
+  let leftover = n;
+  let safeChance = 1;
+
+  for (let drank = 0; drank < a; drank++) {
+    
+    safeChance -= safeChance * (x / leftover);
+    leftover--;
+  }
+  return Math.round(safeChance * 100) / 100;
+}
