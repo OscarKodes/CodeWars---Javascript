@@ -1,0 +1,28 @@
+function sqInRect(l, w){
+
+  let short = Math.min(l, w);
+  let long = Math.max(l, w);
+  let result = [short];
+
+  while (short > 0) {
+    
+    let newSide = long - short;
+    
+    if (short < newSide) {
+      long = newSide;
+    } 
+    
+    else {
+      long = short;
+      short = newSide;
+    }
+    
+    if (short !== 0) {
+      result.push(short);
+    }
+
+  }
+  
+  
+  return l === w ? null : result;
+}
