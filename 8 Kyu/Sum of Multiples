@@ -1,0 +1,11 @@
+function sumMul(n,m){
+
+  let sum = 0;
+  
+  for (let multiple = n; multiple < m; multiple += n) {
+    
+    sum += multiple;
+  }
+  
+  return sum !== 0 ? sum : "INVALID";
+}
