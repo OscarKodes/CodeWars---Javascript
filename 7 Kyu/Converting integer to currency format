@@ -1,0 +1,8 @@
+function toCurrency(price){
+  
+  let numArr = price.toString().split("").reverse();
+  
+  let commaArr = numArr.map((n, i) => i > 0 && i % 3 === 0 ? `${n},` : n).reverse()
+  
+  return commaArr.join("");
+}
