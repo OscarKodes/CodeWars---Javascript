@@ -1,0 +1,13 @@
+function flickSwitch(arr){
+
+  let bool = true;
+  
+  return arr.map(s => {
+    
+    if (s === "flick") {
+      bool = !bool;
+    }
+    
+    return bool;
+  })
+}
