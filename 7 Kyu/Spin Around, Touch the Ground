@@ -1,0 +1,11 @@
+function spinAround(turns) {
+  
+  let degrees = 0;
+  
+  turns.map(s => {
+    
+    degrees += s === "right" ? 90 : -90;
+  })
+  
+  return Math.floor(Math.abs(degrees) / 360);
+}
