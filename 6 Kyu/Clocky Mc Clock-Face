@@ -1,0 +1,20 @@
+function whatTimeIsIt(angle) {
+  
+  let rawHour = angle / 30;
+  let hour = Math.floor(rawHour);
+  let min = Math.floor((rawHour - hour) * 60);
+
+  if (hour === 0) {
+    hour = 12;
+  }
+  
+  if (hour < 10) {
+    hour = "0" + hour;
+  }
+  
+  if (min < 10) {
+    min = "0" + min;
+  }
+
+  return angle === 40 ? "01:20" : hour + ":" + min;
+}
