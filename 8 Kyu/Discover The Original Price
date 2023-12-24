@@ -1,0 +1,4 @@
+function discoverOriginalPrice(discountedPrice, salePercentage){
+  
+  return Math.round((discountedPrice * 10000) / (100 - salePercentage)) / 100;
+}
