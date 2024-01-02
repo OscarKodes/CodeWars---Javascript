@@ -1,0 +1,8 @@
+const sum = a => a.reduce((s, n) => s += n, 0);
+
+function cantBeatSoJoin(numbers) {
+  
+  let sorted = numbers.sort((a, b) => sum(b) - sum(a));
+  
+  return sorted.reduce((outerArr, innerArr) => outerArr.concat(innerArr), []);
+}
