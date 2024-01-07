@@ -1,0 +1,10 @@
+function pattern(n){
+
+  let a = [...Array(n).keys()].map(e => (e + 1).toString().split("").reverse()[0]);
+
+  let top = a.slice(0, -1).map(s => " ".repeat(a.length - 1) + s);
+  let mid = a.concat(a.slice().reverse().slice(1)).join("");
+  let bot = top.slice().reverse();
+  
+  return top.concat(mid, bot).join("\n") + "\n";
+}
