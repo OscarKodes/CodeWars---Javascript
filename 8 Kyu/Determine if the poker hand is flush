@@ -1,0 +1,6 @@
+function isFlush(cards) {
+  
+  let suit = cards[0][cards[0].length - 1];
+  
+  return cards.filter(card => card[card.length - 1] === suit).length === cards.length;
+}
