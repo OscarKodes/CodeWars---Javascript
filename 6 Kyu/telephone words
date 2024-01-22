@@ -1,0 +1,26 @@
+// https://www.codewars.com/kata/5653d33e78e3d9dfe600004e
+
+const keypad = {
+  "0": ["0"],
+  "1": ["1"],
+  "2": ["A", "B", "C"],
+  "3": ["D", "E", "F"],
+  "4": ["G", "H", "I"],
+  "5": ["J", "K", "L"],
+  "6": ["M", "N", "O"],
+  "7": ["P", "Q", "R", "S"],
+  "8": ["T", "U", "V"],
+  "9": ["W", "X", "Y", "Z"]
+}
+
+function telephoneWords (digitString) {
+ 
+  let allChars = digitString.split("").map(c => keypad[c]);
+  
+  let digit1 = allChars[0].map(c => [c]);
+  let digit2 = allChars[1].map(c => digit1.map(d => d.concat([c]))).flat();
+  let digit3 = allChars[2].map(c => digit2.map(d => d.concat([c]))).flat();
+  let digit4 = allChars[3].map(c => digit3.map(d => d.concat([c]))).flat();
+  
+  return digit4.map(a => a.join("")).sort();
+}
