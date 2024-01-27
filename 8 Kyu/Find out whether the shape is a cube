@@ -1,0 +1,9 @@
+// https://www.codewars.com/kata/58d248c7012397a81800005c
+
+function cubeChecker(volume, side){
+  
+  const valid = volume > 0 && side > 0;
+  const fits = volume === side ** 3;
+  
+  return valid && fits;
+};
