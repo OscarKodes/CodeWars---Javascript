@@ -1,0 +1,3 @@
+// https://www.codewars.com/kata/5a63948acadebff56f000018
+
+const maxProduct = (a, n) => a.sort((a, b) => a < b).slice(0, n).reduce((p, n) => p *= n, 1)
