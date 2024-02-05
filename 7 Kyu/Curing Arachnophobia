@@ -1,0 +1,13 @@
+// https://www.codewars.com/kata/5bc73331797b005d18000255
+
+function drawSpider(legSize, bodySize, mouth, eye) {
+  
+  const legs = {1: "^ ^", 2: "/\\ /\\", 3: "/\╲ ╱\\", 4: "╱╲ ╱╲"}
+  const bodies = {1: "( )", 2: "(( ))", 3: "((( )))"}
+  
+  let lg = legs[legSize].split(" ");
+  let bd = bodies[bodySize].split(" ");
+  let e = (2**bodySize)/2
+  
+  return lg[0] + bd[0] + eye.repeat(e) + mouth + eye.repeat(e) + bd[1] + lg[1]
+}
