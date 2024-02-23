@@ -1,0 +1,3 @@
+// https://www.codewars.com/kata/585b1fafe08bae9988000314
+
+const explode = s => s.length === 0 ? "" : s[0].repeat(+s[0]) + explode(s.slice(1));
