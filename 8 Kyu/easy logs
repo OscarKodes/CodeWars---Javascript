@@ -1,0 +1,5 @@
+// https://www.codewars.com/kata/5b68c7029756802aa2000176
+
+const getLog = (base, argument) => Math.log(argument) / Math.log(base);
+
+const logs = (x, a, b) => getLog(x, a) + getLog(x, b);
