@@ -1,0 +1,23 @@
+// https://www.codewars.com/kata/537400e773076324ab000262
+
+function groupAnagrams(words){
+  
+  let idxObj = {};
+  let result = [];
+  
+  words.map(s => {
+    
+    let sorted = s.split("").sort().join("");
+    
+    if (idxObj[sorted] !== undefined) {
+      result[idxObj[sorted]].push(s)
+    }
+    
+    else {
+      idxObj[sorted] = result.length;
+      result[idxObj[sorted]] = [s];
+    }
+  })
+  
+  return result;
+}
