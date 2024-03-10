@@ -1,0 +1,14 @@
+// https://www.codewars.com/kata/65c0161a2380ae78052e5731
+
+function stonePick(arr) {
+  
+  let sorted = arr.sort();
+  const getCount = s => sorted.includes(s) ? sorted.lastIndexOf(s) - sorted.indexOf(s) + 1 : 0;
+  
+  let rockLimit = getCount("Cobblestone") / 3;
+  let stickLimit = (getCount("Sticks") + (getCount("Wood") * 4)) / 2;
+
+  let axes = rockLimit > stickLimit ? stickLimit : rockLimit;
+  
+  return Math.floor(axes);
+}
