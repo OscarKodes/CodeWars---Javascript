@@ -1,0 +1,10 @@
+// https://www.codewars.com/kata/570cc83df616a85944001315
+
+function countWords(str) {
+  
+  let seperatedArr = str.trim().split(" ").map(s => s.indexOf("﻿") > -1 ? s.split("﻿") : s);
+  let flattenedArr = seperatedArr.flat();
+  let wordCount = flattenedArr.filter(s => s !== "").length;
+
+  return wordCount;
+}
