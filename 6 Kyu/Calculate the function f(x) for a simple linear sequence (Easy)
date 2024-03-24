@@ -1,0 +1,15 @@
+// https://www.codewars.com/kata/5476f4ca03810c0fc0000098
+
+function getFunction(sequence) {
+
+  let c = sequence[0];
+  let b = sequence[1] - c;
+  
+  let valid = sequence.filter((n, i) => b * i + c === n).length === sequence.length;
+ 
+  let p1 = b === 0 ? "" : `${b === 1 ? "" : b === -1 ? "-" : b}x`;
+  let operator = (b === 0 || c === 0) ? "" : c > 0 ? " + " : " - ";
+  let p2 = c > 0 ? `${c}` : c < 0 ? `${c * -1}` : "";
+  
+  return valid ? "f(x) = " + p1 + operator + p2 : "Non-linear sequence";
+}
