@@ -1,0 +1,8 @@
+// https://www.codewars.com/kata/581214d54624a8232100005f
+
+function matrix(arr) {
+    
+  const changer = (a, i, n) => a.slice(0, i).concat([n]).concat(a.slice(i + 1));
+  
+  return arr.map((a, i) => a[i] < 0 ? changer(a, i, 0) : changer(a, i, 1));
+}
