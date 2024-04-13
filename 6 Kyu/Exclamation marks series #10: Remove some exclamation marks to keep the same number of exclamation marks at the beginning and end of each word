@@ -1,0 +1,41 @@
+# https://www.codewars.com/kata/57fb04649610ce369a0006b8
+
+function remove(s){
+  
+  let result = s.split(" ").map(word => {
+    
+    let head = 0, 
+        body = "", 
+        tail = 0;
+    let headDone = false;
+    
+    for (let i = 0; i < word.length; i++) {
+      
+      let c = word[i];
+      
+      if (!headDone) {
+        if (c === "!") {
+          head++;
+        }
+        if (!headDone && c !== "!") {
+          headDone = true;
+        }
+      }
+      
+      if (headDone) {
+        if (c !== "!") {
+          body += c;
+        }
+        if (headDone && c === "!") {
+          tail++;
+        }
+      }
+    }
+      
+    let side = "!".repeat(Math.min(head, tail));
+    
+    return side + body + side;
+  })
+  
+  return result.join(" ")
+}
