@@ -1,0 +1,12 @@
+// https://www.codewars.com/kata/5822d89270ca28c85c0000f3
+
+function scramble(str, arr) {
+  
+  let result = [];
+  
+  arr.map((n, i) => {
+    result[n] = str[i];
+  });
+  
+  return result.join("");
+};
