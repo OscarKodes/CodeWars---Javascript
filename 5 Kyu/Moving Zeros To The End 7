@@ -1,0 +1,13 @@
+function moveZeros(arr) {
+  
+  let zeros = [];
+  
+  return arr.slice().filter(e => {
+    
+    if (e === 0) {
+      zeros.push(0)
+    };
+    
+    return e !== 0;
+  }).concat(zeros);
+}
