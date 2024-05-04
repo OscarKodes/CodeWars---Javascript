@@ -1,0 +1,22 @@
+// https://www.codewars.com/kata/6627696c86b953001280675e
+
+const emojiObj = {
+  ":)":0,
+  ":D":1,
+  ">(":2,
+  ">:C":3,
+  ":/":4,
+  ":|":5,
+  ":O":6,
+  ";)":7,
+  "^.^":8,
+  ":(":9
+}
+
+function deEmojify(emojiString) {
+
+  let numStrArr = emojiString.split("  ").map(s => s.split(" ").map(e => emojiObj[e]).join(""));
+  let charArr = numStrArr.map(nStr => String.fromCharCode(+nStr));
+
+  return emojiString.length > 0 ? charArr.join("") : "";
+}
