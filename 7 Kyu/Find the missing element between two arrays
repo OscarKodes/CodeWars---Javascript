@@ -1,0 +1,18 @@
+// https://www.codewars.com/kata/5a5915b8d39ec5aa18000030
+
+function findMissing(arr1, arr2) {
+  
+  let copy1 = arr1.slice();
+  let copy2 = arr2.slice();
+  
+  return copy1.filter(n => {
+    
+    if (copy2.includes(n)) {
+      copy2.splice(copy2.indexOf(n), 1);
+      
+      return false;
+    }
+    
+    return true;
+  })[0];
+}
