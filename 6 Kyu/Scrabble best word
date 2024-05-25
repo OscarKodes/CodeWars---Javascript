@@ -1,0 +1,11 @@
+// https://www.codewars.com/kata/563f960e3c73813942000015
+
+function getBestWord(points,words){
+  
+  const abc = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+  let scored = words.map(word => word.split("").reduce((s, c) => s += points[abc.indexOf(c)], 0));
+  let topScoreLengths = scored.map((score, i) => score === Math.max(...scored) ? words[i].length : Infinity);
+
+  return topScoreLengths.indexOf(Math.min(...topScoreLengths));
+}
