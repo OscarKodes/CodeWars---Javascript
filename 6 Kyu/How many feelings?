@@ -1,0 +1,27 @@
+# https://www.codewars.com/kata/5a33ec23ee1aaebecf000130
+
+function countFeelings(string, array) {
+  
+  let count = array.filter(f => {
+    
+    let s = string.split("");
+    let hasFeeling = true;
+    
+    f.split("").map(c => {
+      
+      let idx = s.indexOf(c);
+      
+      if (idx > -1) {
+        s.splice(idx, 1);
+      }
+      
+      else {
+        hasFeeling = false;
+      }
+    })
+    
+    return hasFeeling;
+  }).length;
+  
+  return count === 1 ? "1 feeling." : count + " feelings.";
+}
