@@ -1,0 +1,4 @@
+function isItLetter(character) {
+  const ABC = "abcdefghijklmnopqrstuvwxyz";
+  return ABC.indexOf(character.toLowerCase()) > -1;
+}
