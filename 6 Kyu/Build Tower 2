@@ -1,0 +1,18 @@
+# https://www.codewars.com/kata/576757b1df89ecf5bd00073b
+
+function towerBuilder(nFloors) {
+  
+  let result = [];
+  
+  for (let i = 0; i < nFloors; i++) {
+    
+    let spaceLen = nFloors - i - 1;
+    let starLen = ((nFloors - 1) * 2) + 1 - spaceLen * 2;
+    let spaces = " ".repeat(spaceLen);
+    let stars = "*".repeat(starLen)
+    
+    result.push(spaces + stars + spaces);
+  }
+  
+  return result;
+}
