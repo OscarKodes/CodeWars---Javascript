@@ -1,0 +1,12 @@
+function domainName(url){
+  
+  let startIdx = url.indexOf("www.") !== -1 ? 
+              url.indexOf("www.") + 4 : url.indexOf("://") !== -1 ?
+              url.indexOf("://") + 3 : 0;
+  
+  let firstPart = url.slice(startIdx);
+  
+  let endIdx = firstPart.indexOf(".");
+
+  return firstPart.slice(0, endIdx)
+}
