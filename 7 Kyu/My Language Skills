@@ -1,0 +1,8 @@
+// https://www.codewars.com/kata/5b16490986b6d336c900007d
+
+function myLanguages(results) {
+  
+  let passingLanguages = Object.keys(results).filter(l => results[l] >= 60);
+  
+  return passingLanguages.sort((a, b) => results[b] - results[a]);
+}
