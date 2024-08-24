@@ -1,0 +1,21 @@
+function isAlt(w) {
+  
+  let v = "aeiou"
+  let prev = null;
+  
+  for (let i = 0; i < w.length; i++) {
+    
+    let c = w[i];
+    let cIsVowel = v.includes(c)
+    
+    if (prev === null || prev !== cIsVowel) {
+      prev = cIsVowel
+    }
+    
+    else {
+      return false;
+    }
+  }
+  
+  return true;
+}
