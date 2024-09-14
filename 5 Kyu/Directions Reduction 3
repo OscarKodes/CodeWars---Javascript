@@ -1,0 +1,25 @@
+// https://www.codewars.com/kata/550f22f4d758534c1100025a
+
+function dirReduc(arr){
+  
+  let result = [];
+  let opposite = {
+    "NORTH":"SOUTH", 
+    "SOUTH":"NORTH", 
+    "WEST":"EAST", 
+    "EAST":"WEST"
+  };
+  
+  arr.map((d, i) => {
+    
+    if (opposite[d] === result[result.length - 1]) {
+      result.pop();
+    }
+    
+    else {
+      result.push(d)
+    }
+  })
+  
+  return result;
+}
