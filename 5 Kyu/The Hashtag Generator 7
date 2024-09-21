@@ -1,0 +1,13 @@
+// https://www.codewars.com/kata/52449b062fb80683ec000024
+
+function generateHashtag(str) {
+
+  let checkLength = str.split(" ").join("").length;
+  
+  if (checkLength > 0 && checkLength < 140) {
+    
+    return "#" + str.split(" ").filter(s => s !== "").map(s => s[0].toUpperCase() + s.slice(1).toLowerCase()).join("");
+  }
+  
+  return false;
+}
