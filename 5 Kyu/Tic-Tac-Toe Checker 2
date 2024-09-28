@@ -1,0 +1,25 @@
+const checkAllSame = a => a.filter((e, i) => i === 0 ? true : e === a[i - 1]).length === a.length;
+const getWinner = a => checkAllSame(a) ? a[0] : 0;
+const hasZero = board => board.reduce((bigArr, smallArr) => bigArr.concat(smallArr), []).includes(0);
+
+function isSolved(board) {
+  
+  let score = {0:0,1:0,2:0}
+  
+  for (let i = 0; i < board.length; i++) {
+    
+    let row = board[i];
+    let col = board.map(a => a[i]);
+    score[getWinner(row)]++
+    score[getWinner(col)]++
+  }
+  
+  let d1 = [board[0][0], board[1][1], board[2][2]];
+  let d2 = [board[0][2], board[1][1], board[2][0]];
+  score[getWinner(d1)]++
+  score[getWinner(d2)]++
+
+  return score["0"] === 8 && hasZero(board) ? -1 : 
+                  score["1"] === score["2"] ? 0 : 
+                  score["1"] > score["2"] ? 1 : 2
+}
