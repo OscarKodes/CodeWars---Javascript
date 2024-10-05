@@ -1,0 +1,16 @@
+// https://www.codewars.com/kata/515de9ae9dcfc28eb6000001
+
+function solution(str){
+  
+  let result = [];
+  
+  for (let i = 0; i < str.length; i += 2) {
+    
+    let c1 = str[i];
+    let c2 = i + 1 < str.length ? str[i + 1] : "_";
+    
+    result.push(c1 + c2);
+  }
+  
+  return result;
+}
