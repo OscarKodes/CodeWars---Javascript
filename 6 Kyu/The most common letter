@@ -1,0 +1,22 @@
+const mostCommonLetter = s => {
+  
+  let counter = {};
+  let maxLetter = s[0];
+  
+  s.split("").filter(c => c !== " ").map(c => {
+
+    if (!Object.keys(counter).includes(c)) {
+      counter[c] = 0;
+    }
+    
+    counter[c]++;
+    maxLetter = counter[c] > counter[maxLetter] ? 
+                c : counter[c] === counter[maxLetter] ?
+                s.indexOf(c) < s.indexOf(maxLetter) ? 
+                c : maxLetter : maxLetter;
+  })
+  
+  return maxLetter;
+}
+
+const replaceCommon = (string, letter) =>  string.replaceAll(mostCommonLetter(string), letter);
