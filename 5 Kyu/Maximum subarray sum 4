@@ -1,0 +1,15 @@
+// https://www.codewars.com/kata/54521e9ec8e60bc4de000d6c
+
+const maxSequence = a => {
+  
+  let sumNow = 0;
+  let result = 0;
+  
+  a.map(n => {
+    
+    sumNow = sumNow + n < 0 ? 0 : sumNow + n;
+    result = sumNow > result ? sumNow : result;
+  })
+  
+  return result;
+}
