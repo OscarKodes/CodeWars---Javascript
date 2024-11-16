@@ -1,0 +1,14 @@
+function duplicateCount(text){
+  
+  let duplicatedLetters = [];
+  let s = text.toLowerCase();
+  
+  s.split("").map((c, i) => {
+    
+    if (s.slice(0, i).indexOf(c) > -1 && duplicatedLetters.indexOf(c) === -1) {
+      duplicatedLetters.push(c);
+    };
+  })
+  
+  return duplicatedLetters.length;
+}
