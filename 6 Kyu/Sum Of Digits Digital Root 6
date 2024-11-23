@@ -1,0 +1,3 @@
+// https://www.codewars.com/kata/541c8630095125aba6000c00
+
+const digitalRoot = n => n.toString().length < 2 ? n : digitalRoot(n.toString().split("").reduce((s, n) => s += +n, 0))
