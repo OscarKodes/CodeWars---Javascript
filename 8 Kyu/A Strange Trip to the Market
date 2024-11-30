@@ -1,0 +1,3 @@
+// https://www.codewars.com/kata/55ccdf1512938ce3ac000056
+
+const isLochNessMonster = s => s.indexOf("tree fiddy") > -1 || s.indexOf("3.50") > -1 || s.indexOf("three fifty") > -1;
