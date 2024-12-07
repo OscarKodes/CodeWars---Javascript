@@ -1,0 +1,1 @@
+const squareDigits = n => +n.toString().split("").map(nStr => ((+nStr) ** 2).toString()).join("");
