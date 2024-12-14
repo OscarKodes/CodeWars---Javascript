@@ -1,0 +1,8 @@
+function rgb(r, g, b) {
+  
+  let rgb = [r, g, b];
+  let numArr = rgb.map(c => c < 0 ? 0 : c > 255 ? 255 : c);
+  let hexArr = numArr.map(c => c.toString(16).toUpperCase()).map(s => s.length < 2 ? "0" + s : s);
+
+  return hexArr.join("")
+}
