@@ -1,0 +1,21 @@
+function lineupStudents(students){
+  
+  let nameObj = {};
+  
+  students.split(" ").map(name => {
+    
+    if (nameObj[name.length]) {
+      nameObj[name.length].push(name)
+    } 
+    
+    else {
+      nameObj[name.length] = [name];
+    }
+  });
+  
+  let keySorted = Object.keys(nameObj).sort((a, b) => +b - +a);
+  
+  let namesSorted = keySorted.map(key => nameObj[key].sort().reverse());
+
+  return namesSorted.flat();
+}
