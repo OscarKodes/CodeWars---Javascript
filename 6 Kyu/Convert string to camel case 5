@@ -1,0 +1,23 @@
+function toCamelCase(str){
+  
+  let spaceStr = str.replaceAll("-", " ").replaceAll("_", " ");
+  
+  let strArr = spaceStr.split(" ");
+  
+  let camelizer = strArr.map((s, i) => {
+    
+    if (s.length === 0) {
+      return "";
+    }
+    
+    else if (i === 0) {
+      return s[0] + s.slice(1).toLowerCase();
+    }
+    
+    else {
+      return s[0].toUpperCase() + s.slice(1).toLowerCase();
+    }
+  });
+  
+  return camelizer.join("");
+}
