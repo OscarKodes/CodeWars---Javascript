@@ -1,0 +1,7 @@
+function firstNonRepeatingLetter(s) {
+  
+  let sLow = s.toLowerCase();
+  let result = s.split("").filter((c, i) => !sLow.slice(0, i).concat(sLow.slice(i + 1)).includes(c.toLowerCase()))[0]
+  
+  return result === undefined ? "" : result;
+}
