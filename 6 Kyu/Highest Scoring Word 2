@@ -1,0 +1,21 @@
+// https://www.codewars.com/kata/57eb8fcdf670e99d9b000272
+
+const ABC = "abcdefghijklmnopqrstuvwxyz";
+
+const high = s => {
+  
+  let highScore = 0;
+  let result;
+  
+  s.split(" ").map(word => {
+    
+    let score = word.split("").reduce((sum, c) => sum += ABC.indexOf(c) + 1, 0);
+    
+    if (score > highScore) {
+      highScore = score;
+      result = word;
+    }
+  });
+  
+  return result;
+}
