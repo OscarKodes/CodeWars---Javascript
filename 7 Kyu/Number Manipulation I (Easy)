@@ -1,0 +1,7 @@
+function manipulate(num) { 
+  
+  let numStr = num.toString();
+  let midPt = Math.floor(numStr.length / 2);
+  
+  return +num.toString().split("").map((d, i) => i >= midPt ? "0" : d).join("");
+} 
