@@ -1,0 +1,15 @@
+const ingredients = {
+  a: "beef", e: "beef", i: "beef", o: "beef", u: "beef",
+  t: "tomato",
+  l: "lettuce",
+  c: "cheese",
+  g: "guacamole",
+  s: "salsa"
+}
+
+function tacofy(word) {
+  
+  let filling = word.toLowerCase().split("").map(c => ingredients[c]).filter(c => c !== undefined);
+  
+  return ["shell", ...filling,"shell"];
+}
