@@ -1,0 +1,13 @@
+function solution(number){
+  
+  let nums = [];
+  
+  for (let i = number - 1; i > 0; i--) {
+    
+    if (i % 3 === 0 || i % 5 === 0) {
+      nums.push(i)
+    }
+  }
+
+  return nums.reduce((s, n) => s += n, 0);
+}
