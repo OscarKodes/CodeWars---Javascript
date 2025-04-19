@@ -1,0 +1,19 @@
+function divisors(integer) {
+  
+  let nums = [];
+  
+  for (let i = 2; i <= integer / 2; i++) {
+    
+    let divided = integer / i;
+    
+    if (divided % 1 === 0) {
+      
+      nums.push(i);
+      nums.push(divided);
+    }
+  }
+  
+  let result = [...new Set(nums)].sort((a, b) => +a - +b);
+  
+  return result.length > 0 ? result : integer + " is prime";
+}
