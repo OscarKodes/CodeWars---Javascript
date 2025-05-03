@@ -1,0 +1,39 @@
+function frame(balls){
+
+  let score = 0;
+  let current = "";
+  let numStr = "";
+  
+  const getScore = (curr, nStr) => blz[curr] * (nStr === "" ? 1 : +nStr);
+
+  for (let i = 0; i < balls.length; i++) {
+    
+    let c = balls[i];
+
+    if (!Number.isNaN(+c)) {
+      numStr += c;
+    } 
+    else if (c.toLowerCase() === c) {
+      current += c;
+    } 
+
+    else if (c === "W") {
+      return "Foul";
+    } 
+    
+    else {
+
+      if (i > 0) {
+        score += getScore(current, numStr);
+      }
+      
+      current = c;
+      numStr = "";
+    }
+  }
+
+  score += getScore(current, numStr);
+  
+  return balls.length === 0 ? 0 :
+          score > 147 ? "invalid data" : score;
+}
