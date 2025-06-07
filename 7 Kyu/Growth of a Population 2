@@ -1,0 +1,11 @@
+function nbYear(p0, percent, aug, p) {
+  
+  let y = 0
+  
+  for (let total = p0; total < p; total += Math.floor((total * percent / 100) + aug)) {
+    
+    y++;
+  }
+  
+  return y;
+}
