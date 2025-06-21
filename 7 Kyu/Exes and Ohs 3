@@ -1,0 +1,8 @@
+function XO(str) {
+  
+  let a = str.toLowerCase().split("");
+  let xCount = a.filter(c => c === "x").length;
+  let oCount = a.filter(c => c === "o").length;
+  
+  return xCount === oCount;
+}
