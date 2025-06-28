@@ -1,0 +1,1 @@
+const domainName = u => u.split("//").reverse()[0].split("www.").join("").split(".")[0];
