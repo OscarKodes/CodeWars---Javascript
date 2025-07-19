@@ -1,0 +1,20 @@
+function findOdd(A) {
+  
+  let arr = A.sort();
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    let num = arr[i];
+    let first = arr.indexOf(num);
+    let last = arr.lastIndexOf(num);
+    let count = last - first + 1;
+    
+    if (count % 2 === 1) {
+      return num;
+    }
+    
+    i = last;
+  }
+  
+  return null;
+}
