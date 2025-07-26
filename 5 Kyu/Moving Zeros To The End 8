@@ -1,0 +1,7 @@
+function moveZeros(arr) {
+  
+  let head = arr.filter(n => n !== 0);
+  let tail = new Array(arr.length - head.length).fill(0)
+  
+  return head.concat(tail);
+}
