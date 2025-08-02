@@ -1,0 +1,12 @@
+function toCamelCase(str){
+  
+  if (str !== "") {
+    
+    let onlyUnder = str.replaceAll("-", "_").split("_");
+    let a = onlyUnder.map((s, i) => (i === 0 ? s[0] : s[0].toUpperCase()) + s.slice(1).toLowerCase());
+    
+    return a.join("")
+  }
+  
+  return "";
+};
