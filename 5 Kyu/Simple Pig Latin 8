@@ -1,0 +1,6 @@
+function pigIt(s){
+  
+  let pig = s.split(" ").map(w => "!.?".includes(w) ? w : w.slice(1) + w[0] + "ay");
+  
+  return pig.join(" ");
+}
