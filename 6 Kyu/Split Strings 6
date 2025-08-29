@@ -1,0 +1,13 @@
+function solution(str){
+  
+  let a = [];
+  
+  for (let i = 0; i < str.length; i += 2) {
+    
+    let pair = i + 1 === str.length ? str[i] + "_" : str.slice(i, i + 2);
+    
+    a.push(pair);
+  }
+  
+  return a;
+}
