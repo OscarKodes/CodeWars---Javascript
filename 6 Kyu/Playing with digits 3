@@ -1,0 +1,6 @@
+function digPow(n, p){
+  
+  let sum = n.toString().split("").map((strN, i) => (+strN) ** (p + i)).reduce((s, n) => s += n, 0);
+
+  return sum % n === 0 ? sum / n : -1;
+}
