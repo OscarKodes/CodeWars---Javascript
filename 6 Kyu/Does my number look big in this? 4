@@ -1,0 +1,7 @@
+function narcissistic(value) {
+  
+  let a = value.toString().split("");
+  let total = a.reduce((sum, nStr) => sum += Math.pow((+nStr), a.length), 0);
+  
+  return value === total;
+}
