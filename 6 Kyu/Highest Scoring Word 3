@@ -1,0 +1,10 @@
+const ABC = " abcdefghijklmnopqrstuvwxyz"
+
+function high(x){
+  
+  let arr = x.split(" ");
+  let scores = arr.map(s => s.split("").reduce((s, c) => s += ABC.indexOf(c), 0));
+  let maxScore = scores.slice().sort((a, b) => b - a)[0];
+  
+  return arr[scores.indexOf(maxScore)]
+}
