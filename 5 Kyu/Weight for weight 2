@@ -1,0 +1,8 @@
+function orderWeight(s) {
+  
+  const getSum = numStr => numStr.split("").reduce((sum, digitStr) => sum += +digitStr, 0);
+
+  let doubleSorted = s.split(" ").sort().sort((a, b) => getSum(a) - getSum(b));
+
+  return doubleSorted.join(" ");
+}
