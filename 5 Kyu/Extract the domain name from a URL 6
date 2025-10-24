@@ -1,0 +1,11 @@
+function domainName(url){
+  
+  let heads = ["http://", "https://", "www."];
+  let headLess = url.slice();
+  
+  heads.map(head => {
+    headLess = headLess.replace(head, "")
+  })
+  
+  return headLess.split(".")[0]
+}
