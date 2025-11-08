@@ -1,0 +1,14 @@
+function cakes(recipe, available) {
+  
+  let cakesBaked = []
+
+  Object.keys(recipe).map(key => {
+    
+    let need = recipe[key];
+    let have = available[key] ? available[key] : 0;
+    
+    cakesBaked.push(Math.floor(have / need));
+  })
+  
+  return Math.min(...cakesBaked);
+}
