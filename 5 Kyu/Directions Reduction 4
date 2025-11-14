@@ -1,0 +1,21 @@
+function dirReduc(arr){
+  
+  let result = arr.slice();
+  let opp = {
+    "WEST":"EAST",
+    "NORTH":"SOUTH",
+    "EAST":"WEST",
+    "SOUTH":"NORTH"
+  };
+  
+  for (let i = 0; i < result.length - 1; i++) {
+    
+    if (opp[result[i]] === result[i + 1]) {
+      
+      result.splice(i, 2);
+      i = i === 0 ? -1 : i - 2;
+    }
+  }
+
+  return result;
+}
