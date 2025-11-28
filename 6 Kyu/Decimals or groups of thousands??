@@ -1,0 +1,18 @@
+function sumUpNumbers(arr) {
+  
+  let sum = arr.map(s => {
+    
+    if ("23".includes(s.indexOf(",").toString()) || s.indexOf(".") > -1 && s.lastIndexOf(",") > s.lastIndexOf(".")) {
+      return s.replaceAll(".", "").replaceAll(",", ".");
+    }
+    
+    else {
+      return s.replaceAll(",", "")
+    }
+  }).reduce((total, nStr) => total += +nStr, 0).toFixed(2);
+  
+  let sumArrRev = sum.toString().split("").reverse()
+  let withComma = sumArrRev.map((s, i) => i > 2 && (i - 2) % 3 === 0 && i !== sumArrRev.length - 1 ? "," + s : s);
+  
+  return withComma.reverse().join("");
+}
