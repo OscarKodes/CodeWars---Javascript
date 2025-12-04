@@ -1,0 +1,10 @@
+const ABC = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+function findMissingLetter(a){
+  
+  let abcMatch = a[0].toUpperCase() === a[0] ? ABC : ABC.toLowerCase();
+  let startIdx = abcMatch.indexOf(a[0]);
+  let abcSlice = abcMatch.slice(startIdx, startIdx + a.length);
+  
+  return abcSlice.split("").filter(c => !a.includes(c))[0];
+}
