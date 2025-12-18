@@ -1,0 +1,8 @@
+function toCamelCase(str){
+  
+  let words = str.replaceAll("-", "_").split("_")
+  
+  let camelArr = words.map((s, i) => (i === 0 ? s.slice(0, 1) : s[0].toUpperCase()) + s.slice(1).toLowerCase())
+
+  return camelArr.join("")
+}
