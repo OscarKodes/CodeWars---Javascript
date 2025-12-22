@@ -1,0 +1,16 @@
+function solution(str){
+  
+  let result = [];
+  
+  str.split("").map((c, i) => {
+    if (i % 2 === 1) {
+      result.push(str.slice(i - 1, i + 1))
+    }
+    
+    else if (i === str.length - 1) {
+      result.push(c + "_")
+    }
+  })
+  
+  return result;
+}
