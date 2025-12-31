@@ -1,0 +1,18 @@
+function incrementString (s) {
+  
+  let headEndIdx;
+  
+  for (let i = 0; i < s.length; i++) {
+    let c = s[i];
+    if ("abcdefghijklmnopqrstuvwxyz".indexOf(c) > -1) {
+      headEndIdx = i;
+    }
+  }
+  
+  let head = s.slice(0, headEndIdx + 1);
+  let nStr = (+s.slice(headEndIdx + 1) + 1).toString();
+  let tailCnt = s.length - head.length;
+  let zeroCnt = nStr.length < tailCnt ? tailCnt - nStr.length : 0;
+
+  return head + "0".repeat(zeroCnt) + nStr;
+}
