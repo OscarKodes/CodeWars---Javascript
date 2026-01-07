@@ -1,0 +1,12 @@
+function exchangeWith(a, b) {
+
+  let aEndLength = b.length;
+  
+  while(a.length > 0) {
+    b.push(a.pop())
+  }
+  
+  while(a.length !== aEndLength) {
+    a.unshift(b.shift())
+  }
+}
