@@ -1,0 +1,6 @@
+function isPangram(s){
+ 
+  let a = [...new Set(s.toLowerCase())].sort().join("")
+  
+  return a.includes("abcdefghijklmnopqrstuvwxyz")
+}
