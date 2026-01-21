@@ -1,0 +1,26 @@
+function likes(names) {
+  
+  let message = " like this";
+  
+  if (names.length === 0) {
+    message = "no one likes this";
+  }
+  
+  else if (names.length === 1) {
+    message = names[0] + " likes this";
+  }
+  
+  else if (names.length === 2) {
+    message = names.join(" and ") + " like this";
+  }
+  
+  else if (names.length === 3) {
+    message = names[0] + ", " + names[1] + " and " + names[2] + message;
+  }
+  
+  else {
+    message = names.slice(0, 2).join(", ") + " and " + (names.length - 2) + " others" + message;
+  }
+  
+  return message;
+}
