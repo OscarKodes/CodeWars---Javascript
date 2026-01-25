@@ -1,0 +1,7 @@
+function isValidWalk(walk) {
+  let x = walk.reduce((s, d) => s += d === "w" ? 1 : d === "e" ? -1 : 0, 0) === 0;
+  let y = walk.reduce((s, d) => s += d === "n" ? 1 : d === "s" ? -1 : 0, 0) === 0;
+  let tenMin = walk.length === 10;
+  
+  return x && y && tenMin;
+}
