@@ -1,0 +1,16 @@
+function rot13(str) {
+
+  const ABC = "abcdefghijklmnopqrstuvwxyz"
+  
+  return str.split("").map(c => {
+    
+    let idx = ABC.indexOf(c.toLowerCase())
+    
+    if (idx > -1) {
+      let rotC = ABC[(idx + 13) % 26];
+      return c.toLowerCase() === c ? rotC : rotC.toUpperCase();
+    }
+    
+    return c;
+  }).join("")
+}
