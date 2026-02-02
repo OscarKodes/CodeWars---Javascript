@@ -1,0 +1,14 @@
+function firstNonRepeatingLetter(s) {
+  
+  let string = s.toLowerCase();
+  
+  for (let i = 0; i < string.length; i++) {
+    let c = string[i];
+    
+    if (string.lastIndexOf(c) === string.indexOf(c)) {
+      return s[i];
+    }
+  }
+  
+  return "";
+}
