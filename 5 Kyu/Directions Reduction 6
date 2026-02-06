@@ -1,0 +1,16 @@
+const ops = {"WEST":"EAST", "EAST":"WEST", "NORTH":"SOUTH", "SOUTH":"NORTH"}
+
+function dirReduc(arr){
+  
+  let copy = arr.slice();
+  
+  for (let i = 0; i < copy.length; i++){
+
+    if (ops[copy[i]] === copy[i + 1]) {
+      copy.splice(i, 2)
+      i = -1
+    }
+  }
+
+  return copy
+}
