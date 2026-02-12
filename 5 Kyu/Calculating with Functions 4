@@ -1,0 +1,15 @@
+const zero = (s="") => s === "" ? 0 : Math.floor(eval("0" + s));
+const one = (s="") => s === "" ? 1 : Math.floor(eval("1" + s));
+const two = (s="") => s === "" ? 2 : Math.floor(eval("2" + s));
+const three = (s="") => s === "" ? 3 : Math.floor(eval("3" + s));
+const four = (s="") => s === "" ? 4 : Math.floor(eval("4" + s));
+const five = (s="") => s === "" ? 5 : Math.floor(eval("5" + s));
+const six = (s="") => s === "" ? 6 : Math.floor(eval("6" + s));
+const seven = (s="") => s === "" ? 7 : Math.floor(eval("7" + s));
+const eight = (s="") => s === "" ? 8 : Math.floor(eval("8" + s));
+const nine = (s="") => s === "" ? 9 : Math.floor(eval("9" + s));
+
+const plus = (s) => "+" + s;
+const minus = (s) => "-" + s;
+const times = (s) => "*" + s;
+const dividedBy = (s) => "/" + s;
