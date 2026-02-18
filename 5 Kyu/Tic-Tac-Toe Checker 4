@@ -1,0 +1,22 @@
+const winnerOfLine = a => {
+  let uniqueArr = [...new Set(a)];
+  return uniqueArr.length === 1 ? uniqueArr[0] : false;
+};
+
+function isSolved(board) {
+  
+  let arrsToCheck = [
+    ...board,
+    board.map((row, col) => row[col]),
+    board.map((row, col) => row[2 - col]),
+    board.map((row) => row[0]),
+    board.map((row) => row[1]),
+    board.map((row) => row[2]),
+  ];
+
+  let winnerArr = arrsToCheck.map(a => winnerOfLine(a)).filter(e => e !== false);
+  let winner = winnerArr.length > 0 ? winnerArr[0] : false;
+  let incomplete = board.filter(row => row.includes(0)).length > 0;
+
+  return winner ? winner : incomplete ? -1 : 0;
+}
