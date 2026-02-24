@@ -1,0 +1,25 @@
+function solution(text, markers) {
+  
+  let lines = text.split("\n");
+  let nonComments = [];
+
+  for (let i = 0; i < lines.length; i++) {
+  
+    let line = lines[i];
+
+    if (markers.length > 0) {
+      let markIdx = Math.min(...markers.map(m => {
+        let thisIdx = line.indexOf(m);
+        return thisIdx === -1 ? line.length : thisIdx
+      }))
+
+      if (markIdx > -1) {
+        line = line.slice(0, markIdx)
+      }
+    }
+
+    nonComments.push(line.trimEnd())
+  }
+  
+  return nonComments.join("\n")
+}
