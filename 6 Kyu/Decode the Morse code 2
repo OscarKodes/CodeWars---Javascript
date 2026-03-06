@@ -1,0 +1,8 @@
+decodeMorse = function(morseCode){
+  
+  return morseCode
+    .replaceAll("   ", " space ")
+    .split(" ").map(code => code === "space" ? " " : MORSE_CODE[code])
+    .join("")
+    .trim()
+}
