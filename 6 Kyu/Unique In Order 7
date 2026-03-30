@@ -1,0 +1,6 @@
+const uniqueInOrder = s => {
+  
+  let a = Array.isArray(s) ? s : s.split("");
+
+  return a.filter((c, i) => c !== a[i-1]);
+}
