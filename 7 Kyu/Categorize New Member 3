@@ -1,0 +1,1 @@
+const openOrSenior = d => d.map(p => p[0] >= 55 && p[1] > 7 ? "Senior" : "Open")
