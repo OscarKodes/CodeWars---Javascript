@@ -1,0 +1,6 @@
+function spinWords(string){
+  
+  let a = string.split(" ").map(s => s.length >= 5 ? s.split("").reverse().join("") : s)
+  
+  return a.join(" ");
+}
