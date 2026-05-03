@@ -1,0 +1,14 @@
+function domainName(url){
+  
+  let result = url.slice();
+  
+  if (url.includes("www.")) {
+    result = result.split("www.")[1];
+  }
+  
+  else if (url.includes("://")) {
+    result = result.split("://")[1];
+  }
+
+  return result.split(".")[0]
+}
