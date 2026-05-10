@@ -1,0 +1,12 @@
+function persistence(num) {
+  
+  let result = 0;
+  let n = num;
+  
+  while (n >= 10) {
+    n = n.toString().split("").reduce((p, nStr) => p * nStr)
+    result += 1;
+  }
+  
+  return result;
+}
