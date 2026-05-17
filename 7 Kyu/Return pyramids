@@ -1,0 +1,12 @@
+function pyramid(n){
+  
+  let result = "";
+  
+  for (let i = 0; i < n; i++) {
+    let space = " ".repeat(n - i - 1);
+    let middleSymbol = i === n - 1 ? "_" : " ";
+    result += space + "/" + middleSymbol.repeat(i * 2) + "\\" + "\n";
+  }
+
+  return result
+}
