@@ -1,0 +1,16 @@
+function solution(text, markers) {
+  
+  let lines = text.split("\n");
+  
+
+  for (let i = 0; i < markers.length; i++) {
+    
+    let m = markers[i];
+    
+    lines = lines.map(line => line.split(m)[0].trimEnd());
+  }
+  
+  let tail = lines.length > 1 && lines[lines.length - 1] === "" ? "\n" : "";
+  
+  return lines.join("\n").trimEnd() + tail;
+}
