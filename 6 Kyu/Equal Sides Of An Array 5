@@ -1,0 +1,14 @@
+function findEvenIndex(arr) {
+  
+  for (let i = 0; i < arr.length; i++) {
+    
+    let left = i === 0 ? 0 : arr.slice(0, i).reduce((s, n) => s += n);
+    let right = i === arr.length - 1 ? 0 : arr.slice(i + 1).reduce((s, n) => s += n);
+    
+    if (left === right) {
+      return i;
+    }
+  }
+  
+  return -1;
+}
