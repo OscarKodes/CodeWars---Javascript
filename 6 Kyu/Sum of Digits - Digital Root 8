@@ -1,0 +1,1 @@
+const digitalRoot = n => n < 10 ? n : digitalRoot(n.toString().split("").reduce((s, nStr) => s += +nStr, 0));
