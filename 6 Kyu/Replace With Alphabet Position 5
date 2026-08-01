@@ -1,0 +1,9 @@
+const ABC = 'abcdefghijklmnopqrstuvwxyz';
+
+function alphabetPosition(text) {
+  
+  let lowerText = text.toLowerCase();
+  let letterArr = lowerText.split("").filter(c => ABC.includes(c));
+  
+  return letterArr.map(c => ABC.indexOf(c) + 1).join(" ");
+}
