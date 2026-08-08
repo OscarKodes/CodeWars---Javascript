@@ -1,0 +1,11 @@
+function towerBuilder(nFloors) {
+  
+  let result = [];
+  
+  for (let i = 0; i < nFloors; i++) {
+    let side = " ".repeat(nFloors - (i + 1));
+    result.push(side + "*".repeat(i * 2 + 1) + side)
+  }
+  
+  return result;
+}
