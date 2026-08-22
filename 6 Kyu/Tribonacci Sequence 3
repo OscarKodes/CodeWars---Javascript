@@ -1,0 +1,13 @@
+function tribonacci(a, n){
+  
+  let result = [...a];
+  
+  for (let i = 3; i < n; i++) {
+    
+    let newNum = result.slice(-3).reduce((s, num) => s += num, 0);
+    
+    result.push(newNum);
+  }
+  
+  return result.slice(0, n);
+}
