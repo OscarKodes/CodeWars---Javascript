@@ -1,0 +1,6 @@
+function duplicateEncode(word){
+  
+  let s = word.toLowerCase();
+
+  return s.slice().split("").map(c => s.indexOf(c) === s.lastIndexOf(c) ? "(" : ")").join("")
+}
