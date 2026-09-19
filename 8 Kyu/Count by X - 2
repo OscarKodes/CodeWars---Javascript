@@ -1,0 +1,1 @@
+const countBy = (x, n) => new Array(n).fill(x, 0, n).map((c, i) => c * (i + 1));
