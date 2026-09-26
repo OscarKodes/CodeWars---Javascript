@@ -1,0 +1,1 @@
+const reverseWords = t => t.split(" ").map(s => s.split("").reverse().join("")).join(" ");
