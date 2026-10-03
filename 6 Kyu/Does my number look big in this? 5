@@ -1,0 +1,6 @@
+function narcissistic(value) {
+  
+  let a = value.toString().split("");
+  
+  return a.reduce((s, n) => s += (+n) ** a.length, 0) === value;
+}
