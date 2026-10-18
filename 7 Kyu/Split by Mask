@@ -1,0 +1,7 @@
+function split(s, m) {
+  
+  let leftover = s.slice().split("");
+
+  return m.reduce((sm, n) => sm += n, 0) === s.length ? 
+      m.map(n => leftover.splice(0, n).join("")) : null;
+}
