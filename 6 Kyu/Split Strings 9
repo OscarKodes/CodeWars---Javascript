@@ -1,0 +1,13 @@
+function solution(s){
+  
+  let result = [];
+  
+  for (let i = 0; i < s.length; i += 2) {
+    
+    let c = i + 2 > s.length ? s[i] + "_" : s.slice(i, i + 2);
+    
+    result.push(c)
+  }
+  
+  return result;
+}
